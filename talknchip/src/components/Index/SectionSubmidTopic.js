@@ -6,7 +6,6 @@ import styled from "styled-components"
 
 const LinkTo = styled(Link)`
   color: #69302c;
-  margin-right: 3%;
   &:hover {
     color: #69302c;
   }
@@ -14,14 +13,14 @@ const LinkTo = styled(Link)`
 const DownButton = styled(Button)`
   color: #FFF;
   margin-right: 3%;
-  margin-left: 30%;
+  margin-left: 41%;
   &:hover {
-    color: #FFF;x
+    color: #FFF;
   }
   
 `
 const Span = styled.span`
-margin-left: 30%;
+margin-left: 40%;
 margin-bottom: 25%;
 
 `
@@ -35,7 +34,7 @@ const Landing = styled.div`
 const Text = styled.h1`
   margin-bottom: 3%;
   margin-top: 10%;
-  margin-left: 3%;
+  margin-left: 18%;
 `
 
 const SectionSubmidTopic = () => (
@@ -49,7 +48,7 @@ const SectionSubmidTopic = () => (
           <LinkTo to='/index'>
             <DownButton>ส่งหัวข้อที่จะไปพูดกันเลย !</DownButton>
           </LinkTo><br /><br />
-          <Span>หรือ <LinkTo to='/404'>โหวตหัวข้อตัวเองที่อยากฟัง ></LinkTo>
+          <Span >หรือ <LinkTo to='/404'>โหวตหัวข้อตัวเองที่อยากฟัง ></LinkTo>
           </Span>
         </Col>
       </Row>
