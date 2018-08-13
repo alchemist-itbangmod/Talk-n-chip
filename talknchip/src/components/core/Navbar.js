@@ -14,7 +14,7 @@ import {
 
 import styled from "styled-components"
 
-const Nav = styled(Navbar)`
+const Navbarja = styled(Navbar)`
 
 `
 
@@ -35,7 +35,7 @@ export default class NavBar extends React.Component {
   render () {
     return (
       <div>
-        <Navbar color='light' expand='md'>
+        <Navbarja color='light' expand='md'>
           <NavbarBrand href='/'>Talk n' Chip</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
@@ -68,7 +68,7 @@ export default class NavBar extends React.Component {
               </UncontrolledDropdown>
             </Nav>
           </Collapse>
-        </Navbar>
+        </Navbarja>
       </div>
     )
   }
