@@ -13,14 +13,14 @@ const LinkTo = styled(Link)`
 const DownButton = styled(Button)`
   color: #FFF;
   margin-right: 3%;
-  margin-left: 41%;
+  margin-left: 35%;
   &:hover {
     color: #FFF;
   }
   
 `
 const Span = styled.span`
-margin-left: 40%;
+margin-left: 34%;
 margin-bottom: 25%;
 
 `
@@ -34,16 +34,19 @@ const Landing = styled.div`
 const Text = styled.h1`
   margin-bottom: 3%;
   margin-top: 10%;
-  margin-left: 18%;
+  margin-left: 13%;
 `
+const Weight = styled.span`
+font-weight: 850;
 
+`
 const SectionSubmidTopic = () => (
   <Landing>
     <Container>
       <Row>
         <Col>
           <Text>
-          อ่านมาขนาดนี้แล้วยังไม่ส่งหัวข้ออีกหรอ ? ส่งเร็ว!
+          อ่านมาขนาดนี้แล้วยังไม่ส่งหัวข้ออีกหรอ ?<Weight> ส่งเร็ว!</Weight>
           </Text>
           <LinkTo to='/index'>
             <DownButton>ส่งหัวข้อที่จะไปพูดกันเลย !</DownButton>
