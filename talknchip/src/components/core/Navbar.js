@@ -15,9 +15,11 @@ import {
 import styled from "styled-components"
 
 const Navbarja = styled(Navbar)`
-
+background-color:transparent;
 `
-
+const Navllink = styled(NavLink)`
+color:#69302c;
+`
 export default class NavBar extends React.Component {
   constructor (props) {
     super(props)
@@ -35,19 +37,19 @@ export default class NavBar extends React.Component {
   render () {
     return (
       <div>
-        <Navbarja color='light' expand='md'>
+        <Navbarja expand='md'>
           <NavbarBrand href='/'>Talk n' Chip</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className='ml-auto' navbar>
               <NavItem>
-                <NavLink href='/components/'>คืออะไร</NavLink>
+                <Navllink href='/components/'>คืออะไร</Navllink>
               </NavItem>
               <NavItem>
-                <NavLink href='/'>ใครมาพูด</NavLink>
+                <Navllink href='/'>ใครมาพูด</Navllink>
               </NavItem>
               <NavItem>
-                <NavLink href='/'>จัดที่ไหน</NavLink>
+                <Navllink href='/'>จัดที่ไหน</Navllink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
