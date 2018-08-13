@@ -5,7 +5,7 @@ import Button from "../core/button"
 import {Landing, Text, Date} from "./styled"
 import styled from "styled-components"
 import NavBar from "../Core/Navbar.js"
-
+import SectionSubmid from "./SectionSubmidTopic.js"
 const LinkTo = styled(Link)`
   color: #69302c;
   margin-right: 3%;
@@ -34,6 +34,7 @@ const IndexPage = () => (
         </Col>
       </Row>
     </Container>
+    <SectionSubmid />
   </Landing>
 )
 
