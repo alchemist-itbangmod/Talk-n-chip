@@ -25,7 +25,7 @@ const Schedule = () => (
         <Card className='mt-4'>
           <CardBody>
             <CardTitle>
-                Schedule
+                SCHEDULE
             </CardTitle>
             <CardText>
               10.00
@@ -63,7 +63,7 @@ const Schedule = () => (
         <Card>
           <CardBody>
             <CardTitle>
-            Location
+            LOCATION
             </CardTitle>
             <CardText className='text-right'>
               <h3>คณะเทคโนโลยีสารสนเทศ</h3>
