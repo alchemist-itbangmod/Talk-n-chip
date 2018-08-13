@@ -12,16 +12,12 @@ const LinkTo = styled(Link)`
 `
 const DownButton = styled(Button)`
   color: #FFF;
-  margin-right: 3%;
-  margin-left: 35%;
   &:hover {
     color: #FFF;
   }
   
 `
 const Span = styled.span`
-margin-left: 34%;
-margin-bottom: 25%;
 
 `
 
@@ -29,22 +25,19 @@ const Landing = styled.div`
   color:#69302c;
   font-weight: bold;
   background-color:#F1BE42;
-  height: 100vh;
+  min-height: 10vh;
 `
 const Text = styled.h1`
-  margin-bottom: 3%;
-  margin-top: 10%;
-  margin-left: 13%;
 `
 const Weight = styled.span`
-font-weight: 850;
+font-weight: 800;
 
 `
-const SectionSubmidTopic = () => (
+const SectionSubmitTopic = () => (
   <Landing>
     <Container>
       <Row>
-        <Col>
+        <Col className='text-center py-5'>
           <Text>
           อ่านมาขนาดนี้แล้วยังไม่ส่งหัวข้ออีกหรอ ?<Weight> ส่งเร็ว!</Weight>
           </Text>
@@ -60,4 +53,4 @@ const SectionSubmidTopic = () => (
   </Landing>
 )
 
-export default SectionSubmidTopic
+export default SectionSubmitTopic
