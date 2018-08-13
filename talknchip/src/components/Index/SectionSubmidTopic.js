@@ -19,6 +19,7 @@ const DownButton = styled(Button)`
   &:hover {
     color: #FFF;x
   }
+  
 `
 const Span = styled.span`
 margin-left: 30%;
