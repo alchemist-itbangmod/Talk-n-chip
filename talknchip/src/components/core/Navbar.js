@@ -13,7 +13,8 @@ import styled from "styled-components"
 
 const Navbarja = styled(Navbar)`
   background-color:transparent;
-  margin-top: 5%;
+  padding: 1em;
+  padding-top: 3em;
 `
 const Navlink = styled(NavLink)`
   color:#69302c;
