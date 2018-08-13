@@ -1,9 +1,10 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React from "react"
+import WhatSection from "./WhatSection"
 
 const IndexPage = () => (
   <div>
     Talk n chip
+    <WhatSection />
   </div>
 )
 
