@@ -9,7 +9,7 @@ const content = {
   นอกจากจะมี Open Session แล้ว
   เรายังมีหัวข้อดีๆ
   จาก Speaker ของทั้งสองทีม
-  ที่จะมทาแชร์ความรู้แบบวร้ายๆ
+  ที่จะมาแชร์ความรู้แบบวร้ายๆ
   ให้ได้ฟังกันอีกด้วย
   `
 }
@@ -47,12 +47,37 @@ const speakers = [
   }
 ]
 
+const SessionContainer = styled(Container)`
+  background-color: #F1BE42;
+  color: #64342F;
+`
+
+const InnerSessionContainer = styled(Container)`
+  h1 {
+    font-weight: 500;
+  }
+  span {
+    font-weight: 700;
+  }
+  p {
+    font-size: 1.75rem;
+  }
+`
+
 const AvatarContainer = styled.div`
-  margin: 2em 0;
   img {
     max-width: 100px;
     border-radius: 50%;
-    border: 5px solid #fff;
+    border: 4px solid #fff;
+  }
+  b {
+    font-weight: 500;
+  }
+  h2 {
+    color: #fff;
+  }
+  h4 {
+    color: #64342F;
   }
 `
 
@@ -60,7 +85,7 @@ const Avatar = ({ speaker: {name, team, topic, image} }) => (
   <AvatarContainer>
     <img src={image} />
     <h2>{topic}</h2>
-    <h2>{name} {team}</h2>
+    <h4><b>{name}</b> {team}</h4>
   </AvatarContainer>
 )
 
@@ -68,8 +93,8 @@ const SpeakerContainer = () => (
   <Fragment>
     {
       speakers.map((speaker, index) => (
-        <Col xs={12} lg={6}>
-          <Avatar speaker={speaker} key={index} />
+        <Col key={index} xs={12} lg={6} className='pb-5' >
+          <Avatar speaker={speaker} />
         </Col>
       ))
     }
@@ -77,26 +102,22 @@ const SpeakerContainer = () => (
 )
 
 const MainSession = () => (
-  <Container>
-    <Row>
-      <Col lg={4}>
-        <h1>
-          {content.header}
-        </h1>
-        <h1>
-          <b><span>{content.headerHighlight}</span></b>
-        </h1>
-        <p>
-          {content.body}
-        </p>
-      </Col>
-      <Col lg={8}>
-        <Row>
-          <SpeakerContainer />
-        </Row>
-      </Col>
-    </Row>
-  </Container>
+  <SessionContainer fluid className='px-0 pt-5'>
+    <InnerSessionContainer>
+      <Row>
+        <Col className='py-5' lg={5}>
+          <h1>{content.header}</h1>
+          <h1><span>{content.headerHighlight}</span></h1>
+          <p>{content.body}</p>
+        </Col>
+        <Col lg={7}>
+          <Row>
+            <SpeakerContainer />
+          </Row>
+        </Col>
+      </Row>
+    </InnerSessionContainer>
+  </SessionContainer>
 )
 
 export default MainSession
