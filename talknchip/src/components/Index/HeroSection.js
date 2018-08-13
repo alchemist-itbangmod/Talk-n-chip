@@ -7,25 +7,23 @@ import NavBar from "../Core/Navbar.js"
 
 const LinkTo = styled(Link)`
   color: #69302c;
-  margin-right: 3%;
-  margin-left: 3%;
   &:hover {
     color: #69302c;
   }
 `
 const Landing = styled.div`
   color:#69302c;
-  font-weight: bold;
+  font-weight: 500;
   background-color:#f8bc00;
   height: 100vh;
 `
 const Text = styled.h1`
   margin-bottom: 3%;
   margin-top: 10%;
-  margin-left: 3%;
+  font-size: 3rem;
 `
 const Date = styled.p`
-  margin-left: 3%;
+  font-size: 1.75rem;
 `
 
 const IndexPage = () => (
@@ -42,7 +40,7 @@ const IndexPage = () => (
           <LinkTo to='/index'>
             <Button>ส่งหัวข้อที่จะไปพูดกันเลย !</Button>
           </LinkTo>
-          หรือ
+          <span className='mx-3'>หรือ</span>
           <LinkTo to='/404'>โหวตหัวข้อตัวเองที่อยากฟัง ></LinkTo>
         </Col>
       </Row>
