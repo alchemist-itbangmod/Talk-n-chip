@@ -1,7 +1,7 @@
 import React from "react"
 import Link from "gatsby-link"
 import { Container, Row, Col } from "reactstrap"
-import Button from "../Core/button"
+import Button from "../core/button"
 import {Landing, Text, Date} from "./styled"
 import styled from "styled-components"
 
