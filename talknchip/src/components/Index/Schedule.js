@@ -60,7 +60,7 @@ const Schedule = () => (
         </Card>
       </Col>
       <Col>
-        <Card>
+        <Card className='mt-4'>
           <CardBody>
             <CardTitle>
             LOCATION
