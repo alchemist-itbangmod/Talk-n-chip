@@ -1,9 +1,11 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React from "react"
+
+import MainSession from "./MainSession"
 
 const IndexPage = () => (
   <div>
     Talk n chip
+    <MainSession />
   </div>
 )
 
