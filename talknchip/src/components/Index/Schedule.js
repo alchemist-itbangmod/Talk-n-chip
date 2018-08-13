@@ -6,7 +6,9 @@ const Landing = styled(Container)`
   height: 100vh;
 `
 const Card = styled(DefaultCard)`
-  border: 0 solid transparent;
+  border: 2px solid #000;
+  border-radius: .2em;
+  width: 80%;
 `
 const CardText = styled(DefaultCardText)`
   color: #69302c;
@@ -20,7 +22,7 @@ const Schedule = () => (
   <Landing>
     <Row>
       <Col>
-        <Card>
+        <Card className='mt-4'>
           <CardBody>
             <CardTitle>
                 Schedule
@@ -58,7 +60,18 @@ const Schedule = () => (
         </Card>
       </Col>
       <Col>
-        Location
+        <Card>
+          <CardBody>
+            <CardTitle>
+            Location
+            </CardTitle>
+            <CardText className='text-right'>
+              <h3>คณะเทคโนโลยีสารสนเทศ</h3>
+              สถาบันเทคโนโลยีพระจอมเกล้า<br />
+              เจ้าคุณทหารลาดกระบัง
+            </CardText>
+          </CardBody>
+        </Card>
       </Col>
     </Row>
   </Landing>
