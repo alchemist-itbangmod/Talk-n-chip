@@ -3,31 +3,35 @@
   "description": "talknchip promo website",
   "version": "1.0.0",
   "author": "Alchemist",
+  "keywords": [
+    "gatsby",
+    "talknchip"
+  ],
+  "repository": "https://github.com/gatsbyjs/gatsby-starter-default",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "dev": "gatsby develop",
+    "start": "gatsby serve",
+    "format": "prettier --write 'src/**/*.js'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
-    "gatsby": "^1.9.277",
-    "gatsby-link": "^1.6.46",
-    "gatsby-plugin-react-helmet": "^2.0.11",
-    "react-helmet": "^5.2.0",
-
     "babel-plugin-styled-components": "^1.5.1",
     "bootstrap": "^4.1.1",
     "firebase": "4.x",
+    "gatsby": "^1.9.277",
+    "gatsby-link": "^1.6.46",
+    "gatsby-plugin-react-helmet": "^2.0.11",
     "gatsby-plugin-styled-components": "^2.0.11",
+
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scroll": "^1.7.10",
     "reactstrap": "^6.2.0",
+    "react-helmet": "^5.2.0",
     "styled-components": "^3.3.3"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write 'src/**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "babel": "^6.23.0",
@@ -41,7 +45,5 @@
     "eslint-plugin-react": "^7.10.0",
     "eslint-plugin-standard": "^3.1.0",
     "prettier": "^1.13.7"
-  },
-  "repository": "https://github.com/gatsbyjs/gatsby-starter-default",
-  "main": "index.js"
+  }
 }
