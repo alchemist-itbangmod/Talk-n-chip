@@ -13,6 +13,10 @@ const content = {
   `
 }
 
+const WhatContainer = styled(Container)`
+  background-color: #F1F1F1;
+`
+
 const WhatHeader = styled.h1`
   color: #69302c;
 
@@ -20,12 +24,14 @@ const WhatHeader = styled.h1`
     color: #f8bc00;
   }
 `
-const WhatP = styled.p`
+const WhatContent = styled.p`
   margin : 40px;
+  font-size: 24px;
 `
 
 const WhatImage = styled.img`
-  max-width: 160px;
+  max-width: 250px;
+  height: auto;
   border-radius: 50%;
   padding: 10px 30px;
 `
@@ -37,18 +43,22 @@ const images = [
 ]
 
 const WhatSection = () => (
-  <Container>
-    <Row>
-      <Col className='text-center' xs={12} lg={{size: 10, offset: 1}}>
-        <WhatHeader>{content.header} <span><b>{content.headerHighlight}</b></span></WhatHeader>
-        <WhatP>{content.body}</WhatP>
-        {
-          images.map((image, index) => (
-            <WhatImage src={image} key={index} />
-          ))
-        }
-      </Col>
-    </Row>
-  </Container>
+  <WhatContainer fluid className='px-0'>
+    <Container className='py-5'>
+      <Row>
+        <Col className='text-center' xs={12} lg={{size: 10, offset: 1}}>
+          <WhatHeader>{content.header} <span><b>{content.headerHighlight}</b></span></WhatHeader>
+          <WhatContent>{content.body}</WhatContent>
+          <div className='d-flex justify-content-between align-items-center'>
+            {
+              images.map((image, index) => (
+                <WhatImage src={image} key={index} />
+              ))
+            }
+          </div>
+        </Col>
+      </Row>
+    </Container>
+  </WhatContainer>
 )
 export default WhatSection
