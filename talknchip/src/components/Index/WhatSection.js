@@ -15,7 +15,7 @@ const content = {
 const WhatSection = () => (
   <Container>
     <Row>
-      <Col>
+      <Col className='text-center' xs={12} lg={{size: 10, offset: 1}}>
         <h1>{content.header}<span>{content.headerHighlight}</span></h1>
         <p>{content.body}</p>
       </Col>
