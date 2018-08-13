@@ -5,6 +5,7 @@ const Button = styled.button`
     border:0px solid transparent;
     border-radius: .1em;
     color: #fff;
+    padding: .5em;
 `
 
 export default Button
