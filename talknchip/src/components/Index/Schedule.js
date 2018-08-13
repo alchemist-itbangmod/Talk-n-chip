@@ -72,11 +72,11 @@ const Schedule = () => (
         </Col>
         <Col>
           <Card className='mt-4'>
-            <CardBody>
+            <CardBody className='text-right'>
               <CardTitle>
             LOCA-<br />TION
               </CardTitle>
-              <CardText className='text-right'>
+              <CardText >
                 <h3>คณะเทคโนโลยีสารสนเทศ</h3>
               สถาบันเทคโนโลยีพระจอมเกล้า<br />
               เจ้าคุณทหารลาดกระบัง
