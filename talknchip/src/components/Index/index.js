@@ -4,6 +4,7 @@ import { Container, Row, Col } from "reactstrap"
 import Button from "../Core/button"
 import Landing from "./styled"
 import styled from "styled-components"
+import NavBar from "../Core/Navbar.js"
 
 const LinkTo = styled(Link)`
   color: #69302c;
@@ -16,6 +17,7 @@ const LinkTo = styled(Link)`
 const IndexPage = () => (
   <Landing>
     <Container>
+      <NavBar />
       <Row>
         <Col md='2' />
         <Col md='8'>
