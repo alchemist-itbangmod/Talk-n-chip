@@ -1,7 +1,7 @@
-import React from "react"
+import React, { Fragment } from "react"
 import {
   Collapse,
-  Navbar,
+  Navbar as DefaultNavbar,
   NavbarToggler,
   NavbarBrand,
   Nav,
@@ -11,7 +11,7 @@ import {
 
 import styled from "styled-components"
 
-const Navbarja = styled(Navbar)`
+const Navbar = styled(DefaultNavbar)`
   background-color:transparent;
   padding: 1em;
   padding-top: 3em;
@@ -46,8 +46,8 @@ export default class NavBar extends React.Component {
   }
   render () {
     return (
-      <div>
-        <Navbarja expand='md'>
+      <Fragment>
+        <Navbar expand='md'>
           <NavBrand href='/'>Talk n' Chip</NavBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
@@ -64,8 +64,8 @@ export default class NavBar extends React.Component {
             </Nav>
             <Button className='fixed-right'>ส่งหัวข้อสุดชิพ</Button>
           </Collapse>
-        </Navbarja>
-      </div>
+        </Navbar>
+      </Fragment>
     )
   }
 }
