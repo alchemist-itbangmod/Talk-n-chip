@@ -7819,7 +7819,7 @@ serve-static@1.13.2:
     parseurl "~1.3.2"
     send "0.16.2"
 
-serve@^9.2.0:
+serve@^9.2.0, serve@^9.4.2:
   version "9.4.2"
   resolved "https://registry.yarnpkg.com/serve/-/serve-9.4.2.tgz#943a1526f424de74ac874aea449d9f9c74ffad2d"
   dependencies:

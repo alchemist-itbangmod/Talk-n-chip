@@ -51,7 +51,7 @@ module.exports = class HTML extends React.Component {
           <meta property='og:url' content={url} />
           <meta property='og:image' content={ogImage} />
           <meta property='og:site_name' content={siteName} />
-          <link href='https://fonts.googleapis.com/css?family=Athiti:400,500,700' rel='stylesheet' />>
+          <link href='https://fonts.googleapis.com/css?family=Athiti:400,500,700' rel='stylesheet' />
           <link href='/static/css/bootstrap.min.css' rel='stylesheet' />
           <link href='/static/css/styles.css' rel='stylesheet' />
           {this.props.headComponents}

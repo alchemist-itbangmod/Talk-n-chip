@@ -1,12 +1,20 @@
-import React from "react"
-
+import React, { Fragment } from "react"
+import HeroSection from "./HeroSection"
+import WhatSection from "./WhatSection"
 import MainSession from "./MainSession"
+import SectionSubmit from "./SectionSubmitTopic"
+import Schedule from "./Schedule"
+import Footer from "./Footer"
+import Sponsor from "./Sponsor"
 
-const IndexPage = () => (
-  <div>
-    Talk n chip
+export default () => (
+  <Fragment>
+    <HeroSection />
+    <Sponsor />
+    <WhatSection />
     <MainSession />
-  </div>
+    <Schedule />
+    <SectionSubmit />
+    <Footer />
+  </Fragment>
 )
-
-export default IndexPage
