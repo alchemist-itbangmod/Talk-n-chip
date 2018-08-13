@@ -2,7 +2,6 @@ import React from "react"
 import Link from "gatsby-link"
 import { Container, Row, Col } from "reactstrap"
 import Button from "../core/button"
-import {Landing, Text} from "./styled"
 import styled from "styled-components"
 
 const LinkTo = styled(Link)`
@@ -25,6 +24,18 @@ const Span = styled.span`
 margin-left: 30%;
 margin-bottom: 25%;
 
+`
+
+const Landing = styled.div`
+  color:#69302c;
+  font-weight: bold;
+  background-color:#f8bc00;
+  height: 100vh;
+`
+const Text = styled.h1`
+  margin-bottom: 3%;
+  margin-top: 10%;
+  margin-left: 3%;
 `
 
 const SectionSubmidTopic = () => (
