@@ -28,7 +28,7 @@ margin-bottom: 25%;
 const Landing = styled.div`
   color:#69302c;
   font-weight: bold;
-  background-color:#f8bc00;
+  background-color:#F1BE42;
   height: 100vh;
 `
 const Text = styled.h1`

@@ -14,7 +14,7 @@ const LinkTo = styled(Link)`
 const Landing = styled.div`
   color:#69302c;
   font-weight: 500;
-  background-color:#f8bc00;
+  background-color:#F1BE42;
   height: 100vh;
 `
 const Text = styled.h1`
