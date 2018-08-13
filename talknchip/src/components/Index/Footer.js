@@ -23,7 +23,7 @@ const CreditImage = styled.img`
 `
 const images = {
   itforge: "/static/images/logoItForge.png",
-  alchemist: "/static/images/logoIAlchemist.png"
+  alchemist: "/static/images/logoAlchemist.png"
 }
 
 const Footer = () => (
