@@ -74,7 +74,7 @@ const Schedule = () => (
           <Card className='mt-4'>
             <CardBody>
               <CardTitle>
-            LOCATION
+            LOCA-<br />TION
               </CardTitle>
               <CardText className='text-right'>
                 <h3>คณะเทคโนโลยีสารสนเทศ</h3>
