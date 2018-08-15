@@ -1,11 +1,12 @@
-import React from "react"
+import React, { Fragment } from 'react'
+import Header from './LoginSection'
 
 class SubmitPage extends React.Component {
   render () {
     return (
-      <div >
-        Test ja
-      </div>
+      <Fragment>
+        <Header/>
+      </Fragment>
     )
   }
 }
