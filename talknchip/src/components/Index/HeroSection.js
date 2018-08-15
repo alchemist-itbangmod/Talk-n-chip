@@ -37,7 +37,7 @@ const IndexPage = () => (
             แล้วไม่พูดจะเสียใจ
           </Text>
           <Date>26 สิงหาคม 2018 ณ คณะไอที ลาดกระบัง</Date>
-          <LinkTo to='/index'>
+          <LinkTo to='../Submit'>
             <Button>ส่งหัวข้อที่จะไปพูดกันเลย !</Button>
           </LinkTo>
           <span className='mx-3'>หรือ</span>
