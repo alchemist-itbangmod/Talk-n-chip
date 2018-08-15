@@ -12,9 +12,15 @@ const SubmitContainer = styled(Container)`
 const SubmitTopic = () => (
   <SubmitContainer>
     <Container>
+      <Row>
+        <Col className='mr-4 ml-auto'>
+          <div className='d-flex justify-content-between align-items-center'>
+            <p>{topic}</p>
+            <Button>เสนอหัวข้อใหม่</Button>
+          </div>
 
-      </Col>
-    </Row>
+        </Col>
+      </Row>
 
     </Container>
   </SubmitContainer>
