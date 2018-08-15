@@ -7,7 +7,7 @@ const Landing = styled.div`
   color:#69302c;
   font-weight: 500;
   background-color:#F1BE42;
-  height: 10vh;
+  height: 20vh;
 `
 
 const LoginSection = () => (
