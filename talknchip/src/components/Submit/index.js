@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react'
 import Header from './LoginSection'
 import Card from './Card'
+import SubmitTopic from "./SubmitTopic";
+import Footer from "../Index/Footer"
 
 class SubmitPage extends React.Component {
   render () {
@@ -9,6 +11,8 @@ class SubmitPage extends React.Component {
         <Header/>
         <Card/>
       </Fragment>
+        <SubmitTopic />
+        <Footer />
     )
   }
 }
