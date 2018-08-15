@@ -61,9 +61,7 @@ const SpeakerContainer = () => (
 
 const CardSubmit = ({ speaker: {topic, date} }) => (
   <Card >
-    <CARDBody >
       <CardTitle className='text-center'>{topic}</CardTitle>
-      <CardSubtitle className='text-left'>{date}</CardSubtitle>
     </CARDBody>
   </Card>
 
@@ -72,7 +70,7 @@ const MainSession = () => (
   <SessionContainer fluid className='px-0 pt-5'>
     <InnerSessionContainer>
       <Row>
-        <Col >
+        <Col sm='6'>
           <Row>
             <SpeakerContainer />
           </Row>
