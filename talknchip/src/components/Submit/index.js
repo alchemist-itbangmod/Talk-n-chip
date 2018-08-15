@@ -10,9 +10,9 @@ class SubmitPage extends React.Component {
       <Fragment>
         <Header/>
         <Card/>
-      </Fragment>
-        <SubmitTopic />
         <Footer />
+      </Fragment>
+       
     )
   }
 }
