@@ -9,13 +9,18 @@ const SubmitContainer = styled(Container)`
   background-color: #f1be42;
 `
 
+const SubmitContent = styled.p`
+  color: #69302c;
+  margin-bottom: 0px;
+`
+
 const SubmitTopic = () => (
   <SubmitContainer>
-    <Container>
+    <Container className='py-1'>
       <Row>
         <Col className='mr-4 ml-auto'>
           <div className='d-flex justify-content-between align-items-center'>
-            <p>{topic}</p>
+            <SubmitContent>{topic}</SubmitContent>
             <Button>เสนอหัวข้อใหม่</Button>
           </div>
 
