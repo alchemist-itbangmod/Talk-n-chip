@@ -3,12 +3,14 @@ import Header from './LoginSection'
 import Card from './Card'
 import SubmitTopic from "./SubmitTopic";
 import Footer from "../Index/Footer"
+import LoginSection from "./LoginSection"
 
 class SubmitPage extends React.Component {
   render () {
     return (
       <Fragment>
-        <Header/>
+        <LoginSection/>
+        <SubmitTopic/>
         <Card/>
         <Footer />
       </Fragment>
