@@ -60,21 +60,26 @@ const SpeakerContainer = () => (
 )
 
 const CardSubmit = ({ speaker: {topic, date} }) => (
-  <CardColumns>
-    <Card >
-      <CARDBody >
-        <CardTitle className='text-center'>{topic}</CardTitle>
+  <Card >
+    <CARDBody>
+      <CardTitle className='text-center'>{topic}</CardTitle>
+      <div className='d-flex justify-content-between align-items-center'>
         <CardSubtitle className='text-left'>{date}</CardSubtitle>
-      </CARDBody>
-    </Card>
-  </CardColumns>
+        <div>
+          <a href='#'><span>D</span></a>
+          <a href='#'><span>E</span></a>
+        </div>
+
+      </div>
+    </CARDBody>
+  </Card>
 
 )
 const MainSession = () => (
   <SessionContainer fluid className='px-0 pt-5'>
     <InnerSessionContainer>
       <Row>
-        <Col >
+        <Col sm='6'>
           <Row>
             <SpeakerContainer />
           </Row>
