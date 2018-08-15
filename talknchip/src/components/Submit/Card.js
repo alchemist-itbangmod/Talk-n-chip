@@ -60,7 +60,6 @@ const SpeakerContainer = () => (
 )
 
 const CardSubmit = ({ speaker: {topic, date} }) => (
-
   <Card >
     <CARDBody >
       <CardTitle className='text-center'>{topic}</CardTitle>
