@@ -18,7 +18,7 @@ const SubmitTopic = () => (
   <SubmitContainer fluid>
     <Container className='py-1'>
       <Row>
-        <Col className='mr-4 ml-auto'>
+        <Col className='ml-auto'>
           <div className='d-flex justify-content-between align-items-center'>
             <SubmitText>{topic}</SubmitText>
             <Button>เสนอหัวข้อใหม่</Button>
