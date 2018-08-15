@@ -9,14 +9,20 @@ const SubmitContainer = styled(Container)`
   background-color: #f1be42;
 `
 
+const SubmitText = styled.p`
+  color: #69302c;
+  margin-bottom: 0px;
+`
+
 const SubmitTopic = () => (
-  <SubmitContainer fluid className='px-0 pt-5'>
-    <Row>
-      <Col className='mr-4 ml-auto'>
-        <div className='d-flex justify-content-between align-items-center'>
-          <p>{topic}</p>
-          <Button>เสนอหัวข้อใหม่</Button>
-        </div>
+  <SubmitContainer fluid>
+    <Container className='py-1'>
+      <Row>
+        <Col className='mr-4 ml-auto'>
+          <div className='d-flex justify-content-between align-items-center'>
+            <SubmitText>{topic}</SubmitText>
+            <Button>เสนอหัวข้อใหม่</Button>
+          </div>
 
       </Col>
     </Row>
