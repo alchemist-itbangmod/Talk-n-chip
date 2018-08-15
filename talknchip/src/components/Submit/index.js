@@ -1,15 +1,18 @@
-import React from "react"
-import Footer from "../Index/Footer"
+import React, { Fragment } from 'react'
+import Header from './LoginSection'
+import Card from './Card'
 import SubmitTopic from "./SubmitTopic";
+import Footer from "../Index/Footer"
 
 class SubmitPage extends React.Component {
   render () {
     return (
-      <div >
-        Test ja
-        <SubmitTopic />
+      <Fragment>
+        <Header/>
+        <Card/>
         <Footer />
-      </div>
+      </Fragment>
+       
     )
   }
 }
