@@ -28,7 +28,6 @@ const speakers = [
 
 const SessionContainer = styled(Container)`
   background-color: #F1BE42;
-  color: #64342F;
 `
 
 const InnerSessionContainer = styled(Container)`
@@ -42,16 +41,19 @@ const InnerSessionContainer = styled(Container)`
     font-size: 1.75rem;
   }
 `
-const CARDBody = styled(CardBody)`
-color:#69302c;
+const CardTitleStyled = styled(CardTitle)`
+  color: #64342F;
+`
 
+const CardSubtitleStyled = styled(CardSubtitle)`
+  color: #282829;
 `
 
 const SpeakerContainer = () => (
   <Fragment>
     {
       speakers.map((speaker, index) => (
-        <Col key={index} xs={12} lg={6} className='pb-5' >
+        <Col key={index} sm='4' className='pb-5' >
           <CardSubmit speaker={speaker} />
         </Col>
       ))
@@ -61,17 +63,16 @@ const SpeakerContainer = () => (
 
 const CardSubmit = ({ speaker: {topic, date} }) => (
   <Card >
-    <CARDBody>
-      <CardTitle className='text-center'>{topic}</CardTitle>
+    <CardBody>
+      <CardTitleStyled className='text-center'>{topic}</CardTitleStyled>
       <div className='d-flex justify-content-between align-items-center'>
-        <CardSubtitle className='text-left'>{date}</CardSubtitle>
+        <CardSubtitleStyled className='text-left'>{date}</CardSubtitleStyled>
         <div>
           <a href='#'><span>D</span></a>
           <a href='#'><span>E</span></a>
         </div>
-
       </div>
-    </CARDBody>
+    </CardBody>
   </Card>
 
 )
@@ -79,7 +80,7 @@ const MainSession = () => (
   <SessionContainer fluid className='px-0 pt-5'>
     <InnerSessionContainer>
       <Row>
-        <Col sm='6'>
+        <Col>
           <Row>
             <SpeakerContainer />
           </Row>
