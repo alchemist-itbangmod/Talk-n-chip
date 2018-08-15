@@ -65,7 +65,7 @@ const CardSubmit = ({ speaker: {topic, date} }) => (
   <Card >
     <CardBody>
       <CardTitleStyled className='text-center'>{topic}</CardTitleStyled>
-      <div className='d-flex justify-content-between align-items-center'>
+      <div className='d-flex justify-content-between align-items-center pt-4'>
         <CardSubtitleStyled className='text-left'>{date}</CardSubtitleStyled>
         <div>
           <a href='#'><span>D</span></a>
