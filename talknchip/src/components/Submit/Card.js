@@ -75,7 +75,7 @@ const SpeakerContainer = () => (
 
 const CardSubmit = ({ speaker: {topic, date} }) => (
   <Card >
-    <CARDBody>
+    <CARDBody >
       <CardTitle className='text-center'>{topic}</CardTitle>
       <div className='d-flex justify-content-between align-items-center'>
         <CardSubtitle className='text-left'>{date}</CardSubtitle>

@@ -13,8 +13,9 @@ import styled from "styled-components"
 
 const Navbar = styled(DefaultNavbar)`
   background-color:transparent;
-  padding: 1em;
+  padding: 0em;
   padding-top: 3em;
+
 `
 const Navlink = styled(NavLink)`
   color:#69302c;
@@ -50,7 +51,7 @@ export default class NavBar extends React.Component {
     return (
       <Fragment>
         <Navbar expand='md'>
-          <NavBrand href='/'>Talk n' Chip</NavBrand>
+          <NavBrand href='/' >Talk n' Chip</NavBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className='mr-4 ml-auto' navbar>
