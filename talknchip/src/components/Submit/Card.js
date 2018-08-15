@@ -1,7 +1,7 @@
 import React, { Fragment } from "react"
 import styled from "styled-components"
 import { Card, CardBody,
-  CardTitle, CardSubtitle, Container, Row, Col } from "reactstrap"
+  CardTitle, CardSubtitle, CardColumns, Container, Row, Col } from "reactstrap"
 
 const speakers = [
   {
@@ -60,12 +60,14 @@ const SpeakerContainer = () => (
 )
 
 const CardSubmit = ({ speaker: {topic, date} }) => (
-  <Card >
-    <CARDBody >
-      <CardTitle className='text-center'>{topic}</CardTitle>
-      <CardSubtitle className='text-left'>{date}</CardSubtitle>
-    </CARDBody>
-  </Card>
+  <CardColumns>
+    <Card >
+      <CARDBody >
+        <CardTitle className='text-center'>{topic}</CardTitle>
+        <CardSubtitle className='text-left'>{date}</CardSubtitle>
+      </CARDBody>
+    </Card>
+  </CardColumns>
 
 )
 const MainSession = () => (
