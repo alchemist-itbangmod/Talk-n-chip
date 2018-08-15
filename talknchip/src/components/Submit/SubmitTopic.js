@@ -21,9 +21,7 @@ const SubmitTopic = () => (
           <div className='d-flex justify-content-between align-items-center'>
             <SubmitText>{topic}</SubmitText>
             <Modals />
-
           </div>
-
         </Col>
       </Row>
     </Container>

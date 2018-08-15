@@ -36,7 +36,8 @@ export default class NavBar extends React.Component {
 
     this.toggle = this.toggle.bind(this)
     this.state = {
-      isOpen: false
+      isOpen: false,
+      nameLogin: "login"
     }
   }
   toggle () {
@@ -44,6 +45,7 @@ export default class NavBar extends React.Component {
       isOpen: !this.state.isOpen
     })
   }
+
   render () {
     return (
       <Fragment>
@@ -59,7 +61,7 @@ export default class NavBar extends React.Component {
                 <Navlink >Guest</Navlink>
               </NavItem>
             </Nav>
-            <Button className='fixed-right'>Login</Button>
+            <Button className='fixed-right' >{this.state.nameLogin}</Button>
           </Collapse>
         </Navbar>
       </Fragment>

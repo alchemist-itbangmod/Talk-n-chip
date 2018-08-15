@@ -1,7 +1,7 @@
 import React, { Fragment } from "react"
 import styled from "styled-components"
 import { Card, CardBody,
-  CardTitle, CardSubtitle, CardColumns, Container, Row, Col } from "reactstrap"
+  CardTitle, CardSubtitle, Container, Row, Col } from "reactstrap"
 
 const speakers = [
   {
@@ -16,6 +16,20 @@ const speakers = [
     date: "เสนอเมื่อ 14/8",
     topic: "ทอดหมูกรอบไม่ให้กรอบ ถ้าจะให้กรอบต้องทำให้"
   },
+  {
+    date: "เสนอเมื่อ 14/8",
+    topic: "ทอดหมูกรอบไม่ให้กรอบ ถ้าจะให้กรอบต้องทำให้"
+  },
+  {
+    date: "เสนอเมื่อ 14/8",
+    topic: "ทอดหมูกรอบไม่ให้กรอบ ถ้าจะให้กรอบต้องทำให้"
+  },
+
+  {
+    date: "เสนอเมื่อ 14/8",
+    topic: "ทอดหมูกรอบไม่ให้กรอบ ถ้าจะให้กรอบต้องทำให้"
+  },
+
   {
     date: "เสนอเมื่อ 14/8",
     topic: "ทอดหมูกรอบไม่ให้กรอบ ถ้าจะให้กรอบต้องทำให้"
@@ -51,7 +65,7 @@ const SpeakerContainer = () => (
   <Fragment>
     {
       speakers.map((speaker, index) => (
-        <Col key={index} xs={12} lg={6} className='pb-5' >
+        <Col key={index} sm='4' className='pb-5' >
           <CardSubmit speaker={speaker} />
         </Col>
       ))
@@ -79,7 +93,7 @@ const MainSession = () => (
   <SessionContainer fluid className='px-0 pt-5'>
     <InnerSessionContainer>
       <Row>
-        <Col sm='6'>
+        <Col >
           <Row>
             <SpeakerContainer />
           </Row>
