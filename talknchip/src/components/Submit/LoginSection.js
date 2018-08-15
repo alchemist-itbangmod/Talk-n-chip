@@ -1,7 +1,6 @@
 import React from "react"
 import { Container, Row, Col } from "reactstrap"
 import styled from "styled-components"
-import NavBarLogin from "../Core/NavbarSubmit.js"
 
 const Landing = styled.div`
   color:#69302c;
@@ -13,7 +12,6 @@ const Landing = styled.div`
 const LoginSection = () => (
   <Landing>
     <Container>
-      <NavBarLogin />
       <Row>
         <Col />
       </Row>
