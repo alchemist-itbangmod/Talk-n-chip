@@ -1,8 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Container, Row, Col } from "reactstrap"
-import Button from "../core/Button"
-
+import Modals from "../core/Modals"
 const topic = "หัวข้อที่เสนอ"
 
 const SubmitContainer = styled(Container)`
@@ -21,12 +20,13 @@ const SubmitTopic = () => (
         <Col className='mr-4 ml-auto'>
           <div className='d-flex justify-content-between align-items-center'>
             <SubmitText>{topic}</SubmitText>
-            <Button>เสนอหัวข้อใหม่</Button>
+            <Modals />
+
           </div>
 
-      </Col>
-    </Row>
-
+        </Col>
+      </Row>
+    </Container>
   </SubmitContainer>
 )
 
