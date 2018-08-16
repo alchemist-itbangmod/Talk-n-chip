@@ -47,7 +47,7 @@ export default class NavBar extends React.Component {
   render () {
     return (
       <Fragment>
-        <Navbar expand='md'>
+        <Navbar expand='md' color='' light>
           <NavBrand href='/'>Talk n' Chip</NavBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
@@ -65,7 +65,6 @@ export default class NavBar extends React.Component {
             <Navlink href='../Submit'>
               <Button className='fixed-right'>ส่งหัวข้อสุดชิพ</Button>
             </Navlink>
-
           </Collapse>
         </Navbar>
       </Fragment>

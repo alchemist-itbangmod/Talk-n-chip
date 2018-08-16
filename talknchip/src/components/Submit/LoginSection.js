@@ -13,14 +13,17 @@ const Landing = styled.div`
 
 const LoginSection = () => (
   <Landing>
-    <Container className='mr-6 ml-auto '>
-      <Row >
-        <Col >
-          <NavBarLogin />
-        </Col>
+    <Container class='.col-'>
+      <Container className='mr-6 ml-auto '>
+        <Row >
+          <Col >
+            <NavBarLogin />
+          </Col>
 
-      </Row>
+        </Row>
+      </Container>
     </Container>
+
   </Landing>
 )
 
