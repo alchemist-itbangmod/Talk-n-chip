@@ -78,7 +78,7 @@ const MainSession = () => (
   <SessionContainer fluid className='px-0 pt-5'>
     <InnerSessionContainer >
       <Row>
-        <Col>
+        <Col xs='12' xl='12'>
           <Row>
             <SpeakerContainer />
           </Row>
