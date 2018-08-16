@@ -60,7 +60,7 @@ const InnerSessionContainer = styled(Container)`
     font-weight: 700;
   }
   p {
-    font-size: 1.75rem;
+    font-size: 1.70rem;
   }
 `
 

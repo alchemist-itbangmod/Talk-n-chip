@@ -20,10 +20,10 @@ const Landing = styled.div`
 const Text = styled.h1`
   margin-bottom: 3%;
   margin-top: 10%;
-  font-size: 3rem;
+  font-size: 2.70rem;
 `
 const Date = styled.p`
-  font-size: 1.75rem;
+  font-size: 1.70rem;
 `
 
 const IndexPage = () => (
