@@ -13,8 +13,9 @@ import styled from "styled-components"
 
 const Navbar = styled(DefaultNavbar)`
   background-color:transparent;
-  padding: 1em;
+  padding: 0em;
   padding-top: 3em;
+
 `
 const Navlink = styled(NavLink)`
   color:#69302c;
@@ -36,7 +37,8 @@ export default class NavBar extends React.Component {
 
     this.toggle = this.toggle.bind(this)
     this.state = {
-      isOpen: false
+      isOpen: false,
+      nameLogin: "login"
     }
   }
   toggle () {
@@ -44,11 +46,12 @@ export default class NavBar extends React.Component {
       isOpen: !this.state.isOpen
     })
   }
+
   render () {
     return (
       <Fragment>
         <Navbar expand='md'>
-          <NavBrand href='/'>Talk n' Chip</NavBrand>
+          <NavBrand href='/' >Talk n' Chip</NavBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className='mr-4 ml-auto' navbar>
@@ -59,7 +62,7 @@ export default class NavBar extends React.Component {
                 <Navlink >Guest</Navlink>
               </NavItem>
             </Nav>
-            <Button className='fixed-right'>Login</Button>
+            <Button className='fixed-right' >{this.state.nameLogin}</Button>
           </Collapse>
         </Navbar>
       </Fragment>

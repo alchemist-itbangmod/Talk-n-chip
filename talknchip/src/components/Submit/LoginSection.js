@@ -8,14 +8,17 @@ const Landing = styled.div`
   font-weight: 500;
   background-color:#F1BE42;
   height: 20vh;
+  
 `
 
 const LoginSection = () => (
   <Landing>
-    <Container>
-      <NavBarLogin />
-      <Row>
-        <Col />
+    <Container className='mr-6 ml-auto '>
+      <Row >
+        <Col >
+          <NavBarLogin />
+        </Col>
+
       </Row>
     </Container>
   </Landing>
