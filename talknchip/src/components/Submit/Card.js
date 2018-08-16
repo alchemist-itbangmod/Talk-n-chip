@@ -3,43 +3,6 @@ import styled from "styled-components"
 import { Card, CardBody,
   CardTitle, CardSubtitle, Container, Row, Col } from "reactstrap"
 
-const speakers = [
-  {
-    date: "เสนอเมื่อ 14/8",
-    topic: "ทอดหมูกรอบไม่ให้กรอบ ถ้าจะให้กรอบต้องทำให้"
-  },
-  {
-    date: "เสนอเมื่อ 14/8",
-    topic: "ทอดหมูกรอบไม่ให้กรอบ ถ้าจะให้กรอบต้องทำให้"
-  },
-  {
-    date: "เสนอเมื่อ 14/8",
-    topic: "ทอดหมูกรอบไม่ให้กรอบ ถ้าจะให้กรอบต้องทำให้"
-  },
-  {
-    date: "เสนอเมื่อ 14/8",
-    topic: "ทอดหมูกรอบไม่ให้กรอบ ถ้าจะให้กรอบต้องทำให้"
-  },
-  {
-    date: "เสนอเมื่อ 14/8",
-    topic: "ทอดหมูกรอบไม่ให้กรอบ ถ้าจะให้กรอบต้องทำให้"
-  },
-
-  {
-    date: "เสนอเมื่อ 14/8",
-    topic: "ทอดหมูกรอบไม่ให้กรอบ ถ้าจะให้กรอบต้องทำให้"
-  },
-
-  {
-    date: "เสนอเมื่อ 14/8",
-    topic: "ทอดหมูกรอบไม่ให้กรอบ ถ้าจะให้กรอบต้องทำให้"
-  },
-  {
-    date: "เสนอเมื่อ 14/8",
-    topic: "ทอดหมูกรอบไม่ให้กรอบ ถ้าจะให้กรอบต้องทำให้"
-  }
-]
-
 const SessionContainer = styled(Container)`
   background-color: #F1BE42;
 `
@@ -63,17 +26,37 @@ const CardSubtitleStyled = styled(CardSubtitle)`
   color: #282829;
 `
 
-const SpeakerContainer = () => (
-  <Fragment>
-    {
-      speakers.map((speaker, index) => (
-        <Col key={index} sm='4' className='pb-5' >
-          <CardSubmit speaker={speaker} />
-        </Col>
-      ))
-    }
-  </Fragment>
-)
+class SpeakerContainer extends React.Component {
+  state = {
+    speakers: [
+      {
+        date: "เสนอเมื่อ 14/8",
+        topic: "ทอดหมูกรอบไม่ให้กรอบ ถ้าจะให้กรอบต้องทำให้"
+      },
+      {
+        date: "เสนอเมื่อ 14/8",
+        topic: "ทอดหมูกรอบไม่ให้กรอบ ถ้าจะให้กรอบต้องทำให้"
+      },
+      {
+        date: "เสนอเมื่อ 14/8",
+        topic: "ทอดหมูกรอบไม่ให้กรอบ ถ้าจะให้กรอบต้องทำให้"
+      }
+    ]
+  }
+  render () {
+    return (
+      <Fragment>
+        {
+          this.state.speakers.map((speaker, index) => (
+            <Col key={index} sm='4' className='pb-5' >
+              <CardSubmit speaker={speaker} />
+            </Col>
+          ))
+        }
+      </Fragment>
+    )
+  }
+}
 
 const CardSubmit = ({ speaker: {topic, date} }) => (
   <Card >
