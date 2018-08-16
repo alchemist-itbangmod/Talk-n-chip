@@ -9,32 +9,46 @@ const Landing = styled.div`
   min-height: 10vh;
 `
 const Text = styled.p`
-color:#000;
+  color:#000;
+  margin: 0;
 `
 const Images = {
   itForge: "/static/images/logoItForge.png",
   alchemist: "/static/images/logoAlchemist.png"
 }
 const Image = styled.img`
-width: auto;
-max-height: 80px;
-padding: 10px 30px;
+  padding: 0 1em;
+  width: auto;
+  max-height: 80px;
+  @media (max-width: 768px) {
+    max-height: 50px;
+  }
+`
+const SponsorCol = styled(Col)`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  text-align: right;
+  @media (max-width: 768px) {
+    justify-content: center;
+    text-align: center;
+  }
 `
 
 const Sponsor = () => (
   <Landing>
     <Container>
-      <Row>
-        <Col className='text-center py-5' >
-          <Text >
-            <span className='mr-5'>ด้วยรักจึงจัดให้</span>
-            <Image src={Images.itForge} /> X
-            <Image src={Images.alchemist} />
-          </Text>
+      <Row className='py-5'>
+        <SponsorCol xs={12} md={4}>
+          <Text>ด้วยรักจึงจัดให้</Text>
+        </SponsorCol>
+        <Col xs={12} md={8}>
+          <Image src={Images.itForge} /> X
+          <Image src={Images.alchemist} />
         </Col>
       </Row>
     </Container>
-
   </Landing>
 )
 

@@ -15,11 +15,17 @@ const Credit = styled.p`
   span{
     color: #f8bc00;
   }
+  @media (max-width: 768px) {
+    font-size: 0.90rem;
+  }
 `
 const CreditImage = styled.img`
   width: auto;
   max-height: 80px;
   padding: 10px 30px;
+  @media (max-width: 768px) {
+    max-height: 50px;
+  }
 `
 const images = {
   itforge: "/static/images/logoItForge.png",
@@ -30,14 +36,16 @@ const Footer = () => (
   <FooterContainer fluid>
     <Container className='py-1'>
       <Row>
-        <Col xs={12} lg={{size: 10, offset: 1}}>
-          <div className='d-flex justify-content-between align-items-center'>
-            <Credit>{creditText.creditText} <span><b>{creditText.creditHilight}</b></span></Credit>
-            <div>
+        <Col xs={12}>
+          <Row className='d-flex justify-content-between align-items-center'>
+            <Col xs={12} md={6} lg={8} className='py-3'>
+              <Credit>{creditText.creditText} <span><b>{creditText.creditHilight}</b></span></Credit>
+            </Col>
+            <Col xs={12} md={6} lg={4} className='py-2'>
               <CreditImage src={images.itforge} />
               <CreditImage src={images.alchemist} />
-            </div>
-          </div>
+            </Col>
+          </Row>
         </Col>
       </Row>
     </Container>
