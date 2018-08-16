@@ -62,7 +62,10 @@ export default class NavBar extends React.Component {
                 <Navlink href='/'>จัดที่ไหน</Navlink>
               </NavItem>
             </Nav>
-            <Button className='fixed-right'>ส่งหัวข้อสุดชิพ</Button>
+            <Navlink href='../Submit'>
+              <Button className='fixed-right'>ส่งหัวข้อสุดชิพ</Button>
+            </Navlink>
+
           </Collapse>
         </Navbar>
       </Fragment>
