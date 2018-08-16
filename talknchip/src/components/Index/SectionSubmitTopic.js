@@ -41,7 +41,7 @@ const SectionSubmitTopic = () => (
           <Text>
           อ่านมาขนาดนี้แล้วยังไม่ส่งหัวข้ออีกหรอ ?<Weight> ส่งเร็ว!</Weight>
           </Text>
-          <LinkTo to='/index'>
+          <LinkTo to='../Submit'>
             <DownButton>ส่งหัวข้อที่จะไปพูดกันเลย !</DownButton>
           </LinkTo><br /><br />
 
