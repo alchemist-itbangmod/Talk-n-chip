@@ -28,11 +28,8 @@ const SponsorCol = styled(Col)`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-
-  text-align: right;
   @media (max-width: 768px) {
     justify-content: center;
-    text-align: center;
   }
 `
 
