@@ -3,7 +3,8 @@ import {Container, Row, Col, Card as DefaultCard, CardText, CardBody, CardTitle 
 import styled from "styled-components"
 
 const Landing = styled(Container)`
-  height: 100vh;
+  min-height: calc(100vh - 200px - 100px);
+  padding-bottom: 10px;
   background-color: #60302c;
 `
 const Card = styled(DefaultCard)`
