@@ -5,6 +5,7 @@ import { Card, CardBody,
 
 const SessionContainer = styled(Container)`
   background-color: #F1BE42;
+  min-height: calc(100vh - 200px - 100px);
 `
 
 const InnerSessionContainer = styled(Container)`
@@ -75,7 +76,7 @@ const CardSubmit = ({ speaker: {topic, date} }) => (
 )
 const MainSession = () => (
   <SessionContainer fluid className='px-0 pt-5'>
-    <InnerSessionContainer>
+    <InnerSessionContainer >
       <Row>
         <Col>
           <Row>
