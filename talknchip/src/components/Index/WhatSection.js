@@ -14,7 +14,10 @@ const content = {
 }
 
 const WhatContainer = styled(Container)`
-  background-color: #F1F1F1;
+  background-image: url('/static/images/Bottom.png');
+  background-color: #F1BE42;
+  background-repeat: no-repeat;
+  background-size: cover;
 `
 
 const WhatHeader = styled.h1`
@@ -43,7 +46,7 @@ const images = [
 ]
 
 const WhatSection = () => (
-  <WhatContainer fluid className='px-0'>
+  <WhatContainer fluid className='py-5 px-0'>
     <Container className='py-5'>
       <Row>
         <Col className='text-center' xs={12} lg={{size: 10, offset: 1}}>

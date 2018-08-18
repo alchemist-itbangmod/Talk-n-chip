@@ -25,8 +25,9 @@ export default class Modals extends React.Component {
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>จะเสนออะไรดีน่ะ ?</ModalHeader>
           <ModalBody >
-           หัวข้อที่จะเสนอ : <input type='text' name='Title' /><br /><br />
-           ลายละเอียด   :   <input type='text' name='Detail' />
+           หัวข้อที่จะเสนอ : <br /><input type='text' name='Title' /><br /><br />
+           ลายละเอียด   : <br /><input type='text' name='Detail' /><br /><br />
+           เบอร์โทรศัพท์  : <br /><input type='nember' name='Tel' /><br /><br />
           </ModalBody>
           <ModalFooter>
             <Button color='primary' onClick={this.toggle}>Do Something</Button>{" "}
