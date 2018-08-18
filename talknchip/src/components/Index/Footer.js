@@ -28,7 +28,7 @@ const CreditImage = styled.img`
   }
 `
 const images = {
-  itforge: "/static/images/logoArtisan.png",
+  itforge: "/static/images/Artisan Logo.png",
   alchemist: "/static/images/logoAlchemist.png"
 }
 
