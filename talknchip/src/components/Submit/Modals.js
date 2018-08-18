@@ -6,7 +6,7 @@ import firebase, {db, getAll, getOne, insert, auth, provider } from "../../tools
 export default class Modals extends React.Component {
     state = {
       modal: false,
-      user: "nologin",
+      userId: "nologin",
       topic: {
         studentId: "",
         topicName: "",
@@ -19,7 +19,7 @@ export default class Modals extends React.Component {
     toggle = this.toggle.bind(this)
 
     toggle () {
-      if (this.state.user === "nologin") {
+      if (this.state.user === null) {
         auth().signInWithPopup(provider)
           .then(({ user }) => {
             // user = JSON.stringify(user)
@@ -33,8 +33,10 @@ export default class Modals extends React.Component {
                 photoURL: user.photoURL
               })
             // this.setState({ user })
-            this.state.user = user.uid
-            window.localStorage.setItem("id", user.uid)
+            this.state.userId = user.uid
+            window.localStorage.setItem("uid", user.uid)
+            window.localStorage.setItem("name", user.displayName)
+            window.localStorage.setItem("img", user.photoURL)
           })
       } else {
         this.setState({
@@ -71,7 +73,7 @@ export default class Modals extends React.Component {
       })
     }
     componentDidMount () {
-      this.state.user = window.localStorage.getItem("id")
+      this.state.userId = window.localStorage.getItem("uid")
     }
     render () {
       return (
