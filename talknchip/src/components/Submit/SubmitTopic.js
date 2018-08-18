@@ -25,7 +25,6 @@ const SubmitTopic = () => (
           </div>
         </Col>
       </Row>
-      <Button>ss</Button>
     </Container>
   </SubmitContainer>
 )
