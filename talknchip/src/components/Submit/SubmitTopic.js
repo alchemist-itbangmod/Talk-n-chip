@@ -1,9 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Container, Row, Col } from "reactstrap"
-import Modals from "../core/Modals"
-import Button from "../core/Button"
-import firebase from "../../tools/firebasehelper"
+import Modals from "./Modals"
 
 const topic = "หัวข้อที่เสนอ"
 
