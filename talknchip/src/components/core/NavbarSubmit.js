@@ -27,13 +27,6 @@ const NavBrand = styled(NavbarBrand)`
   color:#69302c;
 `
 
-const Button = styled.button`
-  background-color: transparent;
-  color: #69302c;
-  border: 2px solid #69302c;
-  border-radius: .1em;
-  padding: .5em 1.25em;
-`
 export default class NavBar extends React.Component {
   constructor (props) {
     super(props)
@@ -69,7 +62,6 @@ export default class NavBar extends React.Component {
                 <Navlink >Guest</Navlink>
               </NavItem>
             </Nav>
-            <Button className='fixed-right' >{this.state.nameLogin}</Button>
           </Collapse>
         </Navbar>
 

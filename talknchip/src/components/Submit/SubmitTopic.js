@@ -2,6 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import { Container, Row, Col } from "reactstrap"
 import Modals from "../core/Modals"
+import Button from "../core/Button"
+import firebase from "../../tools/firebasehelper"
 
 const topic = "หัวข้อที่เสนอ"
 
@@ -25,6 +27,7 @@ const SubmitTopic = () => (
           </div>
         </Col>
       </Row>
+      <Button>ss</Button>
     </Container>
   </SubmitContainer>
 )
