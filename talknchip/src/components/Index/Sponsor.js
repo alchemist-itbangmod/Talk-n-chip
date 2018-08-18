@@ -4,8 +4,10 @@ import styled from "styled-components"
 
 const Landing = styled.div`
   color:#69302c;
-  /* font-weight: bold; */
-  background-color:#F1F1F1;
+  background-image: url('/static/images/Top.png');
+  background-color:#F1BE42;
+  background-size: cover;
+  background-repeat: no-repeat;
   min-height: 10vh;
 `
 const Text = styled.p`
@@ -35,7 +37,7 @@ const SponsorCol = styled(Col)`
 
 const Sponsor = () => (
   <Landing>
-    <Container>
+    <Container className='p-5'>
       <Row className='py-5'>
         <SponsorCol xs={12} md={4}>
           <Text>ด้วยรักจึงจัดให้จาก</Text>
