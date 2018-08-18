@@ -80,9 +80,9 @@ export default class Modals extends React.Component {
           <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
             <ModalHeader toggle={this.toggle}>จะเสนออะไรดีน่ะ ?</ModalHeader>
             <ModalBody >
-           หัวข้อที่จะเสนอ : <br /><input type='text' name='Title' /><br /><br />
-           ลายละเอียด   : <br /><input type='text' name='Detail' /><br /><br />
-           เบอร์โทรศัพท์  : <br /><input type='nember' name='Tel' /><br /><br />
+           หัวข้อที่จะเสนอ : <br /><input type='text' name='Title' size='50' /><br /><br />
+           ลายละเอียด   : <br /><textarea name='Detail' rows='5' cols='50' /><br /><br />
+           เบอร์โทรศัพท์  : <br /><input type='nember' name='Tel' size='50' /><br /><br />
             </ModalBody>
             <ModalFooter>
               <Button color='primary' onClick={this.submit}>ส่งหัวข้อ</Button>{" "}
