@@ -13,7 +13,7 @@ const Text = styled.p`
   margin: 0;
 `
 const Images = {
-  itForge: "/static/images/logoItForge.png",
+  itForge: "/static/images/ITFORGE.png",
   alchemist: "/static/images/logoAlchemist.png"
 }
 const Image = styled.img`
