@@ -5,7 +5,9 @@ import styled from "styled-components"
 const Landing = styled(Container)`
   min-height: calc(100vh - 200px - 100px);
   padding-bottom: 10px;
-  background-color: #60302c;
+  background-image: url('/static/images/IT.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 `
 const Card = styled(DefaultCard)`
   border: 2px solid #000;
@@ -51,6 +53,11 @@ const Schedules = [
 ]
 const Time = styled.p`
   color: #69302c;
+  font-size: 32px;
+  font-weight: bold;
+`
+const Session = styled.p`
+  font-size: 32px;
 `
 const Schedule = () => (
   <Landing fluid>
@@ -65,7 +72,7 @@ const Schedule = () => (
               {Schedules.map((index) => (
                 <CardText key={index} >
                   <Time>{index.time}</Time>
-                  <p>{index.schedule}</p>
+                  <Session>{index.schedule}</Session>
                 </CardText>
               ))}
             </CardBody>
