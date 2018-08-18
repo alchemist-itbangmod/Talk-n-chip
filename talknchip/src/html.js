@@ -1,6 +1,5 @@
 import React from "react"
 import { siteMetadata } from "../gatsby-config"
-
 let stylesStr
 if (process.env.NODE_ENV === "production") {
   try {
@@ -56,7 +55,10 @@ module.exports = class HTML extends React.Component {
           <link href='/static/css/styles.css' rel='stylesheet' />
           {this.props.headComponents}
           {css}
+          <script src='https://www.gstatic.com/firebasejs/5.4.0/firebase.js' />
+
         </head>
+
         <body {...this.props.bodyAttributes}>
           {this.props.preBodyComponents}
           <div
