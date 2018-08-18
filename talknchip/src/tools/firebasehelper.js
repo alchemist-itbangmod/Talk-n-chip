@@ -37,20 +37,20 @@ const auth = firebase.auth
 
 const provider = new firebase.auth.FacebookAuthProvider()
 
-firebase.auth().signInWithPopup(provider)
-  .then(({ user }) => {
-    // user = JSON.stringify(user)
-    // windowChecker() && window.localStorage.setItem("user", user)
-    // user = JSON.parse(user)
-    console.log("user", user)
-    db.ref(`/users/${user.uid}`)
-      .set({
-        name: user.displayName,
-        email: user.email,
-        photoURL: user.photoURL
-      })
-    // this.setState({ user })
-  })
+// firebase.auth().signInWithPopup(provider)
+//   .then(({ user }) => {
+//     // user = JSON.stringify(user)
+//     // windowChecker() && window.localStorage.setItem("user", user)
+//     // user = JSON.parse(user)
+//     console.log("user", user)
+//     db.ref(`/users/${user.uid}`)
+//       .set({
+//         name: user.displayName,
+//         email: user.email,
+//         photoURL: user.photoURL
+//       })
+//     // this.setState({ user })
+//   })
 
 export {
   db,

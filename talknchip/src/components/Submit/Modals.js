@@ -1,12 +1,12 @@
 import React, { Fragment } from "react"
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap"
 import Button from "../core/Button"
-import firebase from "../../credentials/firebase-config"
+import firebase, {db, getAll, getOne, insert, auth, provider } from "../../tools/firebasehelper"
 
 export default class Modals extends React.Component {
     state = {
       modal: false,
-      user: null,
+      user: "nologin",
       topic: {
         studentId: "",
         topicName: "",
@@ -19,9 +19,28 @@ export default class Modals extends React.Component {
     toggle = this.toggle.bind(this)
 
     toggle () {
-      this.setState({
-        modal: !this.state.modal
-      })
+      if (this.state.user === "nologin") {
+        auth().signInWithPopup(provider)
+          .then(({ user }) => {
+            // user = JSON.stringify(user)
+            // windowChecker() && window.localStorage.setItem("user", user)
+            // user = JSON.parse(user)
+            console.log("user", user)
+            db.ref(`/users/${user.uid}`)
+              .set({
+                name: user.displayName,
+                // email: user.email,
+                photoURL: user.photoURL
+              })
+            // this.setState({ user })
+            this.state.user = user.uid
+            window.localStorage.setItem("id", user.uid)
+          })
+      } else {
+        this.setState({
+          modal: !this.state.modal
+        })
+      }
     }
     submit = (e) => {
       e.preventDefault()
@@ -51,7 +70,9 @@ export default class Modals extends React.Component {
         }, 1700)
       })
     }
-
+    componentDidMount () {
+      this.state.user = window.localStorage.getItem("id")
+    }
     render () {
       return (
         <Fragment>
