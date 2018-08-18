@@ -21,8 +21,8 @@ const Credit = styled.p`
 `
 const CreditImage = styled.img`
   width: auto;
-  max-height: 80px;
-  padding: 10px 30px;
+  max-height: 75px;
+  padding: 15px 30px;
   @media (max-width: 768px) {
     max-height: 50px;
   }
@@ -38,10 +38,10 @@ const Footer = () => (
       <Row>
         <Col xs={12}>
           <Row className='d-flex justify-content-between align-items-center'>
-            <Col xs={12} md={6} lg={8} className='py-3'>
+            <Col xs={12} md={6} lg={7} className='py-3'>
               <Credit>{creditText.creditText} <span><b>{creditText.creditHilight}</b></span></Credit>
             </Col>
-            <Col xs={12} md={6} lg={4} className='py-2'>
+            <Col xs={12} md={6} lg={5} className='py-2'>
               <CreditImage src={images.itforge} />
               <CreditImage src={images.alchemist} />
             </Col>
