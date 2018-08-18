@@ -30,8 +30,8 @@ export default class Modals extends React.Component {
            เบอร์โทรศัพท์  : <br /><input type='nember' name='Tel' /><br /><br />
           </ModalBody>
           <ModalFooter>
-            <Button color='primary' onClick={this.toggle}>Do Something</Button>{" "}
-            <Button color='secondary' onClick={this.toggle}>Cancel</Button>
+            <Button color='primary' onClick={this.toggle}>ส่งหัวข้อ</Button>{" "}
+            <Button color='secondary' onClick={this.toggle}>ยกเลิก</Button>
           </ModalFooter>
         </Modal>
       </Fragment>
