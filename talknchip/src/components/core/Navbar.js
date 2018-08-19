@@ -48,18 +48,18 @@ export default class NavBar extends React.Component {
     return (
       <Fragment>
         <Navbar expand='md' color='' light>
-          <NavBrand href='/'>Talk n' Chip</NavBrand>
+          <NavBrand href='#home'>Talk n' Chip</NavBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className='mr-auto ml-auto' navbar>
               <NavItem>
-                <Navlink href='/'>คืออะไร</Navlink>
+                <Navlink href='#what' smooth>คืออะไร</Navlink>
               </NavItem>
               <NavItem>
-                <Navlink href='/'>ใครมาพูด</Navlink>
+                <Navlink href='#who' smooth>ใครมาพูด</Navlink>
               </NavItem>
               <NavItem>
-                <Navlink href='/'>จัดที่ไหน</Navlink>
+                <Navlink href='#where' smooth>จัดที่ไหน</Navlink>
               </NavItem>
             </Nav>
             <Navlink href='../Submit'>
