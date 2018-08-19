@@ -33,6 +33,7 @@ export default class Modals extends React.Component {
       this.setState({ visible: false })
     }
     toggle () {
+      this.state.userId = window.localStorage.getItem("uid")
       console.log("wellcome ID :" + this.state.userId)
       if (this.state.userId === undefined || this.state.userId === null) {
         this.setState({ visible: true })
