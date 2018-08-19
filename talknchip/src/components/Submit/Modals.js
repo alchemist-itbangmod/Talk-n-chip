@@ -1,5 +1,5 @@
 import React, { Fragment } from "react"
-import { Modal, ModalHeader, ModalBody, ModalFooter, Alert } from "reactstrap"
+import { Modal, ModalHeader, ModalBody, ModalFooter, Alert, Form, FormGroup, Label, Input } from "reactstrap"
 import Button from "../core/Button"
 import firebase, {db, getAll, getOne, insert, auth, provider } from "../../tools/firebasehelper"
 import styled from "styled-components"
@@ -16,12 +16,9 @@ export default class Modals extends React.Component {
       modal: false,
       userId: undefined,
       visible: false,
-      topic: {
-        studentId: "",
-        topicName: "",
-        description: "",
-        telno: ""
-      },
+      topicName: "",
+      description: "",
+      telno: "",
       isOpen: false,
       message: ""
     }
@@ -50,34 +47,12 @@ export default class Modals extends React.Component {
       }
     }
     submit = (e) => {
-      e.preventDefault()
-      const { user, topic } = this.state
-      firebase.insert(`topics/${user.uid}`, {
-        ...topic,
-        displayName: user.displayName,
-        photoURL: user.photoURL
-      }, (error) => {
-        if (error) {
-          this.setState({
-            isOpen: true,
-            message: "ส่งข้อมูลไม่สำเร็จ กรุณาติดต่อที่แฟนเพจ เพื่อแจ้งปัญหา",
-            color: "danger"
-          })
-        } else {
-          this.setState({
-            isOpen: true,
-            message: "ส่งข้อมูลสำเร็จ",
-            color: "success"
-          })
-        }
-        setTimeout(() => {
-          console.log("timeout!")
-          this.setState({
-            isOpen: false,
-            visible: false
-          })
-        }, 1700)
+      this.setState({
+        topicName: Topic.value,
+        description: Description.value,
+        telno: Telno.value
       })
+      console.log(this.state)
     }
     componentDidMount () {
       this.state.userId = window.localStorage.getItem("uid")
@@ -93,13 +68,24 @@ export default class Modals extends React.Component {
           <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
             <ModalHeader toggle={this.toggle}>จะเสนออะไรดีน่ะ ?</ModalHeader>
             <ModalBody >
-           หัวข้อที่จะเสนอ : <br /><input type='text' name='Title' size='50' /><br /><br />
-           ลายละเอียด   : <br /><textarea name='Detail' rows='5' cols='50' /><br /><br />
-           เบอร์โทรศัพท์  : <br /><input type='nember' name='Tel' size='50' /><br /><br />
+              <Form>
+                <FormGroup>
+                  <Label for='Topic'>ชื่อหัวข้อ</Label>
+                  <Input type='text' name='topic' id='Topic' />
+                </FormGroup>
+                <FormGroup>
+                  <Label for='Description'>คำอธิบาย</Label>
+                  <Input type='textarea' name='description' id='Description' />
+                </FormGroup>
+                <FormGroup>
+                  <Label for='Telno'>เบอร์โทรศัพท์</Label>
+                  <Input type='number' name='telno' id='Telno' />
+                </FormGroup>
+              </Form>
             </ModalBody>
             <ModalFooter>
               <Button color='primary' onClick={this.submit}>ส่งหัวข้อ</Button>{" "}
-              <Button color='secondary' onClick={this.toggle}>Cancel</Button>
+              <Button color='secondary' onClick={this.toggle}>ยกเลิก</Button>
             </ModalFooter>
           </Modal>
         </Fragment>
