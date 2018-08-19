@@ -21,23 +21,23 @@ export default class Modals extends React.Component {
     toggle () {
       console.log("wellcome ID :" + this.state.userId)
       if (this.state.userId === undefined || this.state.userId === null) {
-        auth().signInWithPopup(provider)
-          .then(({ user }) => {
-            // user = JSON.stringify(user)
-            // windowChecker() && window.localStorage.setItem("user", user)
-            // user = JSON.parse(user)
-            db.ref(`/users/${user.uid}`)
-              .set({
-                name: user.displayName,
-                // email: user.email,
-                photoURL: user.photoURL
-              })
-            // this.setState({ user })
-            this.state.userId = user.uid
-            window.localStorage.setItem("uid", user.uid)
-            window.localStorage.setItem("name", user.displayName)
-            window.localStorage.setItem("img", user.photoURL)
-          })
+        // auth().signInWithPopup(provider)
+        //   .then(({ user }) => {
+        //     // user = JSON.stringify(user)
+        //     // windowChecker() && window.localStorage.setItem("user", user)
+        //     // user = JSON.parse(user)
+        //     db.ref(`/users/${user.uid}`)
+        //       .set({
+        //         name: user.displayName,
+        //         // email: user.email,
+        //         photoURL: user.photoURL
+        //       })
+        //     // this.setState({ user })
+        //     this.state.userId = user.uid
+        //     window.localStorage.setItem("uid", user.uid)
+        //     window.localStorage.setItem("name", user.displayName)
+        //     window.localStorage.setItem("img", user.photoURL)
+        //   })
       } else {
         this.setState({
           modal: !this.state.modal
