@@ -27,10 +27,12 @@ const Landing = styled.div`
   background-size: cover;
 `
 const Text = styled.h1`
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
 `
 const Weight = styled.span`
-font-weight: 800;
-
+  font-weight: 800;
 `
 const SectionSubmitTopic = () => (
   <Landing>
@@ -48,7 +50,6 @@ const SectionSubmitTopic = () => (
         </Col>
       </Row>
     </Container>
-
   </Landing>
 )
 
