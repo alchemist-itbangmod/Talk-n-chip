@@ -58,7 +58,7 @@ const Sponsor = () => (
   <Landing>
     <Container className='p-5'>
       <Row className='py-5'>
-        <SponsorCol xs={12} md={4} lg={{size:3}}>
+        <SponsorCol xs={12} md={4} lg={{size: 3}}>
           <Text>ด้วยรักจึงจัดให้จาก</Text>
         </SponsorCol>
         <SponsorImageCol xs={12} md={8} lg={7} align='center'>

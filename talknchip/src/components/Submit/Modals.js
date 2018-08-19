@@ -1,7 +1,7 @@
 import React, { Fragment } from "react"
 import { Modal, ModalHeader, ModalBody, ModalFooter, Alert, Form, FormGroup, Label, Input } from "reactstrap"
 import Button from "../core/Button"
-import firebase, {db, getAll, getOne, insert, auth, provider } from "../../tools/firebasehelper"
+import { db } from "../../tools/firebasehelper"
 import styled from "styled-components"
 
 const AlertStyled = styled(Alert)`
