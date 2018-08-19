@@ -55,14 +55,16 @@ export default class Modals extends React.Component {
         description: Description.value,
         telno: Telno.value
       })
-      const Value = {
-        name: this.state.name,
-        photo: this.state.photo,
-        uid: this.state.userId,
-        description: this.state.description,
-        telno: this.state.telno
-      }
-      await insert(this.state.userId, Value)
+
+      await db.ref("/users/" + this.state.userId)
+        .set({
+          name: this.state.name,
+          photo: this.state.photo,
+          uid: this.state.userId,
+          topicName: this.state.topicName,
+          description: this.state.description,
+          telno: this.state.telno
+        })
     }
     // componentWillMount = () => {
     // }
