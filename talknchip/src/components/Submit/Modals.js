@@ -13,6 +13,7 @@ export default class Modals extends React.Component {
       modal: false,
       userId: undefined,
       visible: false,
+      visible2: false,
       topicName: "",
       description: "",
       telno: "",
@@ -27,6 +28,7 @@ export default class Modals extends React.Component {
     onDismiss = this.onDismiss.bind(this)
     onDismiss () {
       this.setState({ visible: false })
+      this.setState({ visible2: false })
     }
     toggle () {
       this.state.userId = window.localStorage.getItem("uid")
@@ -34,7 +36,6 @@ export default class Modals extends React.Component {
       if (this.state.userId === undefined || this.state.userId === null) {
         this.setState({ visible: true })
         setTimeout(() => {
-          console.log("timeout!")
           this.setState({
             visible: false
           })
@@ -49,7 +50,7 @@ export default class Modals extends React.Component {
       var nd = new Date()
       var d = nd.getDate()
       var m = nd.getMonth()
-      this.state.date = d + "/" + m
+      this.state.date = "เสนอเมื่อ" + d + "/" + m
     }
     submit = (e) => {
       this.setState({
@@ -57,6 +58,7 @@ export default class Modals extends React.Component {
         description: Description.value,
         telno: Telno.value
       })
+
       db.ref("/users/" + this.state.userId)
         .set({
           name: this.state.name,
@@ -67,6 +69,16 @@ export default class Modals extends React.Component {
           telno: this.state.telno,
           date: this.state.date
         })
+      this.state.visible2 = true
+      setTimeout(() => {
+        this.setState({
+          visible2: false,
+          modal: !this.state.modal
+        })
+      }, 2000)
+    }
+    senddatatoFirebase () {
+
     }
     componentDidMount () {
       this.state.userId = window.localStorage.getItem("uid")
@@ -80,10 +92,12 @@ export default class Modals extends React.Component {
           <AlertStyled color='dark' isOpen={this.state.visible} toggle={this.onDismiss}>
          โปรด login ก่อนจะส่งหัวข้อน่ะ!!
           </AlertStyled>
+
           <Button color='danger' onClick={this.toggle}>{this.props.buttonLabel}เสนอหัวข้อใหม่</Button>
           <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
             <ModalHeader toggle={this.toggle}>จะเสนออะไรดีน่ะ ?</ModalHeader>
             <ModalBody >
+
               <Form>
                 <FormGroup>
                   <Label for='Topic'>ชื่อหัวข้อ</Label>
@@ -99,6 +113,9 @@ export default class Modals extends React.Component {
                 </FormGroup>
               </Form>
             </ModalBody>
+            <AlertStyled color='success' isOpen={this.state.visible2} toggle={this.onDismiss}>
+                 ส่งหัวข้อสุดชิบสำเร็จ
+            </AlertStyled>
             <ModalFooter>
               <Button color='primary' onClick={this.submit}>ส่งหัวข้อ</Button>{" "}
               <Button color='secondary' onClick={this.toggle}>ยกเลิก</Button>
