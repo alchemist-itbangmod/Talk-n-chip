@@ -32,7 +32,6 @@ export default class Modals extends React.Component {
     }
     toggle () {
       this.state.userId = window.localStorage.getItem("uid")
-      console.log("wellcome ID :" + this.state.userId)
       if (this.state.userId === undefined || this.state.userId === null) {
         this.setState({ visible: true })
         setTimeout(() => {
@@ -58,21 +57,28 @@ export default class Modals extends React.Component {
         description: Description.value,
         telno: Telno.value
       })
-
+      const Topics = {
+        name: this.state.name,
+        photo: this.state.photo,
+        topic: Topic.value,
+        description: Description.value,
+        telno: Telno.value,
+        date: this.state.date
+      }
       db.ref("/users/" + this.state.userId)
         .set({
-          name: this.state.name,
-          photo: this.state.photo,
-          topic: this.state.topicName,
-          description: this.state.description,
-          telno: this.state.telno,
-          date: this.state.date
+          name: Topics.name,
+          photo: Topics.photo,
+          topic: Topics.topic,
+          description: Topics.description,
+          telno: Topics.telno,
+          date: Topics.date
         })
       this.state.visible2 = true
       setTimeout(() => {
         this.setState({
           visible2: false,
-          modal: !this.state.modal
+          modal: false
         })
       }, 2000)
     }
