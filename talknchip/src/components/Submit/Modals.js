@@ -1,12 +1,21 @@
 import React, { Fragment } from "react"
-import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap"
+import { Modal, ModalHeader, ModalBody, ModalFooter, Alert } from "reactstrap"
 import Button from "../core/Button"
 import firebase, {db, getAll, getOne, insert, auth, provider } from "../../tools/firebasehelper"
+import styled from "styled-components"
+
+const AlertStyled = styled(Alert)`
+  padding-left: 10em;
+  padding-right: 10em;
+
+
+`
 
 export default class Modals extends React.Component {
     state = {
       modal: false,
-      userId: "nologin",
+      userId: undefined,
+      visible: false,
       topic: {
         studentId: "",
         topicName: "",
@@ -18,26 +27,22 @@ export default class Modals extends React.Component {
     }
     toggle = this.toggle.bind(this)
 
+    onDismiss = this.onDismiss.bind(this)
+
+    onDismiss () {
+      this.setState({ visible: false })
+    }
     toggle () {
-      if (this.state.user === null) {
-        auth().signInWithPopup(provider)
-          .then(({ user }) => {
-            // user = JSON.stringify(user)
-            // windowChecker() && window.localStorage.setItem("user", user)
-            // user = JSON.parse(user)
-            console.log("user", user)
-            db.ref(`/users/${user.uid}`)
-              .set({
-                name: user.displayName,
-                // email: user.email,
-                photoURL: user.photoURL
-              })
-            // this.setState({ user })
-            this.state.userId = user.uid
-            window.localStorage.setItem("uid", user.uid)
-            window.localStorage.setItem("name", user.displayName)
-            window.localStorage.setItem("img", user.photoURL)
+      this.state.userId = window.localStorage.getItem("uid")
+      console.log("wellcome ID :" + this.state.userId)
+      if (this.state.userId === undefined || this.state.userId === null) {
+        this.setState({ visible: true })
+        setTimeout(() => {
+          console.log("timeout!")
+          this.setState({
+            visible: false
           })
+        }, 2000)
       } else {
         this.setState({
           modal: !this.state.modal
@@ -66,8 +71,10 @@ export default class Modals extends React.Component {
           })
         }
         setTimeout(() => {
+          console.log("timeout!")
           this.setState({
-            isOpen: false
+            isOpen: false,
+            visible: false
           })
         }, 1700)
       })
@@ -75,9 +82,13 @@ export default class Modals extends React.Component {
     componentDidMount () {
       this.state.userId = window.localStorage.getItem("uid")
     }
+
     render () {
       return (
         <Fragment>
+          <AlertStyled color='dark' isOpen={this.state.visible} toggle={this.onDismiss}>
+         โปรด login ก่อนจะส่งหัวข้อน่ะ!!
+          </AlertStyled>
           <Button color='danger' onClick={this.toggle}>{this.props.buttonLabel}เสนอหัวข้อใหม่</Button>
           <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
             <ModalHeader toggle={this.toggle}>จะเสนออะไรดีน่ะ ?</ModalHeader>

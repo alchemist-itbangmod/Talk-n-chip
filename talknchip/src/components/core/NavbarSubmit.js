@@ -8,9 +8,13 @@ import {
   NavItem,
   NavLink
 } from "reactstrap"
+import firebase, {db, getAll, getOne, insert, auth, provider } from "../../tools/firebasehelper"
 
 import styled from "styled-components"
 
+const LoginButton = styled.button`
+
+`
 const Navbar = styled(DefaultNavbar)`
   padding: 0em;
   padding-top: 3em;
@@ -28,44 +32,87 @@ const NavBrand = styled(NavbarBrand)`
 `
 
 export default class NavBar extends React.Component {
-  constructor (props) {
-    super(props)
+  state = {
+    isOpen: false,
+    name: "Guest",
+    collapsed: true,
+    userId: undefined,
+    buttonText: "Login"
+  }
+    toggle = this.toggle.bind(this)
 
-    this.toggle = this.toggle.bind(this)
-    this.state = {
-      isOpen: false,
-      nameLogin: "login",
-      collapsed: true
+    componentDidMount () {
+      const nameCheck = window.localStorage.getItem("name")
+      if (nameCheck === null || nameCheck === undefined) {
+        this.setState({
+          name: "Guest"
+        })
+      } else {
+        this.setState({
+          name: window.localStorage.getItem("name"),
+          buttonText: "ออกจากระบบ ?"
 
+        })
+      }
     }
-  }
-  toggle () {
-    this.setState({
-      isOpen: !this.state.isOpen,
-      collapsed: !this.state.collapsed
+    toggle () {
+      this.setState({
+        isOpen: !this.state.isOpen,
+        collapsed: !this.state.collapsed
+      })
+    }
+    login () {
+      const name = window.localStorage.getItem("name")
+      if (name === undefined || name === null) {
+        auth().signInWithPopup(provider)
+          .then(({ user }) => {
+            // user = JSON.stringify(user)
+            // windowChecker() && window.localStorage.setItem("user", user)
+            // user = JSON.parse(user)
+            db.ref(`/users/${user.uid}`)
+              .set({
+                name: user.displayName,
+                // email: user.email,
+                photoURL: user.photoURL
+              })
+            // this.setState({ user })
+            this.state.userId = user.uid
+            window.localStorage.setItem("uid", user.uid)
+            window.localStorage.setItem("name", user.displayName)
+            window.localStorage.setItem("img", user.photoURL)
+            this.setState({
+              name: user.displayName,
+              buttonText: "ออกจากระบบ ?"
+            })
+          })
+      } else {
+        window.localStorage.clear()
+        window.location.reload()
+      }
+    }
 
-    })
-  }
+    render () {
+      return (
+        <Fragment>
+          <Navbar expand='md' color='' light>
+            <NavBrand href='/' >Talk n' Chip</NavBrand>
+            <NavToggler onClick={this.toggle} />
+            <Collapse isOpen={this.state.collapsed} navbar>
+              <Nav className='mr-4 ml-auto' navbar>
+                <NavItem>
+                  <Navlink >สวัสดี ,</Navlink>
+                </NavItem>
+                <NavItem>
+                  <Navlink >{this.state.name}</Navlink>
+                </NavItem>
+                <NavItem>
+                  <LoginButton onClick={() => this.login()}>{this.state.buttonText}</LoginButton>
+                </NavItem>
+              </Nav>
+            </Collapse>
+          </Navbar>
 
-  render () {
-    return (
-      <Fragment>
-        <Navbar expand='md' color='' light>
-          <NavBrand href='/' >Talk n' Chip</NavBrand>
-          <NavToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.collapsed} navbar>
-            <Nav className='mr-4 ml-auto' navbar>
-              <NavItem>
-                <Navlink >สวัสดี ,</Navlink>
-              </NavItem>
-              <NavItem>
-                <Navlink >Guest</Navlink>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Navbar>
-
-      </Fragment>
-    )
-  }
+        </Fragment>
+      )
+    }
 }
