@@ -72,7 +72,6 @@ const CardSubmit = ({ speaker: {topic, date} }) => (
       </div>
     </CardBody>
   </Card>
-
 )
 const MainSession = () => (
   <SessionContainer fluid className='px-0 pt-5'>
