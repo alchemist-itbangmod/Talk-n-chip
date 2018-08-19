@@ -52,7 +52,6 @@ export default class Modals extends React.Component {
         description: Description.value,
         telno: Telno.value
       })
-      console.log(this.state)
     }
     componentDidMount () {
       this.state.userId = window.localStorage.getItem("uid")
