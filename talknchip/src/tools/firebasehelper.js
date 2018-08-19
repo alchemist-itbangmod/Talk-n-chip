@@ -17,8 +17,6 @@ const insert = (uid, value) => db.ref(`${ref}/${uid}`).set({ ...value })
 db.ref("/test")
   .once("value")
   .then(snap => {
-    console.log("21", snap.val())
-    console.log(snap)
   })
   .catch(err => {
     console.error(err)
