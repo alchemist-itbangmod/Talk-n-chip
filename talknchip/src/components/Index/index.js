@@ -9,12 +9,24 @@ import Sponsor from "./Sponsor"
 
 export default () => (
   <Fragment>
-    <HeroSection />
-    <Sponsor />
-    <WhatSection />
-    <MainSession />
-    <Schedule />
-    <SectionSubmit />
+    <section id='home' name='home'>
+      <HeroSection />
+    </section>
+    <section>
+      <Sponsor />
+    </section>
+    <section id='what' name='what'>
+      <WhatSection />
+    </section>
+    <section id='who' name='who'>
+      <MainSession />
+    </section>
+    <section id='where' name='where'>
+      <Schedule />
+    </section>
+    <section>
+      <SectionSubmit />
+    </section>
     <Footer />
   </Fragment>
 )

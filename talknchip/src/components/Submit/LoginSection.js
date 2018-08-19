@@ -7,11 +7,10 @@ const Landing = styled.div`
   color:#69302c;
   font-weight: 500;
   background-color:#F1BE42;
-  height: 20vh;
 `
 
 const LoginSection = () => (
-  <Landing>
+  <Landing className='pb-3'>
     <Container class='.col-'>
       <Container className='mr-6 ml-auto '>
         <Row >

@@ -88,7 +88,7 @@ const AvatarContainer = styled.div`
 const Avatar = ({ speaker: {name, team, topic, image} }) => (
   <AvatarContainer>
     <img src={image} />
-    <h2>{topic}</h2>
+    <h2 className='pt-3'>{topic}</h2>
     <h4><b>{name}</b> {team}</h4>
   </AvatarContainer>
 )
