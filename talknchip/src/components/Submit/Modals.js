@@ -62,7 +62,7 @@ export default class Modals extends React.Component {
           name: this.state.name,
           photo: this.state.photo,
           uid: this.state.userId,
-          topicName: this.state.topicName,
+          topic: this.state.topicName,
           description: this.state.description,
           telno: this.state.telno,
           date: this.state.date
