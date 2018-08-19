@@ -37,7 +37,7 @@ export default class NavBar extends React.Component {
     name: "Guest",
     collapsed: true,
     userId: undefined,
-    buttonText: "Login"
+    buttonText: "เข้าสู่ระบบ"
   }
     toggle = this.toggle.bind(this)
 
