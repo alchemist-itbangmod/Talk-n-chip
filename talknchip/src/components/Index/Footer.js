@@ -39,14 +39,14 @@ const images = {
 
 const Footer = () => (
   <FooterContainer fluid>
-    <Container className='py-1'>
+    <Container>
       <Row>
-        <Col xs={12}>
+        <Col xs={12} className='my-1'>
           <Row className='d-flex justify-content-between align-items-center'>
             <Col xs={12} md={6} lg={7} className='py-3'>
               <Credit>{creditText.creditText} <span><b>{creditText.creditHilight}</b></span></Credit>
             </Col>
-            <Col xs={12} md={6} lg={5} className='py-2' align='center'>
+            <Col xs={12} md={6} lg={5} className='pb-2' align='center'>
               <CreditImage src={images.itforge} />
               <CreditImage src={images.alchemist} />
             </Col>
