@@ -27,6 +27,9 @@ const CardTitle = styled(DefaultCardTitle)`
   color: #f8bc00;
   font-weight: bold;
   font-size: 5rem;
+  @media (max-width: 1196px) {
+    font-size: 4rem;
+  }
   @media (max-width: 768px) {
     font-size: 2.1rem;
   }
@@ -79,14 +82,14 @@ const Session = styled.p`
 const Faculty = styled.h3`
   color: #f8bc00;
   @media (max-width: 768px) {
-    text-align: center;
+    text-align: left;
   }
 `
 const Describe = styled.p`
   color: #fff;
   font-size: 22px;
   @media (max-width: 768px) {
-    text-align: center;
+    text-align: left;
     font-size: 14px;
   }
 `
@@ -113,7 +116,7 @@ const Schedule = () => (
         <Col xs={12} md={6} lg={6} align='center'>
           <CardLocation className='mt-4'>
             <CardBody>
-              <CardTitle className='my-5'>
+              <CardTitle className='mt-5 mb-3'>
               LOCATION
               </CardTitle>
               <CardText >
