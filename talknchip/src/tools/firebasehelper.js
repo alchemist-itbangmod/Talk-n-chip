@@ -5,7 +5,7 @@ const db = firebase.database()
 
 const getAll = (collection) => {
   if (collection) {
-    return db.ref(`${ref}/${collection}`)
+    return db.ref(`${collection}`)
   }
   return db.ref(`${ref}`)
 }

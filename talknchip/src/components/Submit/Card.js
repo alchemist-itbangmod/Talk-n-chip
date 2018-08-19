@@ -1,7 +1,7 @@
 import React, { Fragment } from "react"
 import styled from "styled-components"
 import { Card, CardBody, CardTitle, CardSubtitle, Container, Row, Col } from "reactstrap"
-import { db } from "../../tools/firebasehelper"
+import { db, getAll } from "../../tools/firebasehelper"
 
 const SessionContainer = styled(Container)`
   background-color: #F1BE42;
@@ -29,21 +29,24 @@ const CardSubtitleStyled = styled(CardSubtitle)`
 
 class SpeakerContainer extends React.Component {
   state = {
+
     speakers: [
-      {
-        date: "เสนอเมื่อ 14/8",
-        topic: "ทอดหมูกรอบไม่ให้กรอบ ถ้าจะให้กรอบต้องทำให้"
-      },
-      {
-        date: "เสนอเมื่อ 14/8",
-        topic: "ทอดหมูกรอบไม่ให้กรอบ ถ้าจะให้กรอบต้องทำให้"
-      },
-      {
-        date: "เสนอเมื่อ 14/8",
-        topic: "ทอดหมูกรอบไม่ให้กรอบ ถ้าจะให้กรอบต้องทำให้"
-      }
+
     ]
   }
+  fechData = () => {
+    getAll("users").once("value").then(topicSnapshot => {
+      const speakers = Object.values(topicSnapshot.val())
+      console.log(speakers)
+      this.setState({ speakers })
+      console.log(this.state.speakers)
+    }
+    )
+  }
+  componentDidMount () {
+    this.fechData()
+  }
+
   render () {
     return (
       <Fragment>
