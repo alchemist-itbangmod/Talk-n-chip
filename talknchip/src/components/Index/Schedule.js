@@ -4,7 +4,6 @@ import styled from "styled-components"
 
 const Landing = styled(Container)`
   min-height: calc(100vh - 200px - 100px);
-  padding-bottom: 10px;
   background-image: url('/static/images/IT.png');
   background-repeat: no-repeat;
   background-size: cover;
@@ -18,12 +17,19 @@ const CardLocation = styled(DefaultCard)`
   border: 0px solid transparent;
   background: transparent;
   width: 80%;
+  text-align: right;
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `
 
 const CardTitle = styled(DefaultCardTitle)`
   color: #f8bc00;
   font-weight: bold;
   font-size: 5rem;
+  @media (max-width: 768px) {
+    font-size: 2.1rem;
+  }
 `
 
 const Schedules = [
@@ -60,23 +66,36 @@ const Time = styled.p`
   color: #69302c;
   font-size: 32px;
   font-weight: bold;
+  @media (max-width: 768px) {
+    font-size: 25px;
+  }
 `
 const Session = styled.p`
   font-size: 32px;
+  @media (max-width: 768px) {
+    font-size: 25px;
+  }
 `
 const Faculty = styled.h3`
   color: #f8bc00;
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `
 const Describe = styled.p`
   color: #fff;
   font-size: 22px;
+  @media (max-width: 768px) {
+    text-align: center;
+    font-size: 14px;
+  }
 `
 
 const Schedule = () => (
-  <Landing fluid>
+  <Landing fluid className='py-5'>
     <Container>
       <Row>
-        <Col>
+        <Col xs={12} md={6} lg={6} className='d-flex justify-content-center'>
           <Card className='mt-2'>
             <CardBody>
               <CardTitle>
@@ -91,9 +110,9 @@ const Schedule = () => (
             </CardBody>
           </Card>
         </Col>
-        <Col>
+        <Col xs={12} md={6} lg={6} align='center'>
           <CardLocation className='mt-4'>
-            <CardBody className='text-right'>
+            <CardBody>
               <CardTitle className='my-5'>
               LOCATION
               </CardTitle>
