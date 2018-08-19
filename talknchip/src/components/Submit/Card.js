@@ -1,7 +1,7 @@
 import React, { Fragment } from "react"
 import styled from "styled-components"
-import { Card, CardBody,
-  CardTitle, CardSubtitle, Container, Row, Col } from "reactstrap"
+import { Card, CardBody, CardTitle, CardSubtitle, Container, Row, Col } from "reactstrap"
+import { db } from "../../tools/firebasehelper"
 
 const SessionContainer = styled(Container)`
   background-color: #F1BE42;
