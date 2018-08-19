@@ -20,8 +20,11 @@ export default class Modals extends React.Component {
       description: "",
       telno: "",
       isOpen: false,
-      message: ""
+      message: "",
+      name: "",
+      photo: ""
     }
+
     toggle = this.toggle.bind(this)
 
     onDismiss = this.onDismiss.bind(this)
@@ -46,15 +49,28 @@ export default class Modals extends React.Component {
         })
       }
     }
-    submit = (e) => {
+    submit = async (e) => {
       this.setState({
         topicName: Topic.value,
         description: Description.value,
         telno: Telno.value
       })
+      const Value = {
+        name: this.state.name,
+        photo: this.state.photo,
+        uid: this.state.userId,
+        description: this.state.description,
+        telno: this.state.telno
+      }
+      await insert(this.state.userId, Value)
     }
+    // componentWillMount = () => {
+    // }
     componentDidMount () {
       this.state.userId = window.localStorage.getItem("uid")
+      this.state.name = window.localStorage.getItem("name")
+      this.state.photo = window.localStorage.getItem("img")
+      console.log(this.state)
     }
 
     render () {

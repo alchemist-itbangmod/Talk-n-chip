@@ -14,7 +14,7 @@ const getAll = (collection) => {
 
 const getOne = (attr, whereCause) => db.ref(`${ref}/${attr}/${whereCause}`)
 
-const insert = (uid, value, cb) => db.ref(`${ref}/${uid}`).set({ ...value }, cb)
+const insert = (uid, value) => db.ref(`${ref}/${uid}`).set({ ...value })
 
 // db.ref("/users/190")
 //   .set({
