@@ -17,16 +17,26 @@ const Credit = styled.p`
   }
   @media (max-width: 768px) {
     font-size: 0.90rem;
+    text-align: center;
   }
 `
 const CreditImage = styled.img`
   width: auto;
   max-height: 75px;
-  padding: 15px 30px;
+  padding: 15px 25px;
+  margin: 15px 0px;
   @media (max-width: 768px) {
     max-height: 50px;
+    margin: 0px;
+    padding: 10px 20px;
+  }
+  @media (max-width: 992px) {
+    max-height: 50px;
+    margin: 0px;
+    padding: 10px 20px;
   }
 `
+
 const images = {
   itforge: "/static/images/Artisan Logo.png",
   alchemist: "/static/images/logoAlchemist.png"
@@ -41,7 +51,7 @@ const Footer = () => (
             <Col xs={12} md={6} lg={7} className='py-3'>
               <Credit>{creditText.creditText} <span><b>{creditText.creditHilight}</b></span></Credit>
             </Col>
-            <Col xs={12} md={6} lg={5} className='py-2'>
+            <Col xs={12} md={6} lg={5} className='py-2' align='center'>
               <CreditImage src={images.itforge} />
               <CreditImage src={images.alchemist} />
             </Col>
