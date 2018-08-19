@@ -25,11 +25,6 @@ const CreditImage = styled.img`
   max-height: 75px;
   padding: 15px 25px;
   margin: 15px 0px;
-  @media (max-width: 768px) {
-    max-height: 50px;
-    margin: 0px;
-    padding: 10px 20px;
-  }
   @media (max-width: 992px) {
     max-height: 50px;
     margin: 0px;
