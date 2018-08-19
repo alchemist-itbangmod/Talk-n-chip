@@ -63,7 +63,6 @@ export default class Modals extends React.Component {
         .set({
           name: this.state.name,
           photo: this.state.photo,
-          uid: this.state.userId,
           topic: this.state.topicName,
           description: this.state.description,
           telno: this.state.telno,
