@@ -34,9 +34,21 @@ export default class NavBar extends React.Component {
     this.toggle = this.toggle.bind(this)
     this.state = {
       isOpen: false,
-      nameLogin: "login",
+      name: "Guest",
       collapsed: true
 
+    }
+  }
+  componentDidMount () {
+    const nameCheck = window.localStorage.getItem("name")
+    if (nameCheck === null || nameCheck === undefined) {
+      this.setState({
+        name: "Guest"
+      })
+    } else {
+      this.setState({
+        name: window.localStorage.getItem("name")
+      })
     }
   }
   toggle () {
@@ -59,7 +71,7 @@ export default class NavBar extends React.Component {
                 <Navlink >สวัสดี ,</Navlink>
               </NavItem>
               <NavItem>
-                <Navlink >Guest</Navlink>
+                <Navlink >{this.state.name}</Navlink>
               </NavItem>
             </Nav>
           </Collapse>
