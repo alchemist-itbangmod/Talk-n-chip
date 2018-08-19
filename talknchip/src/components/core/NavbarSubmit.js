@@ -49,7 +49,9 @@ export default class NavBar extends React.Component {
         })
       } else {
         this.setState({
-          name: window.localStorage.getItem("name")
+          name: window.localStorage.getItem("name"),
+          buttonText: "ออกจากระบบ ?"
+
         })
       }
     }
@@ -60,7 +62,8 @@ export default class NavBar extends React.Component {
       })
     }
     login () {
-      if (this.state.userId === undefined || this.state.userId === null) {
+      const name = window.localStorage.getItem("name")
+      if (name === undefined || name === null) {
         auth().signInWithPopup(provider)
           .then(({ user }) => {
             // user = JSON.stringify(user)
