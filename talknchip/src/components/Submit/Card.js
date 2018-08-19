@@ -5,7 +5,7 @@ import { db, getAll } from "../../tools/firebasehelper"
 
 const SessionContainer = styled(Container)`
   background-color: #F1BE42;
-  min-height: calc(100vh - 200px - 100px);
+  min-height: calc(105vh - 200px - 100px);
 `
 
 const InnerSessionContainer = styled(Container)`
