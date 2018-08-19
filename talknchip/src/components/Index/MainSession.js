@@ -64,6 +64,7 @@ const InnerSessionContainer = styled(Container)`
   }
   p {
     font-size: 1.70rem;
+    color: #525252;
   }
 `
 
@@ -77,10 +78,10 @@ const AvatarContainer = styled.div`
     font-weight: 500;
   }
   h2 {
-    color: #fff;
+    color: #64342F;
   }
   h4 {
-    color: #64342F;
+    color: #525252;
   }
 `
 

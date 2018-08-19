@@ -33,10 +33,11 @@ const WhatContent = styled.p`
 `
 
 const WhatImage = styled.img`
-  max-width: 250px;
+  max-width: 200px;
   height: auto;
   border-radius: 50%;
-  padding: 10px 30px;
+  border: 7px solid #f8bc00;
+  margin: 10px 30px;
 `
 
 const images = [

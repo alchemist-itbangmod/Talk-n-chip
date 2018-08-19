@@ -19,11 +19,23 @@ const Images = {
   alchemist: "/static/images/logoAlchemist.png"
 }
 const Image = styled.img`
-  padding: 0 1em;
+  padding: 0.5em 1.5em;
   width: auto;
-  max-height: 80px;
-  @media (max-width: 768px) {
+  max-height: 70px;
+  @media (max-width: 992px) {
     max-height: 50px;
+    padding: 0 0.5em;
+    margin: 10px 0px;
+  }
+  @media (max-width: 768px) {
+    max-height: 40px;
+    padding: 0 0.5em;
+    margin: 10px 0px;
+  }
+  @media (max-width: 500px) {
+    max-height: 25px;
+    padding: 0 0.5em;
+    margin: 10px 0px;
   }
 `
 const SponsorCol = styled(Col)`
@@ -34,18 +46,25 @@ const SponsorCol = styled(Col)`
     justify-content: center;
   }
 `
+const SponsorImageCol = styled(Col)`
+  @media (max-width: 768px) {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+`
 
 const Sponsor = () => (
   <Landing>
     <Container className='p-5'>
       <Row className='py-5'>
-        <SponsorCol xs={12} md={4}>
+        <SponsorCol xs={12} md={4} lg={{size:3}}>
           <Text>ด้วยรักจึงจัดให้จาก</Text>
         </SponsorCol>
-        <Col xs={12} md={8}>
+        <SponsorImageCol xs={12} md={8} lg={7} align='center'>
           <Image src={Images.itForge} /> X
           <Image src={Images.alchemist} />
-        </Col>
+        </SponsorImageCol>
       </Row>
     </Container>
   </Landing>
