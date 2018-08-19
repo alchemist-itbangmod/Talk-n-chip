@@ -19,7 +19,9 @@ export default class Modals extends React.Component {
       isOpen: false,
       message: "",
       name: "",
-      photo: ""
+      photo: "",
+      date: null
+
     }
     toggle = this.toggle.bind(this)
     onDismiss = this.onDismiss.bind(this)
@@ -43,13 +45,18 @@ export default class Modals extends React.Component {
         })
       }
     }
+    newDate () {
+      var nd = new Date()
+      var d = nd.getDate()
+      var m = nd.getMonth()
+      this.state.date = d + "/" + m
+    }
     submit = (e) => {
       this.setState({
         topicName: Topic.value,
         description: Description.value,
         telno: Telno.value
       })
-
       db.ref("/users/" + this.state.userId)
         .set({
           name: this.state.name,
@@ -57,14 +64,15 @@ export default class Modals extends React.Component {
           uid: this.state.userId,
           topicName: this.state.topicName,
           description: this.state.description,
-          telno: this.state.telno
+          telno: this.state.telno,
+          date: this.state.date
         })
     }
     componentDidMount () {
       this.state.userId = window.localStorage.getItem("uid")
       this.state.name = window.localStorage.getItem("name")
       this.state.photo = window.localStorage.getItem("img")
-      console.log(this.state)
+      this.newDate()
     }
     render () {
       return (
