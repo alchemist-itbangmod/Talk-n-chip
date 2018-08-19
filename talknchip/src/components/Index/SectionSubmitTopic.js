@@ -22,12 +22,17 @@ const Landing = styled.div`
   font-weight: bold;
   background-color:#F1BE42;
   min-height: 10vh;
+  background-image: url('/static/images/Pattern.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 `
 const Text = styled.h1`
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
 `
 const Weight = styled.span`
-font-weight: 800;
-
+  font-weight: 800;
 `
 const SectionSubmitTopic = () => (
   <Landing>
@@ -45,7 +50,6 @@ const SectionSubmitTopic = () => (
         </Col>
       </Row>
     </Container>
-
   </Landing>
 )
 
