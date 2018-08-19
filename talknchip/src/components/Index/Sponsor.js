@@ -28,6 +28,11 @@ const Image = styled.img`
     margin: 10px 0px;
   }
   @media (max-width: 768px) {
+    max-height: 40px;
+    padding: 0 0.5em;
+    margin: 10px 0px;
+  }
+  @media (max-width: 500px) {
     max-height: 25px;
     padding: 0 0.5em;
     margin: 10px 0px;
