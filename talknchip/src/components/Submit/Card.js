@@ -46,6 +46,9 @@ class SpeakerContainer extends React.Component {
   componentDidMount () {
     this.fechData()
   }
+  componentWillMount () {
+    this.fechData()
+  }
 
   render () {
     return (
