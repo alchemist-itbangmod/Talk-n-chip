@@ -8,7 +8,6 @@ const Landing = styled.div`
   font-weight: 500;
   background-color:#F1BE42;
   height: 20vh;
-  
 `
 
 const LoginSection = () => (
@@ -19,7 +18,6 @@ const LoginSection = () => (
           <Col >
             <NavBarLogin />
           </Col>
-
         </Row>
       </Container>
     </Container>

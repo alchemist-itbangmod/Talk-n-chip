@@ -11,10 +11,10 @@ import {
 import firebase, {db, getAll, getOne, insert, auth, provider } from "../../tools/firebasehelper"
 
 import styled from "styled-components"
-const LoginButton = styled.button`
-  display: ${props => props.showButton || ""};
-`
 
+const LoginButton = styled.button`
+
+`
 const Navbar = styled(DefaultNavbar)`
   padding: 0em;
   padding-top: 3em;
@@ -37,7 +37,7 @@ export default class NavBar extends React.Component {
     name: "Guest",
     collapsed: true,
     userId: undefined,
-    show: "block"
+    buttonText: "Login"
   }
     toggle = this.toggle.bind(this)
 
@@ -57,7 +57,6 @@ export default class NavBar extends React.Component {
       this.setState({
         isOpen: !this.state.isOpen,
         collapsed: !this.state.collapsed
-
       })
     }
     login () {
@@ -80,9 +79,12 @@ export default class NavBar extends React.Component {
             window.localStorage.setItem("img", user.photoURL)
             this.setState({
               name: user.displayName,
-              show: "none"
+              buttonText: "ออกจากระบบ ?"
             })
           })
+      } else {
+        window.localStorage.clear()
+        window.location.reload()
       }
     }
 
@@ -101,7 +103,7 @@ export default class NavBar extends React.Component {
                   <Navlink >{this.state.name}</Navlink>
                 </NavItem>
                 <NavItem>
-                  <LoginButton showButton={this.state.show} onClick={() => this.login()}>Login</LoginButton>
+                  <LoginButton onClick={() => this.login()}>{this.state.buttonText}</LoginButton>
                 </NavItem>
               </Nav>
             </Collapse>
