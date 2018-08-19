@@ -7,10 +7,7 @@ import styled from "styled-components"
 const AlertStyled = styled(Alert)`
   padding-left: 10em;
   padding-right: 10em;
-
-
 `
-
 export default class Modals extends React.Component {
     state = {
       modal: false,
@@ -24,11 +21,8 @@ export default class Modals extends React.Component {
       name: "",
       photo: ""
     }
-
     toggle = this.toggle.bind(this)
-
     onDismiss = this.onDismiss.bind(this)
-
     onDismiss () {
       this.setState({ visible: false })
     }
@@ -66,15 +60,12 @@ export default class Modals extends React.Component {
           telno: this.state.telno
         })
     }
-    // componentWillMount = () => {
-    // }
     componentDidMount () {
       this.state.userId = window.localStorage.getItem("uid")
       this.state.name = window.localStorage.getItem("name")
       this.state.photo = window.localStorage.getItem("img")
       console.log(this.state)
     }
-
     render () {
       return (
         <Fragment>

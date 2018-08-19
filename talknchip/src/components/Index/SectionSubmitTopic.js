@@ -15,10 +15,6 @@ const DownButton = styled(Button)`
   &:hover {
     color: #FFF;
   }
-  
-`
-const Span = styled.span`
-
 `
 
 const Landing = styled.div`
@@ -44,8 +40,8 @@ const SectionSubmitTopic = () => (
           <LinkTo to='../Submit'>
             <DownButton>ส่งหัวข้อที่จะไปพูดกันเลย !</DownButton>
           </LinkTo><br /><br />
-          <Span >หรือ <LinkTo to='/404'>โหวตหัวข้อตัวเองที่อยากฟัง ></LinkTo>
-          </Span>
+          <span >หรือ <LinkTo to='/404'>โหวตหัวข้อตัวเองที่อยากฟัง ></LinkTo>
+          </span>
         </Col>
       </Row>
     </Container>

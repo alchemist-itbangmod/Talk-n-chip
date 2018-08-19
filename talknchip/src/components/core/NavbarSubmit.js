@@ -13,13 +13,10 @@ import firebase, {db, getAll, getOne, insert, auth, provider } from "../../tools
 import styled from "styled-components"
 
 const LoginButton = styled.button`
-
 `
 const Navbar = styled(DefaultNavbar)`
   padding: 0em;
   padding-top: 3em;
-
-
 `
 const NavToggler = styled(DefaultNavbarToggler)`
   border: 1px solid #000;
@@ -51,7 +48,6 @@ export default class NavBar extends React.Component {
         this.setState({
           name: window.localStorage.getItem("name"),
           buttonText: "ออกจากระบบ ?"
-
         })
       }
     }
@@ -66,16 +62,11 @@ export default class NavBar extends React.Component {
       if (name === undefined || name === null) {
         auth().signInWithPopup(provider)
           .then(({ user }) => {
-            // user = JSON.stringify(user)
-            // windowChecker() && window.localStorage.setItem("user", user)
-            // user = JSON.parse(user)
             db.ref(`/users/${user.uid}`)
               .set({
                 name: user.displayName,
-                // email: user.email,
                 photoURL: user.photoURL
               })
-            // this.setState({ user })
             this.state.userId = user.uid
             window.localStorage.setItem("uid", user.uid)
             window.localStorage.setItem("name", user.displayName)

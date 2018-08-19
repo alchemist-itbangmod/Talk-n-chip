@@ -21,7 +21,6 @@ const LoginSection = () => (
         </Row>
       </Container>
     </Container>
-
   </Landing>
 )
 
