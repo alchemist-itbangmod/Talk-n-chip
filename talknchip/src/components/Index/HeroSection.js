@@ -7,6 +7,7 @@ import NavBar from "../Core/Navbar.js"
 
 const LinkTo = styled(Link)`
   color: #69302c;
+  margin: 0px;
   &:hover {
     color: #69302c;
   }
@@ -18,7 +19,7 @@ const Landing = styled.div`
   background-color:#F1BE42;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  /* height: 100vh; */
 `
 const Text = styled.h1`
   margin-bottom: 3%;
@@ -30,7 +31,7 @@ const Date = styled.p`
 `
 
 const IndexPage = () => (
-  <Landing>
+  <Landing className='py-2'>
     <Container>
       <NavBar />
       <Row>
@@ -40,9 +41,15 @@ const IndexPage = () => (
             แล้วไม่พูดจะเสียใจ
           </Text>
           <Date>26 สิงหาคม 2018 ณ คณะไอที ลาดกระบัง</Date>
+        </Col>
+      </Row>
+      <Row>
+        <Col xs={12} md={4} lg={3} className='m-0'>
           <LinkTo to='../Submit'>
-            <Button>ส่งหัวข้อที่จะไปพูดกันเลย !</Button>
+            <Button block>ส่งหัวข้อที่จะไปพูดกันเลย !</Button>
           </LinkTo>
+        </Col>
+        <Col xs={12} md={5} lg={4} className='py-2 mt-1 my-0 pl-1'>
           <span className='mx-3'>หรือ</span>
           <LinkTo to='/404'>โหวตหัวข้อตัวเองที่อยากฟัง ></LinkTo>
         </Col>
