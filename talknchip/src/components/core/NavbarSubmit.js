@@ -8,11 +8,15 @@ import {
   NavItem,
   NavLink
 } from "reactstrap"
-import firebase, {db, getAll, getOne, insert, auth, provider } from "../../tools/firebasehelper"
+import { db, auth, provider } from "../../tools/firebasehelper"
 
 import styled from "styled-components"
 
 const LoginButton = styled.button`
+  background-color: transparent;
+  border: 1px solid #69302c;
+  border-radius: .25em;
+  color: #69302c;
 `
 const Navbar = styled(DefaultNavbar)`
   padding: 0em;
