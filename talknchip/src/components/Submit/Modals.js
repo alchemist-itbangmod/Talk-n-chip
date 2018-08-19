@@ -49,14 +49,14 @@ export default class Modals extends React.Component {
         })
       }
     }
-    submit = async (e) => {
+    submit = (e) => {
       this.setState({
         topicName: Topic.value,
         description: Description.value,
         telno: Telno.value
       })
 
-      await db.ref("/users/" + this.state.userId)
+      db.ref("/users/" + this.state.userId)
         .set({
           name: this.state.name,
           photo: this.state.photo,
