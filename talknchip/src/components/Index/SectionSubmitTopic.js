@@ -22,6 +22,9 @@ const Landing = styled.div`
   font-weight: bold;
   background-color:#F1BE42;
   min-height: 10vh;
+  background-image: url('/static/images/Pattern.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 `
 const Text = styled.h1`
 `
