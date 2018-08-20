@@ -78,7 +78,18 @@ export default class Modals extends React.Component {
               topic: Topics.topic,
               description: Topics.description,
               telno: Topics.telno,
-              date: Topics.date
+              date: Topics.date,
+              votecount: 0
+            })
+          db.ref("/topics/" + Topics.name + "_" + Topics.topic)
+            .set({
+              name: Topics.name,
+              photo: Topics.photo,
+              topic: Topics.topic,
+              description: Topics.description,
+              telno: Topics.telno,
+              date: Topics.date,
+              votecount: 0
             })
         } catch (e) {
           console.log(e)
@@ -89,9 +100,6 @@ export default class Modals extends React.Component {
           window.location.reload()
         }, 3000)
       }
-    }
-    senddatatoFirebase () {
-
     }
     componentDidMount () {
       this.state.userId = window.localStorage.getItem("uid")

@@ -35,18 +35,13 @@ class SpeakerContainer extends React.Component {
     ]
   }
   fechData = () => {
-    const uid = window.localStorage.getItem("uid")
-    if (uid === null || uid === undefined) {
-
-    } else {
-      getAll("users/" + uid).once("value").then(topicSnapshot => {
-        console.log(topicSnapshot.val())
-        const speakers = Object.values(topicSnapshot.val())
-        this.setState({ speakers })
-        console.log(this.state.speakers)
-      }
-      )
+    getAll("topics/").once("value").then(topicSnapshot => {
+      console.log(topicSnapshot.val())
+      const speakers = Object.values(topicSnapshot.val())
+      this.setState({ speakers })
+      console.log(this.state.speakers)
     }
+    )
   }
   componentDidMount () {
     this.fechData()
