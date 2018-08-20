@@ -35,7 +35,8 @@ class SpeakerContainer extends React.Component {
     ]
   }
   fechData = () => {
-    getAll("users").once("value").then(topicSnapshot => {
+    const uid = window.localStorage.getItem("uid")
+    getAll("users/" + uid).once("value").then(topicSnapshot => {
       const speakers = Object.values(topicSnapshot.val())
       console.log(speakers)
       this.setState({ speakers })
