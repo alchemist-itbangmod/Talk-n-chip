@@ -95,10 +95,10 @@ export default class NavBar extends React.Component {
             <Collapse isOpen={this.state.collapsed} navbar>
               <Nav className='mr-4 ml-auto' navbar>
                 <NavItem>
-                  <Navlink >สวัสดี ,</Navlink>
+                  <Navlink >สวัสดี , {this.state.name} </Navlink>
                 </NavItem>
                 <NavItem>
-                  <Navlink >{this.state.name}</Navlink>
+                  {/* <Navlink >{this.state.name}</Navlink> */}
                 </NavItem>
                 <NavItem>
                   <LoginButton onClick={() => this.login()}>{this.state.buttonText}</LoginButton>
