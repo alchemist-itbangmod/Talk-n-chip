@@ -3,7 +3,6 @@ import Link from "gatsby-link"
 import { Container, Row, Col } from "reactstrap"
 import Button from "../core/Button"
 import styled from "styled-components"
-import NavBar from "../Core/Navbar.js"
 
 const LinkTo = styled(Link)`
   color: #69302c;
@@ -33,7 +32,6 @@ const Date = styled.p`
 const IndexPage = () => (
   <Landing className='py-2'>
     <Container>
-      <NavBar />
       <Row>
         <Col>
           <Text>
