@@ -6,9 +6,11 @@ import SectionSubmit from "./SectionSubmitTopic"
 import Schedule from "./Schedule"
 import Footer from "./Footer"
 import Sponsor from "./Sponsor"
+import NavBar from "../Core/Navbar.js"
 
 export default () => (
   <Fragment>
+    <NavBar />
     <section id='home' name='home'>
       <HeroSection />
     </section>
