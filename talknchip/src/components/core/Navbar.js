@@ -21,6 +21,9 @@ const Navbar = styled(DefaultNavbar)`
   background-color:transparent;
   padding: 1em;
   padding-top: 3em;
+  @media (max-width: 414px){
+    display: none;
+  }
 `
 const Navlink = styled(NavLink)`
   color:#69302c;
