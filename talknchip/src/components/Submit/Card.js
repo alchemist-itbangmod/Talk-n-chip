@@ -36,19 +36,23 @@ class SpeakerContainer extends React.Component {
   }
   fechData = () => {
     const uid = window.localStorage.getItem("uid")
-    getAll("users/" + uid).once("value").then(topicSnapshot => {
-      const speakers = Object.values(topicSnapshot.val())
-      console.log(speakers)
-      this.setState({ speakers })
-      console.log(this.state.speakers)
+    if (uid === null || uid === undefined) {
+
+    } else {
+      getAll("users/" + uid).once("value").then(topicSnapshot => {
+        console.log(topicSnapshot.val())
+        const speakers = Object.values(topicSnapshot.val())
+        this.setState({ speakers })
+        console.log(this.state.speakers)
+      }
+      )
     }
-    )
   }
   componentDidMount () {
     this.fechData()
   }
   componentWillMount () {
-    this.fechData()
+    // this.fechData()
   }
 
   render () {
@@ -57,7 +61,7 @@ class SpeakerContainer extends React.Component {
         {
           this.state.speakers.map((speaker, index) => (
             <Col key={index} sm='4' className='pb-5' >
-              <CardSubmit speaker={speaker} />
+              <CardSubmit speaker={speaker} value={index} />
             </Col>
           ))
         }
@@ -73,8 +77,8 @@ const CardSubmit = ({ speaker: {topic, date} }) => (
       <div className='d-flex justify-content-between align-items-center pt-4'>
         <CardSubtitleStyled className='text-left'>{date}</CardSubtitleStyled>
         <div>
-          <a href='#'><span>D</span></a>
-          <a href='#'><span>E</span></a>
+          <button ><span>D</span></button>
+          <button ><span>E</span></button>
         </div>
       </div>
     </CardBody>

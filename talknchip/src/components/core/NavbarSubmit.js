@@ -61,16 +61,13 @@ export default class NavBar extends React.Component {
         collapsed: !this.state.collapsed
       })
     }
-    login () {
+    async login () {
       const name = window.localStorage.getItem("name")
       if (name === undefined || name === null) {
-        auth().signInWithPopup(provider)
+        await auth().signInWithPopup(provider)
           .then(({ user }) => {
             db.ref(`/users/${user.uid}`)
-              .set({
-                name: user.displayName,
-                photoURL: user.photoURL
-              })
+
             this.state.userId = user.uid
             window.localStorage.setItem("uid", user.uid)
             window.localStorage.setItem("name", user.displayName)
@@ -79,6 +76,9 @@ export default class NavBar extends React.Component {
               name: user.displayName,
               buttonText: "ออกจากระบบ ?"
             })
+            setTimeout(() => {
+              window.location.reload()
+            }, 1500)
           })
       } else {
         window.localStorage.clear()
