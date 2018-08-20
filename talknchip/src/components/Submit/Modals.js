@@ -70,15 +70,19 @@ export default class Modals extends React.Component {
           telno: Telno.value,
           date: this.state.date
         }
-        db.ref("/users/" + this.state.userId + "/" + Topics.topic)
-          .set({
-            name: Topics.name,
-            photo: Topics.photo,
-            topic: Topics.topic,
-            description: Topics.description,
-            telno: Topics.telno,
-            date: Topics.date
-          })
+        try {
+          db.ref("/users/" + this.state.userId + "/" + Topics.topic)
+            .set({
+              name: Topics.name,
+              photo: Topics.photo,
+              topic: Topics.topic,
+              description: Topics.description,
+              telno: Topics.telno,
+              date: Topics.date
+            })
+        } catch (e) {
+          console.log(e)
+        }
         this.state.visible2 = true
         setTimeout(() => { this.setState({ visible2: false, modal: false }) }, 2000)
         setTimeout(() => {
