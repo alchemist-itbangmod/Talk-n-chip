@@ -14,7 +14,7 @@ export default class Modals extends React.Component {
       userId: undefined,
       visible: false,
       visible2: false,
-      topicName: "",
+      visible3: false,
       description: "",
       telno: "",
       isOpen: false,
@@ -29,6 +29,7 @@ export default class Modals extends React.Component {
     onDismiss () {
       this.setState({ visible: false })
       this.setState({ visible2: false })
+      this.setState({ visible3: false })
     }
     toggle () {
       this.state.userId = window.localStorage.getItem("uid")
@@ -52,35 +53,38 @@ export default class Modals extends React.Component {
       this.state.date = "เสนอเมื่อ" + d + "/" + m
     }
     submit = (e) => {
-      this.setState({
-        topicName: Topic.value,
-        description: Description.value,
-        telno: Telno.value
-      })
-      const Topics = {
-        name: this.state.name,
-        photo: this.state.photo,
-        topic: Topic.value,
-        description: Description.value,
-        telno: Telno.value,
-        date: this.state.date
-      }
-      db.ref("/users/" + this.state.userId)
-        .set({
-          name: Topics.name,
-          photo: Topics.photo,
-          topic: Topics.topic,
-          description: Topics.description,
-          telno: Topics.telno,
-          date: Topics.date
-        })
-      this.state.visible2 = true
-      setTimeout(() => {
+      if (Topic.value === "" || Description.value === "" || Telno.value === "") {
+        this.state.visible3 = true
+        setTimeout(() => { this.setState({ visible3: false }) }, 2000)
+      } else {
         this.setState({
-          visible2: false,
-          modal: false
+          topicName: Topic.value,
+          description: Description.value,
+          telno: Telno.value
         })
-      }, 2000)
+        const Topics = {
+          name: this.state.name,
+          photo: this.state.photo,
+          topic: Topic.value,
+          description: Description.value,
+          telno: Telno.value,
+          date: this.state.date
+        }
+        db.ref("/users/" + this.state.userId + "/" + Topics.topic)
+          .set({
+            name: Topics.name,
+            photo: Topics.photo,
+            topic: Topics.topic,
+            description: Topics.description,
+            telno: Topics.telno,
+            date: Topics.date
+          })
+        this.state.visible2 = true
+        setTimeout(() => { this.setState({ visible2: false, modal: false }) }, 2000)
+        setTimeout(() => {
+          window.location.reload()
+        }, 3000)
+      }
     }
     senddatatoFirebase () {
 
@@ -118,6 +122,9 @@ export default class Modals extends React.Component {
                 </FormGroup>
               </Form>
             </ModalBody>
+            <AlertStyled color='danger' isOpen={this.state.visible3} toggle={this.onDismiss}>
+             โปรดกรอกข้อมูลให้ครบด้วย
+            </AlertStyled>
             <AlertStyled color='success' isOpen={this.state.visible2} toggle={this.onDismiss}>
                  ส่งหัวข้อสุดชิบสำเร็จ
             </AlertStyled>
