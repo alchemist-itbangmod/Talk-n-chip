@@ -77,8 +77,12 @@ const CardSubmit = ({ speaker: {topic, date} }) => (
       <div className='d-flex justify-content-between align-items-center pt-4'>
         <CardSubtitleStyled className='text-left'>{date}</CardSubtitleStyled>
         <div>
-          <button ><span>D</span></button>
-          <button ><span>E</span></button>
+          <button type='button' className='btn btn-default btn-lg mx-1'>
+            <span className='glyphicon glyphicon-star'>De</span>
+          </button>
+          <button type='button' className='btn btn-default btn-lg mx-1'>
+            <span className='glyphicon glyphicon-star'>Ed</span>
+          </button>
         </div>
       </div>
     </CardBody>
