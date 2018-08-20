@@ -39,13 +39,18 @@ class SpeakerContainer extends React.Component {
     if (uid === null || uid === undefined) {
 
     } else {
-      getAll("users/" + uid).once("value").then(topicSnapshot => {
-        console.log(topicSnapshot.val())
-        const speakers = Object.values(topicSnapshot.val())
-        this.setState({ speakers })
-        console.log(this.state.speakers)
+      try {
+        getAll("users/" + uid).once("value").then(topicSnapshot => {
+          console.log(topicSnapshot.val())
+          try {
+            const speakers = Object.values(topicSnapshot.val())
+            this.setState({ speakers })
+            console.log(this.state.speakers)
+          } catch (e) { console.log(e) }
+        })
+      } catch (e) {
+        console.log(e)
       }
-      )
     }
   }
   componentDidMount () {
