@@ -1,6 +1,6 @@
 import React, { Fragment } from "react"
 import styled from "styled-components"
-import { Card, CardBody, CardTitle, CardSubtitle, Container, Row, Col } from "reactstrap"
+import { Card, CardBody, CardTitle, CardSubtitle, Alert, Container, Row, Col } from "reactstrap"
 import { db, getAll } from "../../tools/firebasehelper"
 
 const SessionContainer = styled(Container)`
@@ -19,6 +19,10 @@ const InnerSessionContainer = styled(Container)`
     font-size: 1.75rem;
   }
 `
+const AlertStyled = styled(Alert)`
+  padding-left: 27em;
+ 
+`
 const CardTitleStyled = styled(CardTitle)`
   color: #64342F;
 `
@@ -29,15 +33,17 @@ const CardSubtitleStyled = styled(CardSubtitle)`
 
 class SpeakerContainer extends React.Component {
   state = {
-
-    speakers: [
-
-    ]
+    speakers: [],
+    visible: true
+  }
+  onDismiss = this.onDismiss.bind(this)
+  onDismiss () {
+    this.setState({ visible: false })
   }
   fechData = () => {
     const uid = window.localStorage.getItem("uid")
     if (uid === null || uid === undefined) {
-
+      this.setState({ visible: true })
     } else {
       try {
         getAll("users/" + uid).once("value").then(topicSnapshot => {
@@ -48,6 +54,7 @@ class SpeakerContainer extends React.Component {
             console.log(this.state.speakers)
           } catch (e) { console.log(e) }
         })
+        this.onDismiss()
       } catch (e) {
         console.log(e)
       }
@@ -70,6 +77,11 @@ class SpeakerContainer extends React.Component {
             </Col>
           ))
         }
+        <Col className='justify-content-center'>
+          <AlertStyled color='danger' isOpen={this.state.visible} toggle={this.onDismiss}>
+             ต้อง Login ก่อนถึงจะเห็นหัวข้อน่ะ!!
+          </AlertStyled>
+        </Col>
       </Fragment>
     )
   }
