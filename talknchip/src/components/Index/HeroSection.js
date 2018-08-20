@@ -49,7 +49,7 @@ const IndexPage = () => (
         </Col>
         <Col xs={12} md={5} lg={4} className='py-2 mt-1 my-0 pl-1'>
           <span className='mx-3'>หรือ</span>
-          <LinkTo to='/404'>โหวตหัวข้อตัวเองที่อยากฟัง ></LinkTo>
+          <LinkTo to='../Vote'>โหวตหัวข้อตัวเองที่อยากฟัง ></LinkTo>
         </Col>
       </Row>
     </Container>
