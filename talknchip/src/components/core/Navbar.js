@@ -8,8 +8,14 @@ import {
   NavItem,
   NavLink
 } from "reactstrap"
-
+import * as Scroll from "react-scroll"
 import styled from "styled-components"
+
+const DefaultLink = Scroll.Link
+
+const Link = styled(DefaultLink)`
+  cursor: pointer;
+`
 
 const Navbar = styled(DefaultNavbar)`
   background-color:transparent;
@@ -53,13 +59,25 @@ export default class NavBar extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className='mr-auto ml-auto' navbar>
               <NavItem>
-                <Navlink href='#what' smooth>คืออะไร</Navlink>
+                <Navlink>
+                  <Link to='what' smooth={true} >
+                  คืออะไร
+                  </Link>
+                </Navlink>
               </NavItem>
               <NavItem>
-                <Navlink href='#who' smooth>ใครมาพูด</Navlink>
+                <Navlink>
+                  <Link to='who' smooth={true} >
+                ใครมาพูด
+                  </Link>
+                </Navlink>
               </NavItem>
               <NavItem>
-                <Navlink href='#where' smooth>จัดที่ไหน</Navlink>
+                <Navlink>
+                  <Link to='where' smooth={true}>
+                จัดที่ไหน
+                  </Link>
+                </Navlink>
               </NavItem>
             </Nav>
             <Navlink href='../Submit'>
