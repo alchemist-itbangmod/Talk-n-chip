@@ -18,9 +18,8 @@ const Link = styled(DefaultLink)`
 `
 
 const Navbar = styled(DefaultNavbar)`
-  background-color:transparent;
+  background-color: #F1BE42;
   padding: 1em;
-  padding-top: 3em;
   @media (max-width: 414px){
     display: none;
   }
@@ -56,7 +55,7 @@ export default class NavBar extends React.Component {
   render () {
     return (
       <Fragment>
-        <Navbar expand='md' color='' light>
+        <Navbar expand='md' className='sticky-top' light>
           <NavBrand href='#home'>Talk n' Chip</NavBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
