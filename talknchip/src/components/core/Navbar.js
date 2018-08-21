@@ -1,5 +1,6 @@
 import React, { Fragment } from "react"
 import {
+  Container,
   Collapse,
   Navbar as DefaultNavbar,
   NavbarToggler,
@@ -56,36 +57,38 @@ export default class NavBar extends React.Component {
     return (
       <Fragment>
         <Navbar expand='md' className='sticky-top' light>
-          <NavBrand href='#home'>Talk n' Chip</NavBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className='mr-auto ml-auto' navbar>
-              <NavItem>
-                <Navlink>
-                  <Link to='what' smooth={true} >
+          <Container>
+            <NavBrand href='#home'>Talk n' Chip</NavBrand>
+            <NavbarToggler onClick={this.toggle} />
+            <Collapse isOpen={this.state.isOpen} navbar>
+              <Nav className='mr-auto ml-auto' navbar>
+                <NavItem>
+                  <Navlink>
+                    <Link to='what' smooth >
                   คืออะไร
-                  </Link>
-                </Navlink>
-              </NavItem>
-              <NavItem>
-                <Navlink>
-                  <Link to='who' smooth={true} >
+                    </Link>
+                  </Navlink>
+                </NavItem>
+                <NavItem>
+                  <Navlink>
+                    <Link to='who' smooth >
                 ใครมาพูด
-                  </Link>
-                </Navlink>
-              </NavItem>
-              <NavItem>
-                <Navlink>
-                  <Link to='where' smooth={true}>
+                    </Link>
+                  </Navlink>
+                </NavItem>
+                <NavItem>
+                  <Navlink>
+                    <Link to='where' smooth>
                 จัดที่ไหน
-                  </Link>
-                </Navlink>
-              </NavItem>
-            </Nav>
-            <Navlink href='../Submit'>
-              <Button className='fixed-right'>ส่งหัวข้อสุดชิพ</Button>
-            </Navlink>
-          </Collapse>
+                    </Link>
+                  </Navlink>
+                </NavItem>
+              </Nav>
+              <Navlink href='../Submit'>
+                <Button className='fixed-right'>ส่งหัวข้อสุดชิพ</Button>
+              </Navlink>
+            </Collapse>
+          </Container>
         </Navbar>
       </Fragment>
     )
