@@ -29,11 +29,16 @@ const NavBrand = styled(NavbarBrand)`
 `
 
 const Button = styled.button`
+  cursor: pointer;
   background-color: transparent;
   color: #69302c;
   border: 2px solid #69302c;
   border-radius: .1em;
   padding: .5em 1.25em;
+  &:hover{
+    background-color: #69302c;
+    color: #fff;
+  }
 `
 export default class NavBar extends React.Component {
   constructor (props) {
