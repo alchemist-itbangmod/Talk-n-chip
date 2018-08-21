@@ -59,17 +59,17 @@ export default class NavBar extends React.Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className='mr-auto ml-auto' navbar>
                 <NavItem>
-                  <Link className='p-3' to='what' smooth >
+                  <Link className='px-3' to='what' smooth >
                   คืออะไร
                   </Link>
                 </NavItem>
                 <NavItem>
-                  <Link className='p-3' to='who' smooth >
+                  <Link className='px-3' to='who' smooth >
                 ใครมาพูด
                   </Link>
                 </NavItem>
                 <NavItem>
-                  <Link className='p-3' to='where' smooth>
+                  <Link className='px-3' to='where' smooth>
                 จัดที่ไหน
                   </Link>
                 </NavItem>

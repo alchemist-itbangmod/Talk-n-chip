@@ -10,7 +10,7 @@ const Landing = styled.div`
 
 const LoginSection = () => (
   <Landing className='pb-3'>
-    <Container class='.col-'>
+    <Container>
       <Container className='mr-6 ml-auto '>
         <Row >
           <Col >

@@ -9,7 +9,6 @@ import { fas } from "@fortawesome/free-solid-svg-icons"
 library.add(fas)
 
 const SessionContainer = styled(Container)`
-  background-color: #F1BE42;
   min-height: calc(105vh - 200px - 100px);
 `
 
@@ -23,10 +22,6 @@ const InnerSessionContainer = styled(Container)`
   p {
     font-size: 1.75rem;
   }
-`
-const AlertStyled = styled(Alert)`
-  padding-left: 27em;
- 
 `
 const CardTitleStyled = styled(CardTitle)`
   color: #64342F;
@@ -83,9 +78,9 @@ class SpeakerContainer extends React.Component {
           ))
         }
         <Col className='justify-content-center'>
-          <AlertStyled color='danger' isOpen={this.state.visible} toggle={this.onDismiss}>
+          <Alert className='text-center' color='danger' isOpen={this.state.visible} toggle={this.onDismiss}>
              ต้อง Login ก่อนถึงจะเห็นหัวข้อน่ะ!!
-          </AlertStyled>
+          </Alert>
         </Col>
       </Fragment>
     )
