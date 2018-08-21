@@ -3,9 +3,13 @@ import styled from "styled-components"
 import { db, getAll } from "../../tools/firebasehelper"
 import Button from "../core/Button"
 import { Card, CardBody, CardTitle, CardSubtitle, Alert, Container, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input } from "reactstrap"
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { fas } from "@fortawesome/free-solid-svg-icons"
+
+library.add(fas)
 
 const SessionContainer = styled(Container)`
-  background-color: #F1BE42;
   min-height: calc(105vh - 200px - 100px);
 `
 
@@ -19,9 +23,6 @@ const InnerSessionContainer = styled(Container)`
   p {
     font-size: 1.75rem;
   }
-`
-const AlertStyled = styled(Alert)`
- 
 `
 const CardTitleStyled = styled(CardTitle)`
   color: #64342F;
@@ -178,6 +179,11 @@ class SpeakerContainer extends React.Component {
           ))
 
         }
+        <Col className='justify-content-center'>
+          <Alert className='text-center' color='danger' isOpen={this.state.visible} toggle={this.onDismiss}>
+             ต้อง Login ก่อนถึงจะเห็นหัวข้อน่ะ!!
+          </Alert>
+        </Col>
         <Form onSubmit={this.submit}>
           <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
             <ModalHeader toggle={this.toggle}>จะแก้ไขอะไรดีน่ะ ?</ModalHeader>
@@ -216,11 +222,15 @@ const CardSubmit = ({ speaker: {topic, date}, deleteTopic, index, editTopic }) =
       <div className='d-flex justify-content-between align-items-center pt-4'>
         <CardSubtitleStyled className='text-left'>{date}</CardSubtitleStyled>
         <div>
-          <button type='button' onClick={() => { deleteTopic(index) }} className='btn btn-default mx-1'>
-            <span className='glyphicon glyphicon-star'>D</span>
+          <button type='button' className='btn btn-default mx-1'>
+            <div>
+              <FontAwesomeIcon icon='trash-alt' />
+            </div>
           </button>
-          <button type='button' onClick={() => { editTopic(index) }} className='btn btn-default mx-1'>
-            <span className='glyphicon glyphicon-star'>E</span>
+          <button type='button' className='btn btn-default mx-1'>
+            <div>
+              <FontAwesomeIcon icon='pen' />
+            </div>
           </button>
         </div>
       </div>

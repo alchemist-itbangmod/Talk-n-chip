@@ -1,5 +1,5 @@
 import React from "react"
-import {Container, Row, Col, Card as DefaultCard, CardText, CardBody, CardTitle as DefaultCardTitle} from "reactstrap"
+import {Container, Row, Col, Card as DefaultCard, CardBody, CardTitle as DefaultCardTitle} from "reactstrap"
 import styled from "styled-components"
 
 const Landing = styled(Container)`
@@ -10,8 +10,11 @@ const Landing = styled(Container)`
 `
 const Card = styled(DefaultCard)`
   border: 2px solid #000;
-  border-radius: .2em;
-  width: 80%;
+  margin-top: -15vh;
+  border-radius: 5px;
+  background-color: #ffffff;
+  width: 540px;
+
 `
 const CardLocation = styled(DefaultCard)`
   border: 0px solid transparent;
@@ -24,14 +27,17 @@ const CardLocation = styled(DefaultCard)`
 `
 
 const CardTitle = styled(DefaultCardTitle)`
-  color: #f8bc00;
+  font-size: 79px;
   font-weight: bold;
-  font-size: 5rem;
-  @media (max-width: 1196px) {
-    font-size: 4rem;
-  }
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: right;
+  color: #f8bc00;
   @media (max-width: 768px) {
-    font-size: 2.1rem;
+    font-size: 34px;
+    text-align: center;
   }
 `
 
@@ -81,16 +87,25 @@ const Session = styled.p`
 `
 const Faculty = styled.h3`
   color: #f8bc00;
+  font-size: 32px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: right;
+  color: #f8bc00;
   @media (max-width: 768px) {
-    text-align: left;
+    font-size: 20px;
+    text-align: center;
   }
 `
 const Describe = styled.p`
   color: #fff;
-  font-size: 22px;
+  font-size: 26px;
   @media (max-width: 768px) {
-    text-align: left;
-    font-size: 14px;
+    text-align: center;
+    font-size: 20px;
   }
 `
 
@@ -98,32 +113,36 @@ const Schedule = () => (
   <Landing fluid className='py-5'>
     <Container>
       <Row>
-        <Col xs={12} md={6} lg={6} className='d-flex justify-content-center'>
-          <Card className='mt-2'>
+        <Col xs={12} lg={6} className='d-flex justify-content-center'>
+          <Card className='py-5 px-4'>
             <CardBody>
-              <CardTitle>
+              <CardTitle className='text-left'>
                 SCHEDULE
               </CardTitle>
-              {Schedules.map((index) => (
-                <CardText key={index} >
-                  <Time>{index.time}</Time>
-                  <Session>{index.schedule}</Session>
-                </CardText>
-              ))}
+              {
+                Schedules.map((data, index) => (
+                  <div key={index}>
+                    <Time>{data.time}</Time>
+                    <Session>{data.schedule}</Session>
+                  </div>
+                ))
+              }
             </CardBody>
           </Card>
         </Col>
-        <Col xs={12} md={6} lg={6} align='center'>
+        <Col xs={12} lg={6} align='center'>
           <CardLocation className='mt-4'>
             <CardBody>
               <CardTitle className='mt-5 mb-3'>
               LOCATION
               </CardTitle>
-              <CardText >
+              <div>
                 <Faculty>คณะเทคโนโลยีสารสนเทศ</Faculty>
-                <Describe>สถาบันเทคโนโลยีพระจอมเกล้า<br />
-              เจ้าคุณทหารลาดกระบัง</Describe>
-              </CardText>
+                <Describe>
+                  สถาบันเทคโนโลยีพระจอมเกล้า<br />
+                  เจ้าคุณทหารลาดกระบัง
+                </Describe>
+              </div>
             </CardBody>
           </CardLocation>
         </Col>

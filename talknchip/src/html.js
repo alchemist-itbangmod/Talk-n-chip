@@ -60,7 +60,6 @@ module.exports = class HTML extends React.Component {
           <link href='/static/css/styles.css' rel='stylesheet' />
           {this.props.headComponents}
           {css}
-          <script src='https://www.gstatic.com/firebasejs/5.4.0/firebase.js' />
 
         </head>
 

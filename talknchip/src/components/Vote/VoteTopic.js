@@ -4,16 +4,12 @@ import { Container, Row, Col } from "reactstrap"
 
 const topic = "มาโหวตหัวข้อสุดชิบกันเถอะ"
 
-const SubmitContainer = styled(Container)`
-  background-color: #f1be42;
-`
-
 const SubmitText = styled.p`
   color: #69302c;
   margin-bottom: 0px;
 `
 const VoteTopic = () => (
-  <SubmitContainer fluid>
+  <Container fluid>
     <Container className='py-1'>
       <Row>
         <Col className='ml-auto'>
@@ -23,7 +19,7 @@ const VoteTopic = () => (
         </Col>
       </Row>
     </Container>
-  </SubmitContainer>
+  </Container>
 )
 
 export default VoteTopic

@@ -11,12 +11,18 @@ const creditText = {
   creditHilight: "Artisan + Alchemist"
 }
 const Credit = styled.p`
+  font-size: 23px;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+
   margin-bottom: 0px;
   span{
+    font-weight: 600;
     color: #f8bc00;
   }
   @media (max-width: 768px) {
-    font-size: 0.90rem;
     text-align: center;
   }
 `
@@ -44,7 +50,7 @@ const Footer = () => (
         <Col xs={12} className='my-1'>
           <Row className='d-flex justify-content-between align-items-center'>
             <Col xs={12} md={6} lg={7} className='py-3'>
-              <Credit>{creditText.creditText} <span><b>{creditText.creditHilight}</b></span></Credit>
+              <Credit>{creditText.creditText} <span>{creditText.creditHilight}</span></Credit>
             </Col>
             <Col xs={12} md={6} lg={5} className='pb-2' align='center'>
               <CreditImage src={images.itforge} />

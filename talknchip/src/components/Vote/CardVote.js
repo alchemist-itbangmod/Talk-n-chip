@@ -2,9 +2,13 @@ import React, { Fragment } from "react"
 import styled from "styled-components"
 import { Card, CardBody, CardTitle, CardSubtitle, Container, Row, Col } from "reactstrap"
 import { db, getAll } from "../../tools/firebasehelper"
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { fas } from "@fortawesome/free-solid-svg-icons"
+
+library.add(fas)
 
 const SessionContainer = styled(Container)`
-  background-color: #F1BE42;
   min-height: calc(105vh - 200px - 100px);
 `
 
@@ -27,7 +31,7 @@ const CardSubtitleStyled = styled(CardSubtitle)`
   color: #282829;
 `
 
-class SpeakerContainer extends React.Component {
+class CardContainer extends React.Component {
   state = {
 
     speakers: [],
@@ -83,7 +87,7 @@ class SpeakerContainer extends React.Component {
         {
           this.state.speakers.map((speaker, index) => (
             <Col key={index} sm='4' className='pb-5' >
-              <CardSubmit speaker={speaker} value={index} />
+              <CardVote speaker={speaker} value={index} />
             </Col>
           ))
         }
@@ -92,7 +96,7 @@ class SpeakerContainer extends React.Component {
   }
 }
 
-const CardSubmit = ({ speaker: {topic, date} }) => (
+const CardVote = ({ speaker: {topic, date} }) => (
   <Card >
     <CardBody>
       <CardTitleStyled className='text-center'>{topic}</CardTitleStyled>
@@ -100,20 +104,22 @@ const CardSubmit = ({ speaker: {topic, date} }) => (
         <CardSubtitleStyled className='text-left'>{date}</CardSubtitleStyled>
         <div>
           <button type='button' className='btn btn-default mx-1'>
-            <span>&hearts;</span>
+            <div>
+              <FontAwesomeIcon icon='heart' />
+            </div>
           </button>
         </div>
       </div>
     </CardBody>
   </Card>
 )
-const CardVote = () => (
+const AllCardVote = () => (
   <SessionContainer fluid className='px-0 pt-5'>
     <InnerSessionContainer >
       <Row>
         <Col xs='12' xl='12'>
           <Row>
-            <SpeakerContainer />
+            <CardContainer />
           </Row>
         </Col>
       </Row>
@@ -121,4 +127,4 @@ const CardVote = () => (
   </SessionContainer>
 )
 
-export default CardVote
+export default AllCardVote

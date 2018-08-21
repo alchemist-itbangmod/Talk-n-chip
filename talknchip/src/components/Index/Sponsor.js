@@ -5,7 +5,6 @@ import styled from "styled-components"
 const Landing = styled.div`
   color:#69302c;
   background-image: url('/static/images/Top.png');
-  background-color:#F1BE42;
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 10vh;

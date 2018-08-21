@@ -6,30 +6,41 @@ const content = {
   header: "เพราะใดๆในโลกล้วนเป็น",
   headerHighlight: "เรื่องน่าเมาท์",
   body: `
-    ในปีนี้ทางชุมชน ITForge KMITL และ Alchemist KMUTT จึงได้ลงเอย
-    มานัดพบ ชวนทุกคนมานั่งเมาท์กินขนมให้เจ็บคอเล่นอย่างเป็นกันเอง
+    ในปีนี้ทางชุมนุม ITForge KMITL และ Alchemist KMUTT จึงได้ลงเอย
+    มานัดพบ ชวนทุกคนมานั่งเม้าท์กินขนมให้เจ็บคอเล่นอย่างเป็นกันเอง
     เพื่อให้ทุกคนได้รู้จักกันมากขึ้นผ่าน Open Session ที่ใครอยากจะแชร์อะไร
-    ก็มาเสนอหัวข้อกันได้แล้วมาฝอยกัน
+    ก็เสนอหัวข้อกันมาได้แล้วมาฝอยกัน
   `
 }
 
 const WhatContainer = styled(Container)`
   background-image: url('/static/images/Bottom.png');
-  background-color: #F1BE42;
   background-repeat: no-repeat;
   background-size: cover;
 `
 
 const WhatHeader = styled.h1`
   color: #69302c;
-
+  font-size: 45px;
   span {
     color: #f8bc00;
+  }
+  @media (max-width: 768px) {
+    font-size: 35px;
   }
 `
 const WhatContent = styled.p`
   margin : 40px;
-  font-size: 24px;
+  font-size: 30px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `
 
 const WhatImage = styled.img`
@@ -37,7 +48,7 @@ const WhatImage = styled.img`
   height: auto;
   border-radius: 50%;
   border: 7px solid #f8bc00;
-  margin: 10px 30px;
+  /* margin: 10px 30px; */
 `
 
 const images = [
@@ -54,13 +65,13 @@ const WhatSection = () => (
           <WhatHeader>{content.header} <span><b>{content.headerHighlight}</b></span></WhatHeader>
           <WhatContent>{content.body}</WhatContent>
           <Row className='d-flex justify-content-between align-items-center'>
-            {
-              images.map((image, index) => (
-                <Col xs={12} lg={4}>
-                  <WhatImage src={image} key={index} />
-                </Col>
-              ))
-            }
+            <Col xs={12} sm={12} lg={12}>
+              {
+                images.map((image, index) => (
+                  <WhatImage src={image} key={index} className='m-5' />
+                ))
+              }
+            </Col>
           </Row>
         </Col>
       </Row>
