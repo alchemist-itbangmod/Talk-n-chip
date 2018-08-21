@@ -54,16 +54,27 @@ const SessionContainer = styled(Container)`
 `
 
 const InnerSessionContainer = styled(Container)`
-  padding: 4em 0 7em;
+  padding: 4em 15px 7em;
   h1 {
+    font-size: 45px;
     font-weight: 500;
+    @media (max-width: 768px) {
+      font-size: 35px;
+    }
   }
   span {
     font-weight: 700;
   }
   p {
-    font-size: 1.70rem;
     color: #525252;
+    font-size: 30px;
+    @media (max-width: 768px) {
+      font-size: 20px;
+      margin: 0 auto;
+    }
+  }
+  @media (max-width: 768px) {
+    text-align: center;
   }
 `
 
@@ -83,6 +94,9 @@ const AvatarContainer = styled.div`
   }
   h4 {
     color: #525252;
+  }
+  @media (max-width: 768px) {
+    text-align: center;
   }
 `
 
@@ -110,7 +124,7 @@ const SpeakerContainer = () => (
   <Fragment>
     {
       speakers.map((speaker, index) => (
-        <Col key={index} xs={12} lg={6} className='pb-5' >
+        <Col key={index} xs={12} md={6} className='pb-5' >
           <Avatar speaker={speaker} />
         </Col>
       ))
@@ -122,7 +136,7 @@ const MainSession = () => (
   <SessionContainer fluid className='px-0 pt-5'>
     <InnerSessionContainer>
       <Row>
-        <Col className='py-5' lg={5}>
+        <Col className='py-5' xs={12} lg={5}>
           <h1>{content.header}</h1>
           <h1><span>{content.headerHighlight}</span></h1>
           <Content>{content.body}</Content>

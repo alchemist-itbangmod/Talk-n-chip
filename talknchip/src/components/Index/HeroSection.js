@@ -26,6 +26,9 @@ const Text = styled.h1`
   line-height: 1.35;
   letter-spacing: normal;
   color: #69302c;
+  @media (max-width: 768px) {
+    font-size: 35px;
+  }
 `
 
 const SubText = styled.div`
@@ -40,6 +43,9 @@ const Date = styled.p`
   line-height: normal;
   letter-spacing: normal;
   color: #69302c;
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `
 
 const IndexPage = () => (
