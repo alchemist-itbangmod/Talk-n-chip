@@ -20,9 +20,6 @@ const Link = styled(DefaultLink)`
 
 const Navbar = styled(DefaultNavbar)`
   padding: 1em;
-  @media (max-width: 414px){
-    display: none;
-  }
 `
 const Navlink = styled(NavLink)`
   color:#69302c;
@@ -62,25 +59,19 @@ export default class NavBar extends React.Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className='mr-auto ml-auto' navbar>
                 <NavItem>
-                  <Navlink>
-                    <Link to='what' smooth >
+                  <Link className='p-3' to='what' smooth >
                   คืออะไร
-                    </Link>
-                  </Navlink>
+                  </Link>
                 </NavItem>
                 <NavItem>
-                  <Navlink>
-                    <Link to='who' smooth >
+                  <Link className='p-3' to='who' smooth >
                 ใครมาพูด
-                    </Link>
-                  </Navlink>
+                  </Link>
                 </NavItem>
                 <NavItem>
-                  <Navlink>
-                    <Link to='where' smooth>
+                  <Link className='p-3' to='where' smooth>
                 จัดที่ไหน
-                    </Link>
-                  </Navlink>
+                  </Link>
                 </NavItem>
               </Nav>
               <Navlink href='../Submit'>
