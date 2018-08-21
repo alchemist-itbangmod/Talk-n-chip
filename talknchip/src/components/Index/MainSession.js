@@ -54,6 +54,7 @@ const SessionContainer = styled(Container)`
 `
 
 const InnerSessionContainer = styled(Container)`
+  padding: 4em 0 7em;
   h1 {
     font-weight: 500;
   }
