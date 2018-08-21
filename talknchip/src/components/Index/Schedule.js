@@ -1,5 +1,5 @@
 import React from "react"
-import {Container, Row, Col, Card as DefaultCard, CardText, CardBody, CardTitle as DefaultCardTitle} from "reactstrap"
+import {Container, Row, Col, Card as DefaultCard, CardBody, CardTitle as DefaultCardTitle} from "reactstrap"
 import styled from "styled-components"
 
 const Landing = styled(Container)`
@@ -97,7 +97,6 @@ const Faculty = styled.h3`
   letter-spacing: normal;
   text-align: right;
   color: #f8bc00;
-  
   @media (max-width: 768px) {
     text-align: left;
   }
@@ -122,10 +121,10 @@ const Schedule = () => (
                 SCHEDULE
               </CardTitle>
               {Schedules.map((index) => (
-                <CardText key={index} >
+                <div key={index}>
                   <Time>{index.time}</Time>
                   <Session>{index.schedule}</Session>
-                </CardText>
+                </div>
               ))}
             </CardBody>
           </Card>
@@ -136,13 +135,13 @@ const Schedule = () => (
               <CardTitle className='mt-5 mb-3'>
               LOCATION
               </CardTitle>
-              <CardText >
+              <div>
                 <Faculty>คณะเทคโนโลยีสารสนเทศ</Faculty>
                 <Describe>
                   สถาบันเทคโนโลยีพระจอมเกล้า<br />
                   เจ้าคุณทหารลาดกระบัง
                 </Describe>
-              </CardText>
+              </div>
             </CardBody>
           </CardLocation>
         </Col>

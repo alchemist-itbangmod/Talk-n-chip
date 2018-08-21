@@ -42,7 +42,7 @@ const WhatImage = styled.img`
   height: auto;
   border-radius: 50%;
   border: 7px solid #f8bc00;
-  margin: 10px 30px;
+  /* margin: 10px 30px; */
 `
 
 const images = [
@@ -59,13 +59,13 @@ const WhatSection = () => (
           <WhatHeader>{content.header} <span><b>{content.headerHighlight}</b></span></WhatHeader>
           <WhatContent>{content.body}</WhatContent>
           <Row className='d-flex justify-content-between align-items-center'>
-            {
-              images.map((image, index) => (
-                <Col xs={12} lg={4}>
-                  <WhatImage src={image} key={index} />
-                </Col>
-              ))
-            }
+            <Col xs={12} sm={12} lg={12}>
+              {
+                images.map((image, index) => (
+                  <WhatImage src={image} key={index} className='m-5' />
+                ))
+              }
+            </Col>
           </Row>
         </Col>
       </Row>
