@@ -3,7 +3,6 @@ import { Modal, ModalHeader, ModalBody, ModalFooter, Alert, Form, FormGroup, Lab
 import Button from "../core/Button"
 import { db } from "../../tools/firebasehelper"
 import styled from "styled-components"
-
 const AlertStyled = styled(Alert)`
   padding-left: 10em;
   padding-right: 10em;
@@ -18,7 +17,6 @@ export default class Modals extends React.Component {
       description: "",
       telno: "",
       isOpen: false,
-      message: "",
       name: "",
       photo: "",
       date: null
@@ -50,7 +48,7 @@ export default class Modals extends React.Component {
       var nd = new Date()
       var d = nd.getDate()
       var m = nd.getMonth()
-      this.state.date = "เสนอเมื่อ" + d + "/" + m
+      this.state.date = "เสนอเมื่อ " + d + "|" + m
     }
     submit = (e) => {
       if (Topic.value === "" || Description.value === "" || Telno.value === "") {
@@ -81,7 +79,7 @@ export default class Modals extends React.Component {
               date: Topics.date,
               votecount: 0
             })
-          db.ref("/topics/" + Topics.name + "_" + Topics.topic)
+          db.ref("/topics/" + Topics.date + "__" + Topics.name + "__" + Topics.topic)
             .set({
               name: Topics.name,
               photo: Topics.photo,
@@ -118,7 +116,6 @@ export default class Modals extends React.Component {
           <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
             <ModalHeader toggle={this.toggle}>จะเสนออะไรดีน่ะ ?</ModalHeader>
             <ModalBody >
-
               <Form>
                 <FormGroup>
                   <Label for='Topic'>ชื่อหัวข้อ</Label>
