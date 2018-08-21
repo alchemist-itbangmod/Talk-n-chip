@@ -2,6 +2,11 @@ import React, { Fragment } from "react"
 import styled from "styled-components"
 import { Card, CardBody, CardTitle, CardSubtitle, Alert, Container, Row, Col } from "reactstrap"
 import { db, getAll } from "../../tools/firebasehelper"
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { fas } from "@fortawesome/free-solid-svg-icons"
+
+library.add(fas)
 
 const SessionContainer = styled(Container)`
   background-color: #F1BE42;
@@ -95,10 +100,14 @@ const CardSubmit = ({ speaker: {topic, date} }) => (
         <CardSubtitleStyled className='text-left'>{date}</CardSubtitleStyled>
         <div>
           <button type='button' className='btn btn-default mx-1'>
-            <span className='glyphicon glyphicon-star'>D</span>
+            <div>
+              <FontAwesomeIcon icon='trash-alt' />
+            </div>
           </button>
           <button type='button' className='btn btn-default mx-1'>
-            <span className='glyphicon glyphicon-star'>E</span>
+            <div>
+              <FontAwesomeIcon icon='pen' />
+            </div>
           </button>
         </div>
       </div>
