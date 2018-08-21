@@ -25,6 +25,9 @@ const WhatHeader = styled.h1`
   span {
     color: #f8bc00;
   }
+  @media (max-width: 768px) {
+    font-size: 35px;
+  }
 `
 const WhatContent = styled.p`
   margin : 40px;
@@ -35,6 +38,9 @@ const WhatContent = styled.p`
   line-height: normal;
   letter-spacing: normal;
   text-align: center;
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `
 
 const WhatImage = styled.img`
