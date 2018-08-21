@@ -9,7 +9,6 @@ import { fas } from "@fortawesome/free-solid-svg-icons"
 library.add(fas)
 
 const SessionContainer = styled(Container)`
-  background-color: #F1BE42;
   min-height: calc(105vh - 200px - 100px);
 `
 
