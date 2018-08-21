@@ -37,6 +37,7 @@ class SpeakerContainer extends React.Component {
     topics: [],
     speakers: [],
     visible: false,
+    visible2: false,
     modal: false,
     isOpen: false,
     userId: undefined,
@@ -48,7 +49,7 @@ class SpeakerContainer extends React.Component {
   }
   onDismiss = this.onDismiss.bind(this)
   onDismiss () {
-    this.setState({ visible: false })
+    this.setState({ visible: false, visible2: false })
   }
   toggle = (index) => {
     this.state.indexofDelete = index
@@ -128,7 +129,7 @@ class SpeakerContainer extends React.Component {
     const uid = window.localStorage.getItem("uid")
 
     if (uid === null || uid === undefined) {
-      this.setState({ visible: true })
+      this.setState({ visible2: true })
     } else {
       try {
         getAll("topics/" + uid + "/").on("value", topicsnap => {
@@ -180,7 +181,7 @@ class SpeakerContainer extends React.Component {
 
         }
         <Col className='justify-content-center'>
-          <Alert className='text-center' color='danger' isOpen={this.state.visible} toggle={this.onDismiss}>
+          <Alert className='text-center' color='danger' isOpen={this.state.visible2} toggle={this.onDismiss}>
              ต้อง Login ก่อนถึงจะเห็นหัวข้อน่ะ!!
           </Alert>
         </Col>
@@ -201,9 +202,9 @@ class SpeakerContainer extends React.Component {
                 <Input type='number' name='telno' id='Telno' />
               </FormGroup>
             </ModalBody>
-            <AlertStyled color='success' isOpen={this.state.visible} toggle={this.onDismiss}>
+            <Alert color='success' isOpen={this.state.visible} toggle={this.onDismiss}>
                  ส่งหัวข้อสุดชิบสำเร็จ
-            </AlertStyled>
+            </Alert>
             <ModalFooter>
               <input type='submit' onClick={this.submit} />
               <Button color='secondary' onClick={this.toggle}>ยกเลิก</Button>
@@ -222,12 +223,12 @@ const CardSubmit = ({ speaker: {topic, date}, deleteTopic, index, editTopic }) =
       <div className='d-flex justify-content-between align-items-center pt-4'>
         <CardSubtitleStyled className='text-left'>{date}</CardSubtitleStyled>
         <div>
-          <button type='button' className='btn btn-default mx-1'>
+          <button type='button' onClick={() => { deleteTopic(index) }} className='btn btn-default mx-1'>
             <div>
               <FontAwesomeIcon icon='trash-alt' />
             </div>
           </button>
-          <button type='button' className='btn btn-default mx-1'>
+          <button type='button' onClick={() => { editTopic(index) }} className='btn btn-default mx-1'>
             <div>
               <FontAwesomeIcon icon='pen' />
             </div>
