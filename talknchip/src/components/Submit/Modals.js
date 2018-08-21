@@ -51,6 +51,7 @@ export default class Modals extends React.Component {
       this.state.date = "เสนอเมื่อ " + d + "|" + m
     }
     submit = (e) => {
+      e.preventDefault()
       if (Topic.value === "" || Description.value === "" || Telno.value === "") {
         this.state.visible3 = true
         setTimeout(() => { this.setState({ visible3: false }) }, 2000)
@@ -63,31 +64,36 @@ export default class Modals extends React.Component {
         const Topics = {
           name: this.state.name,
           photo: this.state.photo,
+          uid: this.state.userId,
           topic: Topic.value,
           description: Description.value,
           telno: Telno.value,
           date: this.state.date
         }
         try {
-          db.ref("/users/" + this.state.userId + "/" + Topics.topic)
+          db.ref("/users/" + this.state.userId)
             .set({
               name: Topics.name,
               photo: Topics.photo,
-              topic: Topics.topic,
-              description: Topics.description,
               telno: Topics.telno,
-              date: Topics.date,
-              votecount: 0
+              createAt: Topics.date,
+              updateAt: Topics.date,
+              uid: Topics.uid
+
             })
-          db.ref("/topics/" + Topics.date + "__" + Topics.name + "__" + Topics.topic)
+          db.ref("/topics/" + this.state.userId + "/" + Topics.topic)
             .set({
-              name: Topics.name,
-              photo: Topics.photo,
+              uid: Topics.uid,
               topic: Topics.topic,
               description: Topics.description,
-              telno: Topics.telno,
-              date: Topics.date,
-              votecount: 0
+              createAt: Topics.date,
+              updateAt: Topics.date
+            })
+          db.ref("/votes/" + this.state.userId + "/" + Topics.topic)
+            .set({
+              uid: Topics.uid,
+              topicid: Topics.uid + "_" + Topics.topic,
+              createAt: Topics.date
             })
         } catch (e) {
           console.log(e)
@@ -95,7 +101,7 @@ export default class Modals extends React.Component {
         this.state.visible2 = true
         setTimeout(() => { this.setState({ visible2: false, modal: false }) }, 2000)
         setTimeout(() => {
-          window.location.reload()
+          // window.location.reload()
         }, 3000)
       }
     }
@@ -115,32 +121,29 @@ export default class Modals extends React.Component {
           <Button color='danger' onClick={this.toggle}>{this.props.buttonLabel}เสนอหัวข้อใหม่</Button>
           <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
             <ModalHeader toggle={this.toggle}>จะเสนออะไรดีน่ะ ?</ModalHeader>
-            <ModalBody >
-              <Form>
+            <Form onSubmit={this.submit}>
+              <ModalBody >
                 <FormGroup>
                   <Label for='Topic'>ชื่อหัวข้อ</Label>
-                  <Input type='text' name='topic' id='Topic' />
+                  <Input type='text' name='topic' id='Topic' required />
                 </FormGroup>
                 <FormGroup>
                   <Label for='Description'>คำอธิบาย</Label>
-                  <Input type='textarea' name='description' id='Description' />
+                  <Input type='textarea' name='description' id='Description' required />
                 </FormGroup>
                 <FormGroup>
                   <Label for='Telno'>เบอร์โทรศัพท์</Label>
-                  <Input type='number' name='telno' id='Telno' />
+                  <Input type='number' name='telno' id='Telno' required />
                 </FormGroup>
-              </Form>
-            </ModalBody>
-            <AlertStyled color='danger' isOpen={this.state.visible3} toggle={this.onDismiss}>
-             โปรดกรอกข้อมูลให้ครบด้วย
-            </AlertStyled>
-            <AlertStyled color='success' isOpen={this.state.visible2} toggle={this.onDismiss}>
+              </ModalBody>
+              <AlertStyled color='success' isOpen={this.state.visible2} toggle={this.onDismiss}>
                  ส่งหัวข้อสุดชิบสำเร็จ
-            </AlertStyled>
-            <ModalFooter>
-              <Button color='primary' onClick={this.submit}>ส่งหัวข้อ</Button>{" "}
-              <Button color='secondary' onClick={this.toggle}>ยกเลิก</Button>
-            </ModalFooter>
+              </AlertStyled>
+              <ModalFooter>
+                <input type='submit' onClick={this.submit} />
+                <Button color='secondary' onClick={this.toggle}>ยกเลิก</Button>
+              </ModalFooter>
+            </Form>
           </Modal>
         </Fragment>
       )

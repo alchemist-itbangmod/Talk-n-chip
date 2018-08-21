@@ -30,16 +30,43 @@ const CardSubtitleStyled = styled(CardSubtitle)`
 class SpeakerContainer extends React.Component {
   state = {
 
-    speakers: [
-
-    ]
+    speakers: [],
+    speakersTemp: [],
+    votes: []
   }
   fechData = () => {
-    getAll("topics/").once("value").then(topicSnapshot => {
-      console.log(topicSnapshot.val())
-      const speakers = Object.values(topicSnapshot.val())
-      this.setState({ speakers })
-      console.log(this.state.speakers)
+    getAll("topics/").on("value", topicssnap => {
+      try {
+        let topicssnapobj = Object.values(topicssnap.val())
+        this.state.speakersTemp = []
+        for (let i = 0; i <= topicssnapobj.length; i++) {
+          let tempobj = Object.values(topicssnapobj[i])
+          try {
+            for (let z = 0; z < tempobj.length; z++) {
+              this.state.speakersTemp.push(tempobj[z])
+            }
+          } catch (e) {
+            console.log(e)
+          }
+        }
+
+        this.setState({
+          speakers: this.state.speakersTemp
+        })
+      } catch (e) {
+        this.setState({
+          speakers: this.state.speakersTemp
+        })
+      }
+    }
+    )
+    getAll("votes/").on("value", votessnap => {
+      try {
+        let votess = Object.values(votessnap.val())
+        this.setState({ votess })
+      } catch (e) {
+
+      }
     }
     )
   }
