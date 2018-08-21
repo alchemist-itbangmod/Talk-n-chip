@@ -19,7 +19,6 @@ const Link = styled(DefaultLink)`
 `
 
 const Navbar = styled(DefaultNavbar)`
-  background-color: #F1BE42;
   padding: 1em;
   @media (max-width: 414px){
     display: none;

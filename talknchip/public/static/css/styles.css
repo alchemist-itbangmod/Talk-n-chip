@@ -1,3 +1,6 @@
 body {
   font-family: 'Athiti', sans-serif;
+  background-image: url(../images/Pattern.png);
+  background-color: #F1BE42;
+  background-attachment: fixed;
 }

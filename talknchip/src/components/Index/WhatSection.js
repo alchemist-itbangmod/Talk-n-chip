@@ -15,7 +15,6 @@ const content = {
 
 const WhatContainer = styled(Container)`
   background-image: url('/static/images/Bottom.png');
-  background-color: #F1BE42;
   background-repeat: no-repeat;
   background-size: cover;
 `

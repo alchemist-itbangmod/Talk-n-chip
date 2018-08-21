@@ -48,8 +48,6 @@ const speakers = [
 ]
 
 const SessionContainer = styled(Container)`
-  background-image: url('/static/images/Pattern.png');
-  background-color: #F1BE42;
   background-repeat: no-repeat;
   background-size: cover;
   color: #64342F;

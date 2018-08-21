@@ -14,11 +14,6 @@ const LinkTo = styled(Link)`
 const Landing = styled.div`
   color:#69302c;
   font-weight: 500;
-  background-image: url('/static/images/Pattern.png');
-  background-color:#F1BE42;
-  background-size: cover;
-  background-repeat: no-repeat;
-  /* height: 100vh; */
 `
 const Text = styled.h1`
   margin-bottom: 3%;

@@ -20,9 +20,9 @@ const DownButton = styled(Button)`
 const Landing = styled.div`
   color:#69302c;
   font-weight: bold;
-  background-color:#F1BE42;
   min-height: 10vh;
   background-image: url('/static/images/Pattern.png');
+  background-color: #F1BE42;
   background-repeat: no-repeat;
   background-size: cover;
 `
