@@ -6,7 +6,6 @@ import NavBarLogin from "../Core/NavbarSubmit.js"
 const Landing = styled.div`
   color:#69302c;
   font-weight: 500;
-  background-color:#F1BE42;
 `
 
 const LoginSection = () => (

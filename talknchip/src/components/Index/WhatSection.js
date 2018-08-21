@@ -6,30 +6,41 @@ const content = {
   header: "เพราะใดๆในโลกล้วนเป็น",
   headerHighlight: "เรื่องน่าเมาท์",
   body: `
-    ในปีนี้ทางชุมชน ITForge KMITL และ Alchemist KMUTT จึงได้ลงเอย
-    มานัดพบ ชวนทุกคนมานั่งเมาท์กินขนมให้เจ็บคอเล่นอย่างเป็นกันเอง
+    ในปีนี้ทางชุมนุม ITForge KMITL และ Alchemist KMUTT จึงได้ลงเอย
+    มานัดพบ ชวนทุกคนมานั่งเม้าท์กินขนมให้เจ็บคอเล่นอย่างเป็นกันเอง
     เพื่อให้ทุกคนได้รู้จักกันมากขึ้นผ่าน Open Session ที่ใครอยากจะแชร์อะไร
-    ก็มาเสนอหัวข้อกันได้แล้วมาฝอยกัน
+    ก็เสนอหัวข้อกันมาได้แล้วมาฝอยกัน
   `
 }
 
 const WhatContainer = styled(Container)`
   background-image: url('/static/images/Bottom.png');
-  background-color: #F1BE42;
   background-repeat: no-repeat;
   background-size: cover;
 `
 
 const WhatHeader = styled.h1`
   color: #69302c;
-
+  font-size: 45px;
   span {
     color: #f8bc00;
+  }
+  @media (max-width: 768px) {
+    font-size: 35px;
   }
 `
 const WhatContent = styled.p`
   margin : 40px;
-  font-size: 24px;
+  font-size: 30px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `
 
 const WhatImage = styled.img`
