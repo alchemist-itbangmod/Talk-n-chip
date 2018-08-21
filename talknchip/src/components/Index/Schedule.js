@@ -119,12 +119,14 @@ const Schedule = () => (
               <CardTitle className='text-left'>
                 SCHEDULE
               </CardTitle>
-              {Schedules.map((index) => (
-                <div key={index}>
-                  <Time>{index.time}</Time>
-                  <Session>{index.schedule}</Session>
-                </div>
-              ))}
+              {
+                Schedules.map((data, index) => (
+                  <div key={index}>
+                    <Time>{data.time}</Time>
+                    <Session>{data.schedule}</Session>
+                  </div>
+                ))
+              }
             </CardBody>
           </Card>
         </Col>
