@@ -11,6 +11,15 @@ const LinkTo = styled(Link)`
     color: #69302c;
   }
 `
+const LinkButton = styled(Link)`
+  color: #69302c;
+  margin: 0px;
+  &:hover {
+    color: #69302c;
+    text-decoration: none;
+  }
+`
+
 const Landing = styled.div`
   color:#69302c;
   font-weight: 500;
@@ -63,9 +72,9 @@ const IndexPage = () => (
       </Row>
       <Row>
         <Col xs={12} md={4} lg={3} className='m-0'>
-          <LinkTo to='../Submit'>
+          <LinkButton to='../Submit'>
             <Button block>ส่งหัวข้อที่จะไปพูดกันเลย !</Button>
-          </LinkTo>
+          </LinkButton>
         </Col>
         <Col xs={12} md={5} lg={4} className='py-2 mt-1 my-0 pl-1'>
           <SubText>
