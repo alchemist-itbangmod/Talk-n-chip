@@ -55,10 +55,13 @@ const Text = styled.h1`
   span {
     font-size: 45px;
     font-weight: bold;
+    @media (max-width: 768px) {
+      font-size: 35px;
+    }
   }
 
   @media (max-width: 768px) {
-    font-size: 2rem;
+    font-size: 35px;
   }
 `
 const SectionSubmitTopic = () => (

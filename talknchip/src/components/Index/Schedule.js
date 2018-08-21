@@ -35,11 +35,9 @@ const CardTitle = styled(DefaultCardTitle)`
   letter-spacing: normal;
   text-align: right;
   color: #f8bc00;
-  @media (max-width: 1196px) {
-    font-size: 4rem;
-  }
   @media (max-width: 768px) {
-    font-size: 2.1rem;
+    font-size: 34px;
+    text-align: center;
   }
 `
 
@@ -99,15 +97,16 @@ const Faculty = styled.h3`
   color: #f8bc00;
   
   @media (max-width: 768px) {
-    text-align: left;
+    font-size: 20px;
+    text-align: center;
   }
 `
 const Describe = styled.p`
   color: #fff;
   font-size: 26px;
   @media (max-width: 768px) {
-    text-align: left;
-    font-size: 14px;
+    text-align: center;
+    font-size: 20px;
   }
 `
 
@@ -115,7 +114,7 @@ const Schedule = () => (
   <Landing fluid className='py-5'>
     <Container>
       <Row>
-        <Col xs={12} md={6} lg={6} className='d-flex justify-content-center'>
+        <Col xs={12} lg={6} className='d-flex justify-content-center'>
           <Card className='py-5 px-4'>
             <CardBody>
               <CardTitle className='text-left'>
@@ -130,7 +129,7 @@ const Schedule = () => (
             </CardBody>
           </Card>
         </Col>
-        <Col xs={12} md={6} lg={6} align='center'>
+        <Col xs={12} lg={6} align='center'>
           <CardLocation className='mt-4'>
             <CardBody>
               <CardTitle className='mt-5 mb-3'>
