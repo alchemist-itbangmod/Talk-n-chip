@@ -3,11 +3,12 @@ import styled from "styled-components"
 import { Container, Row, Col } from "reactstrap"
 import Modals from "./Modals"
 
-const topic = "หัวข้อที่เสนอ"
+const topic = "หัวข้อที่เสนอของคุณ"
 
-const SubmitText = styled.p`
+const SubmitText = styled.span`
   color: #69302c;
   margin-bottom: 0px;
+  font-size: 24px;
 `
 
 const SubmitTopic = () => (
