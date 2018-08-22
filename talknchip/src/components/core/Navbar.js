@@ -30,6 +30,7 @@ const NavBrand = styled(NavbarBrand)`
 
 const Button = styled.button`
   cursor: pointer;
+  font-weight: 500;
   background-color: transparent;
   color: #69302c;
   border: 2px solid #69302c;
@@ -79,7 +80,7 @@ export default class NavBar extends React.Component {
                   </Link>
                 </NavItem>
               </Nav>
-              <Navlink href='../Submit'>
+              <Navlink href='/submit'>
                 <Button className='fixed-right'>ส่งหัวข้อสุดชิพ</Button>
               </Navlink>
             </Collapse>
