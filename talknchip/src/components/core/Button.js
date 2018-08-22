@@ -10,9 +10,10 @@ const Button = styled(DefaultButton)`
     padding: .7em 1.25em;
     font-size: 21px;
     width: auto;
-    &:hover{
-      background-color: #421714;
+    &:hover, &:active {
+      background-color: #421714 !important;
       text-decoration: none;
+      box-shadow: none !important;
     }
 `
 
