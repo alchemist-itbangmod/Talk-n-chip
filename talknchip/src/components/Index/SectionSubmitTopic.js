@@ -72,11 +72,11 @@ const SectionSubmitTopic = () => (
           <Text>
           อ่านมาขนาดนี้แล้วยังไม่ส่งหัวข้ออีกหรอ ?<span> ส่งเร็ว!</span>
           </Text>
-          <LinkTo to='../Submit'>
+          <LinkTo to='../submit'>
             <DownButton className='my-4'>ส่งหัวข้อที่จะไปพูดกันเลย !</DownButton>
           </LinkTo>
           <span>
-            หรือ <LinkTo to='../Vote'>โหวตหัวข้อตัวเองที่อยากฟัง ></LinkTo>
+            หรือ <LinkTo to='../vote'>โหวตหัวข้อตัวเองที่อยากฟัง ></LinkTo>
           </span>
         </Col>
       </Row>
