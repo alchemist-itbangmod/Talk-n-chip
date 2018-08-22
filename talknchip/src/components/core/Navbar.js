@@ -10,6 +10,7 @@ import {
   NavLink
 } from "reactstrap"
 import * as Scroll from "react-scroll"
+import { push } from "gatsby-link"
 import styled from "styled-components"
 
 const DefaultLink = Scroll.Link
@@ -55,6 +56,9 @@ export default class NavBar extends React.Component {
       isOpen: !this.state.isOpen
     })
   }
+  changeRoute = () => {
+    push("/submit")
+  }
   render () {
     return (
       <Fragment>
@@ -80,8 +84,8 @@ export default class NavBar extends React.Component {
                   </Link>
                 </NavItem>
               </Nav>
-              <Navlink href='/submit'>
-                <Button className='fixed-right'>ส่งหัวข้อสุดชิพ</Button>
+              <Navlink>
+                <Button onClick={this.changeRoute} className='fixed-right'>ส่งหัวข้อสุดชิพ</Button>
               </Navlink>
             </Collapse>
           </Container>
