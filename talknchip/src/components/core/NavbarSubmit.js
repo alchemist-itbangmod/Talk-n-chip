@@ -93,12 +93,9 @@ export default class NavBar extends React.Component {
             <NavBrand href='/' >Talk n' Chip</NavBrand>
             <NavToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.collapsed} navbar>
-              <Nav className='mr-4 ml-auto' navbar>
+              <Nav className='mr-4 ml-auto d-flex align-items-center justify-content-between' navbar>
                 <NavItem>
                   <Navlink >สวัสดี , {this.state.name} </Navlink>
-                </NavItem>
-                <NavItem>
-                  {/* <Navlink >{this.state.name}</Navlink> */}
                 </NavItem>
                 <NavItem>
                   <LoginButton onClick={() => this.login()}>{this.state.buttonText}</LoginButton>
