@@ -1,7 +1,6 @@
 import React from "react"
 import {Container, Row, Col, Card as DefaultCard, CardBody, CardTitle as DefaultCardTitle} from "reactstrap"
 import styled from "styled-components"
-import GoogleMap from "./GoogleMap"
 
 const Landing = styled(Container)`
   min-height: calc(100vh - 200px - 100px);
@@ -153,7 +152,7 @@ const Schedule = () => (
                 </Describe>
               </div>
               <div>
-                <a href="https://goo.gl/maps/gF3W6ewi67r">
+                <a href='https://goo.gl/maps/gF3W6ewi67r' target='_blank'>
                   <MapImage src='static/images/CaptureMap.png' />
                 </a>
               </div>
