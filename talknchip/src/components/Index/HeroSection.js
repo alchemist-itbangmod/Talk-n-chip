@@ -5,12 +5,22 @@ import Button from "../core/Button"
 import styled from "styled-components"
 
 const LinkTo = styled(Link)`
+  cursor: not-allowed;
   color: #69302c;
   margin: 0px;
   &:hover {
     color: #69302c;
   }
 `
+const LinkButton = styled(Link)`
+  color: #69302c;
+  margin: 0px;
+  &:hover {
+    color: #69302c;
+    text-decoration: none;
+  }
+`
+
 const Landing = styled.div`
   color:#69302c;
   font-weight: 500;
@@ -62,15 +72,15 @@ const IndexPage = () => (
         </Col>
       </Row>
       <Row>
-        <Col xs={12} md={4} lg={3} className='m-0'>
-          <LinkTo to='../Submit'>
+        <Col xs={12} md={5} lg={3} className='m-0'>
+          <LinkButton to='/submit'>
             <Button block>ส่งหัวข้อที่จะไปพูดกันเลย !</Button>
-          </LinkTo>
+          </LinkButton>
         </Col>
-        <Col xs={12} md={5} lg={4} className='py-2 mt-1 my-0 pl-1'>
+        <Col xs={12} md={7} lg={9} className='py-2 mt-1 my-0 pl-1'>
           <SubText>
             <span className='mx-3'>หรือ</span>
-            <LinkTo to='../Vote'>{"โหวตหัวข้อตัวเองที่อยากฟัง >"}</LinkTo>
+            <LinkTo to='/'>{"โหวตหัวข้อตัวเองที่อยากฟัง >"}</LinkTo>
           </SubText>
         </Col>
       </Row>

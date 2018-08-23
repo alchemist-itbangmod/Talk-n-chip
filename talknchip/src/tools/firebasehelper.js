@@ -14,13 +14,13 @@ const getOne = (attr, whereCause) => db.ref(`${ref}/${attr}/${whereCause}`)
 
 const insert = (uid, value) => db.ref(`${ref}/${uid}`).set({ ...value })
 
-db.ref("/test")
-  .once("value")
-  .then(snap => {
-  })
-  .catch(err => {
-    console.error(err)
-  })
+// db.ref("/test")
+//   .once("value")
+//   .then(snap => {
+//   })
+//   .catch(err => {
+//     console.error(err)
+//   })
 
 const auth = firebase.auth
 

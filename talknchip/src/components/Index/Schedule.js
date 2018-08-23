@@ -10,7 +10,6 @@ const Landing = styled(Container)`
   background-size: cover;
 `
 const Card = styled(DefaultCard)`
-  border: 2px solid #000;
   margin-top: -15vh;
   border-radius: 5px;
   background-color: #ffffff;

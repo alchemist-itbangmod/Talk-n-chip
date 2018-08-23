@@ -10,6 +10,7 @@ import {
   NavLink
 } from "reactstrap"
 import * as Scroll from "react-scroll"
+import { push } from "gatsby-link"
 import styled from "styled-components"
 
 const DefaultLink = Scroll.Link
@@ -29,11 +30,17 @@ const NavBrand = styled(NavbarBrand)`
 `
 
 const Button = styled.button`
+  cursor: pointer;
+  font-weight: 500;
   background-color: transparent;
   color: #69302c;
   border: 2px solid #69302c;
   border-radius: .1em;
   padding: .5em 1.25em;
+  &:hover{
+    background-color: #69302c;
+    color: #fff;
+  }
 `
 export default class NavBar extends React.Component {
   constructor (props) {
@@ -49,6 +56,9 @@ export default class NavBar extends React.Component {
       isOpen: !this.state.isOpen
     })
   }
+  changeRoute = () => {
+    push("/submit")
+  }
   render () {
     return (
       <Fragment>
@@ -59,23 +69,23 @@ export default class NavBar extends React.Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className='mr-auto ml-auto' navbar>
                 <NavItem>
-                  <Link className='p-3' to='what' smooth >
+                  <Link className='px-3' to='what' smooth >
                   คืออะไร
                   </Link>
                 </NavItem>
                 <NavItem>
-                  <Link className='p-3' to='who' smooth >
+                  <Link className='px-3' to='who' smooth >
                 ใครมาพูด
                   </Link>
                 </NavItem>
                 <NavItem>
-                  <Link className='p-3' to='where' smooth>
+                  <Link className='px-3' to='where' smooth>
                 จัดที่ไหน
                   </Link>
                 </NavItem>
               </Nav>
-              <Navlink href='../Submit'>
-                <Button className='fixed-right'>ส่งหัวข้อสุดชิพ</Button>
+              <Navlink>
+                <Button onClick={this.changeRoute} className='fixed-right'>ส่งหัวข้อสุดชิพ</Button>
               </Navlink>
             </Collapse>
           </Container>
