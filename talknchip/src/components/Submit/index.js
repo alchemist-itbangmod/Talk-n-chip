@@ -68,7 +68,6 @@ class SubmitPage extends React.Component {
         const user = userSnapshot.val()
         return user
       })
-      console.log(userQuery)
       if (userQuery && userQuery.uid) {
         insert(`users/${user.uid}`, { ...userQuery, updatedAt: moment().format() })
       } else {
