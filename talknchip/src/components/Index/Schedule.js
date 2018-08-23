@@ -142,7 +142,7 @@ const Schedule = () => (
               <CardTitle className='mt-5 mb-3'>
               LOCATION
               </CardTitle>
-              <div>
+              <div className='mb-4'>
                 <Faculty>คณะเทคโนโลยีสารสนเทศ</Faculty>
                 <Describe>
                   สถาบันเทคโนโลยีพระจอมเกล้า<br />
