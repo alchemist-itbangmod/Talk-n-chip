@@ -1,26 +1,12 @@
 import firebase from "../credentials/firebase-config"
 
-const ref = "talk-n-chip"
 const db = firebase.database()
 
-const getAll = (collection) => {
-  if (collection) {
-    return db.ref(`${collection}`)
-  }
-  return db.ref(`${ref}`)
-}
+const getAll = (collection) => db.ref(`${collection}`)
 
-const getOne = (attr, whereCause) => db.ref(`${ref}/${attr}/${whereCause}`)
+const getOne = (collection, attr, whereCause) => db.ref(`${collection}/${attr}/${whereCause}`)
 
-const insert = (uid, value) => db.ref(`${ref}/${uid}`).set({ ...value })
-
-// db.ref("/test")
-//   .once("value")
-//   .then(snap => {
-//   })
-//   .catch(err => {
-//     console.error(err)
-//   })
+const insert = (collection, value) => db.ref(`${collection}`).set({ ...value })
 
 const auth = firebase.auth
 
