@@ -88,6 +88,7 @@ export default class Modals extends React.Component {
           ...this.state.topic,
           createdAt: moment().format()
         })
+        insert(`users/${user.uid}`, { ...user, telNo: topic.telNo, updatedAt: moment().format() })
         this.setState({ error: "", message: "เสนอหัวข้อสำเร็จ !" })
         this.toggle()
         setTimeout(() => {
