@@ -70,7 +70,6 @@ const TopicContainer = ({ topics }) => (
               <CardSubmit topic={topic} value={index} />
             </Col>
           ))
-
         }
       </Row>
     </InnerSessionContainer>

@@ -1,7 +1,9 @@
 import React, { Fragment } from "react"
+import styled from 'styled-components'
 import moment from "moment"
 import firebase from "../../credentials/firebase-config"
 import { auth, provider, insert, getAll } from "../../tools/firebasehelper"
+import { Container, Row, Col, Card } from "reactstrap"
 
 import TopicContainer from "./TopicContainer"
 import NavBarLogin from "../Core/NavbarSubmit"
@@ -14,6 +16,10 @@ const getUser = ({ uid, providerData }) => {
     uid
   }
 }
+
+const MessageContainer = styled(Container)`
+  min-height: 75vh;
+`
 
 class SubmitPage extends React.Component {
   state = {
@@ -65,7 +71,17 @@ class SubmitPage extends React.Component {
         <NavBarLogin login={this.login} user={user} buttonText={buttonText} />
         <SubmitTopic user={user} />
         {
-          topics.length > 0 ? <TopicContainer topics={topics} /> : <div>กรุณา Login หรือส่งหัวข้อ</div>
+          topics.length > 0 ? <TopicContainer topics={topics} /> : (
+            <MessageContainer>
+              <Row>
+                <Col xs={12}>
+                  <Card className='mt-5 py-4 text-center'>
+                    <h3>{"กรุณา Login หรือส่งหัวข้อก่อน"}</h3>
+                  </Card>
+                </Col>
+              </Row>
+            </MessageContainer>
+          )
         }
         <Footer />
       </Fragment>
