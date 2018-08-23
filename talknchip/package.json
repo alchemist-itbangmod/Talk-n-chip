@@ -19,6 +19,9 @@
     "now": "serve public/"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.2",
+    "@fortawesome/free-solid-svg-icons": "^5.2.0",
+    "@fortawesome/react-fontawesome": "^0.1.2",
     "babel-plugin-styled-components": "^1.5.1",
     "bootstrap": "^4.1.1",
     "firebase": "4.x",
@@ -26,8 +29,11 @@
     "gatsby-link": "^1.6.46",
     "gatsby-plugin-react-helmet": "^2.0.11",
     "gatsby-plugin-styled-components": "^2.0.11",
+    "i": "^0.3.6",
+    "moment": "^2.22.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-google-maps": "^9.4.5",
     "react-helmet": "^5.2.0",
     "react-scroll": "^1.7.10",
     "reactstrap": "^6.2.0",

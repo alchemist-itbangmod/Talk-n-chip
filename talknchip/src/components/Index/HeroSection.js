@@ -3,45 +3,85 @@ import Link from "gatsby-link"
 import { Container, Row, Col } from "reactstrap"
 import Button from "../core/Button"
 import styled from "styled-components"
-import NavBar from "../Core/Navbar.js"
 
 const LinkTo = styled(Link)`
+  cursor: not-allowed;
   color: #69302c;
+  margin: 0px;
   &:hover {
     color: #69302c;
   }
 `
+const LinkButton = styled(Link)`
+  color: #69302c;
+  margin: 0px;
+  &:hover {
+    color: #69302c;
+    text-decoration: none;
+  }
+`
+
 const Landing = styled.div`
   color:#69302c;
   font-weight: 500;
-  background-color:#F1BE42;
-  height: 100vh;
+  margin-bottom: 5em;
 `
 const Text = styled.h1`
   margin-bottom: 3%;
   margin-top: 10%;
-  font-size: 3rem;
+  font-size: 55px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.35;
+  letter-spacing: normal;
+  color: #69302c;
+  @media (max-width: 768px) {
+    font-size: 35px;
+  }
 `
+
+const SubText = styled.div`
+  font-size: 21px;
+`
+
 const Date = styled.p`
-  font-size: 1.75rem;
+  font-size: 24px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #69302c;
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `
 
 const IndexPage = () => (
-  <Landing>
+  <Landing className='py-2'>
     <Container>
-      <NavBar />
       <Row>
         <Col>
           <Text>
-            ถ้าพูดเยอะจะเจ็บคอแต่ถ้ามา <br /> Talk n' Chip <br />
-            แล้วไม่พูดจะเสียใจ
+            ถ้าพูดเยอะอาจจะเจ็บคอ<br />
+            แต่ถ้ามา Talk n' Chip <br />
+            แล้วพูดไม่พอจะเสียใจ
           </Text>
           <Date>26 สิงหาคม 2018 ณ คณะไอที ลาดกระบัง</Date>
-          <LinkTo to='/index'>
-            <Button>ส่งหัวข้อที่จะไปพูดกันเลย !</Button>
-          </LinkTo>
-          <span className='mx-3'>หรือ</span>
-          <LinkTo to='/404'>โหวตหัวข้อตัวเองที่อยากฟัง ></LinkTo>
+        </Col>
+      </Row>
+      <Row>
+        <Col xs={12} md={5} lg={3} className='m-0'>
+          <LinkButton to='/submit'>
+            <Button block>ส่งหัวข้อที่จะไปพูดกันเลย !</Button>
+          </LinkButton>
+        </Col>
+        <Col xs={12} md={7} lg={9} className='py-2 mt-1 my-0 pl-1'>
+          <SubText>
+            <span className='mx-3'>หรือ</span>
+            <LinkTo to='/'>{"โหวตหัวข้อตัวเองที่อยากฟัง >"}</LinkTo>
+          </SubText>
         </Col>
       </Row>
     </Container>

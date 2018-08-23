@@ -4,37 +4,68 @@ import styled from "styled-components"
 
 const Landing = styled.div`
   color:#69302c;
-  font-weight: bold;
-  background-color:#F1F1F1;
+  background-image: url('/static/images/Top.png');
+  background-size: cover;
+  background-repeat: no-repeat;
   min-height: 10vh;
 `
 const Text = styled.p`
-color:#000;
+  color:#000;
+  margin: 0;
 `
 const Images = {
-  itForge: "/static/images/logoItForge.png",
+  itForge: "/static/images/ITFORGE.png",
   alchemist: "/static/images/logoAlchemist.png"
 }
 const Image = styled.img`
-width: auto;
-max-height: 80px;
-padding: 10px 30px;
+  padding: 0.5em 1.5em;
+  width: auto;
+  max-height: 70px;
+  @media (max-width: 992px) {
+    max-height: 50px;
+    padding: 0 0.5em;
+    margin: 10px 0px;
+  }
+  @media (max-width: 768px) {
+    max-height: 40px;
+    padding: 0 0.5em;
+    margin: 10px 0px;
+  }
+  @media (max-width: 500px) {
+    max-height: 25px;
+    padding: 0 0.5em;
+    margin: 10px 0px;
+  }
+`
+const SponsorCol = styled(Col)`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+`
+const SponsorImageCol = styled(Col)`
+  @media (max-width: 768px) {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
 `
 
 const Sponsor = () => (
   <Landing>
-    <Container>
-      <Row>
-        <Col className='text-center py-5' >
-          <Text >
-            <span className='mr-5'>ด้วยรักจึงจัดให้</span>
-            <Image src={Images.itForge} /> X
-            <Image src={Images.alchemist} />
-          </Text>
-        </Col>
+    <Container className='p-5'>
+      <Row className='py-5'>
+        <SponsorCol xs={12} md={4} lg={{size: 3}}>
+          <Text>ด้วยรักจึงจัดให้จาก</Text>
+        </SponsorCol>
+        <SponsorImageCol xs={12} md={8} lg={7} align='center'>
+          <Image src={Images.itForge} /> X
+          <Image src={Images.alchemist} />
+        </SponsorImageCol>
       </Row>
     </Container>
-
   </Landing>
 )
 
