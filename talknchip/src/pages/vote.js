@@ -1,3 +1,3 @@
-import Vote from "../components/Vote"
+// import Vote from "../components/Vote"
 
-export default Vote
+// export default Vote

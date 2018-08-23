@@ -5,6 +5,7 @@ import Button from "../core/Button"
 import styled from "styled-components"
 
 const LinkTo = styled(Link)`
+  cursor: not-allowed;
   color: #69302c;
   margin: 0px;
   &:hover {
@@ -79,7 +80,7 @@ const IndexPage = () => (
         <Col xs={12} md={7} lg={9} className='py-2 mt-1 my-0 pl-1'>
           <SubText>
             <span className='mx-3'>หรือ</span>
-            <LinkTo to='/vote'>{"โหวตหัวข้อตัวเองที่อยากฟัง >"}</LinkTo>
+            <LinkTo to='/'>{"โหวตหัวข้อตัวเองที่อยากฟัง >"}</LinkTo>
           </SubText>
         </Col>
       </Row>

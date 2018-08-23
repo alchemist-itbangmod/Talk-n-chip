@@ -225,7 +225,7 @@ const CardSubmit = ({ speaker: {topic, date}, deleteTopic, index, editTopic }) =
         <div>
           <button type='button' onClick={() => { deleteTopic(index) }} className='btn btn-default mx-1'>
             <div>
-              <FontAwesomeIcon icon='trash-alt' />
+              <FontAwesomeIcon icon='trash' />
             </div>
           </button>
           <button type='button' onClick={() => { editTopic(index) }} className='btn btn-default mx-1'>

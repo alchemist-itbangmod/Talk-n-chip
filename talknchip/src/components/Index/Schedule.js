@@ -108,6 +108,15 @@ const Describe = styled.p`
   }
 `
 
+const MapImage = styled.img`
+  max-width: 300px;
+  height: auto;
+  border-radius: 2%;
+  @media (max-width: 768px) {
+    max-width: 150px;
+  }
+`
+
 const Schedule = () => (
   <Landing fluid className='py-5'>
     <Container>
@@ -142,6 +151,14 @@ const Schedule = () => (
                   เจ้าคุณทหารลาดกระบัง
                 </Describe>
               </div>
+              <div>
+                <a href='https://goo.gl/maps/gF3W6ewi67r' target='_blank'>
+                  <MapImage src='static/images/CaptureMap.png' />
+                </a>
+              </div>
+              {/* <div>
+                <GoogleMap />
+              </div> */}
             </CardBody>
           </CardLocation>
         </Col>
