@@ -1,5 +1,5 @@
 import React, { Fragment } from "react"
-import styled from 'styled-components'
+import styled from "styled-components"
 import moment from "moment"
 import firebase from "../../credentials/firebase-config"
 import { auth, provider, insert, getAll } from "../../tools/firebasehelper"
@@ -59,7 +59,7 @@ class SubmitPage extends React.Component {
     } else {
       firebase.auth().signOut().then(() => {
         const user = { displayName: "Guest" }
-        this.setState({ user, buttonText: "เข้าสู่ระบบ" })
+        this.setState({ user, buttonText: "เข้าสู่ระบบ", topics: [] })
       })
     }
   }
