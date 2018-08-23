@@ -54,7 +54,6 @@ const WhatImage = styled.img`
   height: auto;
   border-radius: 50%;
   border: 7px solid #f8bc00;
-  /* margin: 10px 30px; */
 `
 
 const images = [
