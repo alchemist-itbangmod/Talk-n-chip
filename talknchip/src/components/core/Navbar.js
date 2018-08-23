@@ -6,7 +6,7 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem,
+  NavItem as DefaultNavItem,
   NavLink
 } from "reactstrap"
 import * as Scroll from "react-scroll"
@@ -17,16 +17,30 @@ const DefaultLink = Scroll.Link
 
 const Link = styled(DefaultLink)`
   cursor: pointer;
+  font-size: 19px;
 `
 
 const Navbar = styled(DefaultNavbar)`
   padding: 1em;
+  background-color: ${props => props.color};
+  transition: .5s;
 `
-const Navlink = styled(NavLink)`
+export const Navlink = styled(NavLink)`
   color:#69302c;
+  font-size: 19px;
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `
 const NavBrand = styled(NavbarBrand)`
   color:#69302c;
+`
+const NavItem = styled(DefaultNavItem)`
+  @media (max-width: 768px) {
+    padding: .7em 0;
+    width: 100%;
+    text-align: center;
+  }
 `
 
 const Button = styled.button`
@@ -37,21 +51,22 @@ const Button = styled.button`
   border: 2px solid #69302c;
   border-radius: .1em;
   padding: .5em 1.25em;
+  font-size: 19px;
   &:hover{
     background-color: #69302c;
     color: #fff;
   }
 `
-export default class NavBar extends React.Component {
-  constructor (props) {
-    super(props)
 
-    this.toggle = this.toggle.bind(this)
-    this.state = {
-      isOpen: false
-    }
+const Img = styled.img`
+  height: 60px;
+`
+export default class NavBar extends React.Component {
+  state = {
+    isOpen: false,
+    color: "transparent"
   }
-  toggle () {
+  toggle = () => {
     this.setState({
       isOpen: !this.state.isOpen
     })
@@ -59,14 +74,31 @@ export default class NavBar extends React.Component {
   changeRoute = () => {
     push("/submit")
   }
+  componentDidMount = () => {
+    document && document.addEventListener("scroll", (e) => {
+      if (window && window.scrollY > 30) {
+        this.setState({
+          color: "#f8bc00"
+        })
+      } else {
+        this.setState({
+          color: "transparent"
+        })
+      }
+    }, true)
+  }
+
   render () {
+    const { children } = this.props
     return (
-      <Fragment>
-        <Navbar expand='md' className='sticky-top' light>
-          <Container>
-            <NavBrand href='#home'>Talk n' Chip</NavBrand>
-            <NavbarToggler onClick={this.toggle} />
-            <Collapse isOpen={this.state.isOpen} navbar>
+      <Navbar color={this.state.color} expand='md' className='sticky-top' light>
+        <Container>
+          <NavBrand href='#home'>
+            <Img src='/static/images/Asset_10.svg' />
+          </NavBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            { children || <Fragment>
               <Nav className='mr-auto ml-auto' navbar>
                 <NavItem>
                   <Link className='px-3' to='what' smooth >
@@ -87,10 +119,11 @@ export default class NavBar extends React.Component {
               <Navlink>
                 <Button onClick={this.changeRoute} className='fixed-right'>ส่งหัวข้อสุดชิพ</Button>
               </Navlink>
-            </Collapse>
-          </Container>
-        </Navbar>
-      </Fragment>
+            </Fragment>
+            }
+          </Collapse>
+        </Container>
+      </Navbar>
     )
   }
 }

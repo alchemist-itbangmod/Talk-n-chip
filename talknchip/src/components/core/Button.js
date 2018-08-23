@@ -5,9 +5,9 @@ const Button = styled(DefaultButton)`
     cursor: pointer;
     background-color:#69302c;
     border:0px solid transparent;
-    border-radius: .1em;
+    border-radius: 3px;
     color: #fff;
-    padding: .7em 1.25em;
+    padding: 0.4em 1.25em;
     font-size: 21px;
     width: auto;
     &:hover, &:active {
