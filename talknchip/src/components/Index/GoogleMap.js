@@ -4,7 +4,7 @@ import { withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 
 class Map extends Component {
   render () {
-    const MapImage = styled.img`
+    const MapImage = styled.div`
       max-width: 300px;
     height: auto;
     border-radius: 2%;
@@ -16,16 +16,16 @@ class Map extends Component {
       <GoogleMap
         defaultCenter={{ lat: 13.730882, lng: 100.781345 }}
         defaultZoom={17}
-      />
+      >
+        <Marker title={"Hello"} position={{ lat: 13.730882, lng: 100.781345 }} />
+      </GoogleMap>
     ))
     return (
       <div >
         <MapLocation
           containerElement={<div style={{ height: "300px", width: "300px" }} />}
           mapElement={<div style={{ height: "100%" }} />}
-        >
-          <Marker title={"Hello"} />
-        </MapLocation>
+        />
       </div>
     )
   }
