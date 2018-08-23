@@ -40,11 +40,11 @@ module.exports = class HTML extends React.Component {
             name='viewport'
             content='width=device-width, initial-scale=1, shrink-to-fit=no'
           />
-          <meta property='og:url' content='http://localhost:8000' />
+          <meta property='og:url' content='https://talknchip.in.th' />
           <meta property='og:type' content='article' />
           <meta property='og:title' content='Let Talk n Chip' />
           <meta property='og:description' content='Share knowlage' />
-          <meta property='og:image' content='http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg' />
+          <meta property='og:image' content='https://talknchip.in.th/static/images/og.png' />
 
           <title>{title}</title>
           <meta name='description' content={description} />
@@ -58,9 +58,9 @@ module.exports = class HTML extends React.Component {
           <link href='https://fonts.googleapis.com/css?family=Athiti:400,500,700' rel='stylesheet' />
           <link href='/static/css/bootstrap.min.css' rel='stylesheet' />
           <link href='/static/css/styles.css' rel='stylesheet' />
+          <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAvI3rn-YqIVDbfpvCgHDitbbEy331d110' />
           {this.props.headComponents}
           {css}
-          <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAvI3rn-YqIVDbfpvCgHDitbbEy331d110' />
 
         </head>
 

@@ -5,8 +5,9 @@ import firebase from "../../credentials/firebase-config"
 import { auth, provider, insert, getAll } from "../../tools/firebasehelper"
 import { Container, Row, Col, Card } from "reactstrap"
 
+import Button from "../core/Button"
+import NavBarLogin from "../core/NavbarSubmit"
 import TopicContainer from "./TopicContainer"
-import NavBarLogin from "../Core/NavbarSubmit"
 import SubmitTopic from "./SubmitTopic"
 import Footer from "../Index/Footer"
 
@@ -29,7 +30,7 @@ class SubmitPage extends React.Component {
   }
 
   componentDidMount () {
-    firebase.auth().onAuthStateChanged(async authUser => {
+    firebase.auth().onAuthStateChanged(authUser => {
       if (authUser) {
         const user = getUser(authUser)
         insert(`users/${user.uid}`, { ...user, updatedAt: moment().format() })
@@ -49,13 +50,14 @@ class SubmitPage extends React.Component {
       }
     })
   }
-  login = async () => {
+  login = () => {
     const { user } = this.state
     if (user.displayName === "Guest") {
-      const userAuth = await auth().signInWithPopup(provider)
-      const user = getUser(userAuth.user)
-      insert(`users/${user.uid}`, { ...user, createdAt: moment().format() })
-      this.setState({ user: { ...user } })
+      auth().signInWithPopup(provider).then(userAuth => {
+        const user = getUser(userAuth.user)
+        insert(`users/${user.uid}`, { ...user, createdAt: moment().format() })
+        this.setState({ user: { ...user } })
+      })
     } else {
       firebase.auth().signOut().then(() => {
         const user = { displayName: "Guest" }
@@ -76,7 +78,13 @@ class SubmitPage extends React.Component {
               <Row>
                 <Col xs={12}>
                   <Card className='mt-5 py-4 text-center'>
-                    <h4>{"กรุณา Login หรือส่งหัวข้อก่อน"}</h4>
+                    <h4>
+                      {
+                        user.displayName === "Guest"
+                          ? <Fragment>{"กรุณา"}<Button className='mx-3' onClick={this.login}>เข้าสู่ระบบ</Button>{"ก่อนเสนอหัวข้อ"}</Fragment>
+                          : <Fragment>{"กรุณาเสนอหัวข้อโดยกดปุ่ม \"เสนอหัวข้อ\" ด้านขวาบน"}</Fragment>
+                      }
+                    </h4>
                   </Card>
                 </Col>
               </Row>

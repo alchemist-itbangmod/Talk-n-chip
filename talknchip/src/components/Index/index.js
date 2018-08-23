@@ -6,7 +6,7 @@ import SectionSubmit from "./SectionSubmitTopic"
 import Schedule from "./Schedule"
 import Footer from "./Footer"
 import Sponsor from "./Sponsor"
-import NavBar from "../Core/Navbar.js"
+import NavBar from "../core/Navbar"
 
 export default () => (
   <Fragment>
