@@ -1,6 +1,15 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: "Talk n Chip #1",
+    description: "",
+    favicon: "/static/images/favicon.png",
+    keywords: "conference",
+    ogTitle: "Talk n Chip #1",
+    ogType: "company",
+    url: "",
+    ogImage: "/static/images/og.png",
+    siteName: "Talk n Chip #1"
   },
-  plugins: ['gatsby-plugin-react-helmet'],
+  pathPrefix: "/talknchip",
+  plugins: ["gatsby-plugin-styled-components"]
 }
