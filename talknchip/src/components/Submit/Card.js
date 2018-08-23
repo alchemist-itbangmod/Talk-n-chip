@@ -101,7 +101,7 @@ const CardSubmit = ({ speaker: {topic, date} }) => (
         <div>
           <button type='button' className='btn btn-default mx-1'>
             <div>
-              <FontAwesomeIcon icon='trash-alt' />
+              <FontAwesomeIcon icon='trash' />
             </div>
           </button>
           <button type='button' className='btn btn-default mx-1'>
