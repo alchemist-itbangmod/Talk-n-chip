@@ -76,7 +76,7 @@ class SubmitPage extends React.Component {
               <Row>
                 <Col xs={12}>
                   <Card className='mt-5 py-4 text-center'>
-                    <h3>{"กรุณา Login หรือส่งหัวข้อก่อน"}</h3>
+                    <h4>{"กรุณา Login หรือส่งหัวข้อก่อน"}</h4>
                   </Card>
                 </Col>
               </Row>

@@ -7,6 +7,9 @@ const SubmitText = styled.span`
   color: #69302c;
   margin-bottom: 0px;
   font-size: 24px;
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 `
 
 const SubmitTopic = ({ user }) => (

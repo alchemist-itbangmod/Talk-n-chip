@@ -27,6 +27,9 @@ const CardTitleStyled = styled(CardTitle)`
   font-size: 24px;
   font-weight: bold;
   color: #69302c;
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 `
 
 const CardSubtitleStyled = styled(CardSubtitle)`

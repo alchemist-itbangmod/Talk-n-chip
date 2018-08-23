@@ -16,7 +16,7 @@ import { library } from "@fortawesome/fontawesome-svg-core"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { fas } from "@fortawesome/free-solid-svg-icons"
 
-import Button from "../core/Button"
+import Button, { ButtonOutline } from "../core/Button"
 import { insert } from "../../tools/firebasehelper"
 import { generateUID } from "../../tools/uid"
 
@@ -25,7 +25,7 @@ library.add(fas)
 const Modal = styled(DefaultModal)`
   margin-top: 20vh;
   .text-center {
-    font-size: 100px;
+    font-size: 60px;
   }
   svg {
     color: #5dca00;
@@ -99,32 +99,33 @@ export default class Modals extends React.Component {
     }
 
     render () {
+      const { user } = this.props
       const { modal, error, message } = this.state
       return (
         <Fragment>
-          <Button onClick={this.toggle}>เสนอหัวข้อ</Button>
+          {user.displayName !== "Guest" && <Button onClick={this.toggle}>เสนอหัวข้อ</Button>}
           <Modal isOpen={modal}>
             <Form onSubmit={this.submit}>
               <ModalHeader toggle={this.toggle}>เสนอหัวข้อที่อยากแชร์</ModalHeader>
               <ModalBody >
                 <FormGroup>
                   <Label for='Topic'>ชื่อหัวข้อ</Label>
-                  <Input onChange={this.handleTopicName} type='text' name='topic' id='Topic' required />
+                  <Input placeholder='กินข้าวกับโค้ดกัน' onChange={this.handleTopicName} type='text' name='topic' id='Topic' required />
                 </FormGroup>
                 <FormGroup>
                   <Label for='Description'>คำอธิบาย</Label>
-                  <Input onChange={this.handleDescription} type='textarea' name='description' id='Description' required />
+                  <Input placeholder='กินข้าวไปหนึ่งคำ และพิมพ์โค้ด 1 ฟังก์ชั่น' onChange={this.handleDescription} type='textarea' name='description' id='Description' required />
                 </FormGroup>
                 <FormGroup>
                   <Label for='Telno'>เบอร์โทรศัพท์</Label>
-                  <Input onChange={this.handleTelno} type='number' name='telno' id='Telno' required />
+                  <Input placeholder="0123456789" onChange={this.handleTelno} type='number' name='telno' id='Telno' required />
                 </FormGroup>
               </ModalBody>
 
               { error && <Alert color='danger'> { error } </Alert> }
               <ModalFooter>
+                <ButtonOutline onClick={this.toggle}>ยกเลิก</ButtonOutline>
                 <Button type='submit'>ส่งหัวข้อ</Button>
-                <Button color='secondary' onClick={this.toggle}>ยกเลิก</Button>
               </ModalFooter>
             </Form>
           </Modal>
