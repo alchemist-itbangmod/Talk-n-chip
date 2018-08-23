@@ -1,19 +1,41 @@
 import React, { Fragment } from "react"
 import moment from "moment"
 import styled from "styled-components"
-import { Modal, ModalHeader, ModalBody, ModalFooter, Alert, Form, FormGroup, Label, Input } from "reactstrap"
+import {
+  Modal as DefaultModal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Alert,
+  Form,
+  FormGroup,
+  Label,
+  Input
+} from "reactstrap"
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { fas } from "@fortawesome/free-solid-svg-icons"
 
 import Button from "../core/Button"
 import { insert } from "../../tools/firebasehelper"
 import { generateUID } from "../../tools/uid"
 
-const AlertStyled = styled(Alert)`
-  padding-left: 10em;
-  padding-right: 10em;
+library.add(fas)
+
+const Modal = styled(DefaultModal)`
+  margin-top: 20vh;
+  .text-center {
+    font-size: 100px;
+  }
+  svg {
+    color: #5dca00;
+  }
 `
+
 export default class Modals extends React.Component {
     state = {
       modal: false,
+      message: "",
       error: "",
       topic: {}
     }
@@ -66,14 +88,18 @@ export default class Modals extends React.Component {
           ...this.state.topic,
           createdAt: moment().format()
         })
-        this.setState({ error: "" })
+        this.setState({ error: "", message: "เสนอหัวข้อสำเร็จ !" })
+        this.toggle()
+        setTimeout(() => {
+          this.setState({ message: "" })
+        }, 1500)
       } else {
         this.setState({ error: "กรุณาข้อมูลกรอกให้ครบ" })
       }
     }
 
     render () {
-      const { modal, error } = this.state
+      const { modal, error, message } = this.state
       return (
         <Fragment>
           <Button onClick={this.toggle}>เสนอหัวข้อ</Button>
@@ -102,6 +128,14 @@ export default class Modals extends React.Component {
               </ModalFooter>
             </Form>
           </Modal>
+          {message && <Modal isOpen={message !== ""}>
+            <ModalBody>
+              <div className='text-center'>
+                <FontAwesomeIcon icon='check-circle' />
+                <h1>{message}</h1>
+              </div>
+            </ModalBody>
+          </Modal>}
         </Fragment>
       )
     }

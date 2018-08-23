@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import moment from "moment"
 import { Card, CardBody, CardTitle, CardSubtitle, Container, Row, Col } from "reactstrap"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -23,23 +24,27 @@ const InnerSessionContainer = styled(Container)`
   }
 `
 const CardTitleStyled = styled(CardTitle)`
-  color: #64342F;
+  font-size: 24px;
+  font-weight: bold;
+  color: #69302c;
 `
 
 const CardSubtitleStyled = styled(CardSubtitle)`
-  color: #282829;
+  font-size: 21px;
+  font-weight: 500;
+  color: #3c3c3c;
 `
 
 const deleteTopic = () => {}
 
 const editTopic = () => {}
 
-const CardSubmit = ({ topic: {title, date} }) => (
+const CardSubmit = ({ topic: {title, createdAt} }) => (
   <Card >
     <CardBody>
-      <CardTitleStyled className='text-center'>{title}</CardTitleStyled>
+      <CardTitleStyled>{title}</CardTitleStyled>
       <div className='d-flex justify-content-between align-items-center pt-4'>
-        <CardSubtitleStyled className='text-left'>{date}</CardSubtitleStyled>
+        <CardSubtitleStyled>{`เสนอเมื่อ ${moment(createdAt).format("DD/MM")}`}</CardSubtitleStyled>
         {/* <button type='button' onClick={() => { deleteTopic(title) }} className='btn btn-default mx-1'>
           <div>
             <FontAwesomeIcon icon='trash' />
