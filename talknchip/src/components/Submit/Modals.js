@@ -118,7 +118,7 @@ export default class Modals extends React.Component {
                 </FormGroup>
                 <FormGroup>
                   <Label for='Telno'>เบอร์โทรศัพท์</Label>
-                  <Input placeholder='0123456789' onChange={this.handleTelno} type='number' name='telno' id='Telno' required />
+                  <Input placeholder='0123456789' pattern='^[0]{1}[0-9]{9}' onChange={this.handleTelno} type='text' name='telno' id='Telno' required />
                 </FormGroup>
               </ModalBody>
 
