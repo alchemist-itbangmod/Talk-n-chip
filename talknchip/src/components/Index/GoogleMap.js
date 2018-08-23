@@ -17,7 +17,7 @@ class Map extends Component {
         defaultCenter={{ lat: 13.730882, lng: 100.781345 }}
         defaultZoom={17}
       >
-        <Marker title={"Hello"} position={{ lat: 13.730882, lng: 100.781345 }} />
+        <Marker position={{ lat: 13.730882, lng: 100.781345 }} />
       </GoogleMap>
     ))
     return (
