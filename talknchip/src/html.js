@@ -60,6 +60,7 @@ module.exports = class HTML extends React.Component {
           <link href='/static/css/styles.css' rel='stylesheet' />
           {this.props.headComponents}
           {css}
+          <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAvI3rn-YqIVDbfpvCgHDitbbEy331d110' />
 
         </head>
 
