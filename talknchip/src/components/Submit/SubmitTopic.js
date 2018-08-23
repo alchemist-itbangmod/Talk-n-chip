@@ -9,13 +9,13 @@ const SubmitText = styled.span`
   font-size: 24px;
 `
 
-const SubmitTopic = () => (
+const SubmitTopic = ({ user }) => (
   <Container fluid>
     <Container className='py-1'>
       <Row>
         <Col className='d-flex justify-content-between align-items-center'>
           <SubmitText>{"หัวข้อที่เสนอของคุณ"}</SubmitText>
-          <Modals />
+          <Modals user={user} />
         </Col>
       </Row>
     </Container>

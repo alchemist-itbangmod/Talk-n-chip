@@ -1,8 +1,11 @@
 import React, { Fragment } from "react"
+import moment from "moment"
+import styled from "styled-components"
 import { Modal, ModalHeader, ModalBody, ModalFooter, Alert, Form, FormGroup, Label, Input } from "reactstrap"
+
 import Button from "../core/Button"
 import { insert } from "../../tools/firebasehelper"
-import styled from "styled-components"
+import { generateUID } from "../../tools/uid"
 
 const AlertStyled = styled(Alert)`
   padding-left: 10em;
@@ -56,9 +59,13 @@ export default class Modals extends React.Component {
 
     submit = (e) => {
       e.preventDefault()
+      const { user } = this.props
       const { topic } = this.state
       if (topic && topic.title && topic.description) {
-        insert(`topics/9B0qMcpVH7MDYh80fkkyUoF2IL33/${topic.title}`, this.state.topic)
+        insert(`topics/${user.uid}/${generateUID()}`, {
+          ...this.state.topic,
+          createdAt: moment().format()
+        })
         this.setState({ error: "" })
       } else {
         this.setState({ error: "กรุณาข้อมูลกรอกให้ครบ" })
@@ -99,28 +106,3 @@ export default class Modals extends React.Component {
       )
     }
 }
-
-// db.ref("/users/" + this.state.userId)
-// .set({
-//   name: Topics.name,
-//   photo: Topics.photo,
-//   telno: Topics.telno,
-//   createAt: Topics.date,
-//   updateAt: Topics.date,
-//   uid: Topics.uid
-
-// })
-// db.ref("/topics/" + this.state.userId + "/" + Topics.topic)
-// .set({
-//   uid: Topics.uid,
-//   topic: Topics.topic,
-//   description: Topics.description,
-//   createAt: Topics.date,
-//   updateAt: Topics.date
-// })
-// db.ref("/votes/" + this.state.userId + "/" + Topics.topic)
-// .set({
-//   uid: Topics.uid,
-//   topicid: Topics.uid + "_" + Topics.topic,
-//   createAt: Topics.date
-// })
