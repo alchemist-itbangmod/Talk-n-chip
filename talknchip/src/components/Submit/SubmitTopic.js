@@ -3,8 +3,6 @@ import styled from "styled-components"
 import { Container, Row, Col } from "reactstrap"
 import Modals from "./Modals"
 
-const topic = "หัวข้อที่เสนอของคุณ"
-
 const SubmitText = styled.span`
   color: #69302c;
   margin-bottom: 0px;
@@ -15,11 +13,9 @@ const SubmitTopic = () => (
   <Container fluid>
     <Container className='py-1'>
       <Row>
-        <Col className='ml-auto'>
-          <div className='d-flex justify-content-between align-items-center'>
-            <SubmitText>{topic}</SubmitText>
-            <Modals />
-          </div>
+        <Col className='d-flex justify-content-between align-items-center'>
+          <SubmitText>{"หัวข้อที่เสนอของคุณ"}</SubmitText>
+          <Modals />
         </Col>
       </Row>
     </Container>
