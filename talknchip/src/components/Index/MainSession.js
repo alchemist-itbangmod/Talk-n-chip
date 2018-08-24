@@ -16,34 +16,34 @@ const content = {
 
 const speakers = [
   {
-    name: "เต้",
-    team: "Alchemist",
-    topic: "กินข้าวกับโค้ดกันเถอะ",
-    image: "https://scontent.fbkk14-1.fna.fbcdn.net/v/t31.0-8/19144003_758900554284312_5658595717333519338_o.jpg?_nc_cat=0&oh=9aaa31dc4d00dfb03b410c175b285bfb&oe=5BF69118"
+    name: "",
+    team: "",
+    topic: "Coming soon...",
+    image: "/static/images/Asset_10.svg"
   },
   {
-    name: "เต้",
-    team: "Alchemist",
-    topic: "กินข้าวกับโค้ดกันเถอะ",
-    image: "https://scontent.fbkk14-1.fna.fbcdn.net/v/t31.0-8/19144003_758900554284312_5658595717333519338_o.jpg?_nc_cat=0&oh=9aaa31dc4d00dfb03b410c175b285bfb&oe=5BF69118"
+    name: "",
+    team: "",
+    topic: "Coming soon...",
+    image: "/static/images/Asset_10.svg"
   },
   {
-    name: "เต้",
-    team: "Alchemist",
-    topic: "กินข้าวกับโค้ดกันเถอะ",
-    image: "https://scontent.fbkk14-1.fna.fbcdn.net/v/t31.0-8/19144003_758900554284312_5658595717333519338_o.jpg?_nc_cat=0&oh=9aaa31dc4d00dfb03b410c175b285bfb&oe=5BF69118"
+    name: "",
+    team: "",
+    topic: "Coming soon...",
+    image: "/static/images/Asset_10.svg"
   },
   {
-    name: "เต้",
-    team: "Alchemist",
-    topic: "กินข้าวกับโค้ดกันเถอะ",
-    image: "https://scontent.fbkk14-1.fna.fbcdn.net/v/t31.0-8/19144003_758900554284312_5658595717333519338_o.jpg?_nc_cat=0&oh=9aaa31dc4d00dfb03b410c175b285bfb&oe=5BF69118"
+    name: "",
+    team: "",
+    topic: "Coming soon...",
+    image: "/static/images/Asset_10.svg"
   },
   {
-    name: "เต้",
-    team: "Alchemist",
-    topic: "กินข้าวกับโค้ดกันเถอะ",
-    image: "https://scontent.fbkk14-1.fna.fbcdn.net/v/t31.0-8/19144003_758900554284312_5658595717333519338_o.jpg?_nc_cat=0&oh=9aaa31dc4d00dfb03b410c175b285bfb&oe=5BF69118"
+    name: "",
+    team: "",
+    topic: "Coming soon...",
+    image: "/static/images/Asset_10.svg"
   }
 ]
 
