@@ -1,6 +1,6 @@
 import React from "react"
-import {Container, Row, Col, Card as DefaultCard, CardBody, CardTitle as DefaultCardTitle} from "reactstrap"
 import styled from "styled-components"
+import {Container, Row, Col, Card as DefaultCard, CardBody as DefaultCardBody, CardTitle as DefaultCardTitle} from "reactstrap"
 import GoogleMap from "./GoogleMap"
 
 const Landing = styled(Container)`
@@ -8,6 +8,10 @@ const Landing = styled(Container)`
   background-image: url('/static/images/IT.png');
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media (max-width: 768px) {
+    padding: 0px;
+  }
 `
 const Card = styled(DefaultCard)`
   margin-top: -15vh;
@@ -15,6 +19,13 @@ const Card = styled(DefaultCard)`
   background-color: #ffffff;
   width: 540px;
 
+`
+
+const CardBody = styled(DefaultCardBody)`
+  @media (max-width: 768px) {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 `
 const CardLocation = styled(DefaultCard)`
   border: 0px solid transparent;

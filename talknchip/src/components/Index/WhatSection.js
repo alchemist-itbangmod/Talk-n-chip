@@ -70,7 +70,7 @@ const WhatSection = () => (
           <Col className='text-center' xs={12} lg={{size: 10, offset: 1}}>
             <WhatHeader>{content.header} <span><b>{content.headerHighlight}</b></span></WhatHeader>
             <WhatContent>{content.body}</WhatContent>
-            <Row className='d-flex justify-content-between align-items-center'>
+            {/* <Row className='d-flex justify-content-between align-items-center'>
               <Col xs={12} sm={12} lg={12}>
                 {
                   images.map((image, index) => (
@@ -78,7 +78,7 @@ const WhatSection = () => (
                   ))
                 }
               </Col>
-            </Row>
+            </Row> */}
           </Col>
         </Row>
       </Container>
