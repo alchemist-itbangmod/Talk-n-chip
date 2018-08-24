@@ -43,7 +43,7 @@ module.exports = class HTML extends React.Component {
           <meta property='og:url' content='https://talknchip.in.th' />
           <meta property='og:type' content='article' />
           <meta property='og:title' content='Let Talk n Chip' />
-          <meta property='og:description' content='Share knowlage' />
+          <meta property='og:description' content={`ถ้าพูดเยอะอาจจะเจ็บคอ แต่ถ้ามา Talk n’ Chip แล้วพูดไม่พอแล้วจะเจ็บใจ ขอเชิญเสนอหัวข้อที่อยากพูดและเข้าร่วมงาน Meetup Talk n' Chip วันที่ 26 สิงหาคม 2018 ณ คณะไอที ลาดกระบัง`} />
           <meta property='og:image' content='https://talknchip.in.th/static/images/og.png' />
 
           <title>{title}</title>
