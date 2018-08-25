@@ -40,6 +40,9 @@ const Image = styled.img`
   &.bangmod {
     max-height: unset;
     height: 60px;
+    @media (min-width: 1024px) {
+      height: 85px;
+    }
   }
 `
 const SponsorCol = styled(Col)`
@@ -70,6 +73,8 @@ const Sponsor = () => (
           <Image src={Images.alchemist} />
         </SponsorImageCol>
         <Col className='text-center mt-5'>
+          <small>สนับสนุนโดย</small>
+          <br />
           <Image className='bangmod' src={"/static/images/bangmod.png"} />
         </Col>
       </Row>
