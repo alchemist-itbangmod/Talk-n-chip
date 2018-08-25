@@ -42,7 +42,7 @@ class VotePage extends React.Component {
     } else {
       firebase.auth().signOut().then(() => {
         const user = { displayName: "Guest" }
-        this.setState({ user, buttonText: "เข้าสู่ระบบ", topics: [] })
+        this.setState({ user, buttonText: "เข้าสู่ระบบ" })
       })
     }
   }
