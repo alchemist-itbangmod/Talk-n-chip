@@ -3,7 +3,9 @@ import moment from "moment"
 import {
   Container,
   Row,
-  Col
+  Col,
+  Card,
+  CardBody
 } from "reactstrap"
 import firebase from "../../credentials/firebase-config"
 import { auth, provider, insert, getAll, getOne } from "../../tools/firebasehelper"
@@ -69,16 +71,23 @@ class VotePage extends React.Component {
     const { user, topics, buttonText } = this.state
     return (
       <Fragment>
-        <NavBarLogin login={this.loginn} user={user} buttonText={buttonText} />
+        <NavBarLogin login={this.login} user={user} buttonText={buttonText} />
         <VoteTopic />
         <Container>
           <Row>
             {
-              topics.map((topic, index) => (
+              topics.length > 0 ? topics.map((topic, index) => (
                 <Col key={index} xs={12} lg={4} className='pb-5' >
                   <CardVote topic={Object.values(topic)[0]} value={index} />
                 </Col>
               ))
+                : <Col>
+                  <Card className='mb-5'>
+                    <CardBody className='text-center'>
+                      <h3>กำลังโหลด...</h3>
+                    </CardBody>
+                  </Card>
+                </Col>
             }
           </Row>
         </Container>

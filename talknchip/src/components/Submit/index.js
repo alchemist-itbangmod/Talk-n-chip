@@ -55,7 +55,6 @@ class SubmitPage extends React.Component {
           },
           buttonText: "ออกจากระบบ"
         })
-        this.forceUpdate()
       }
     })
   }
