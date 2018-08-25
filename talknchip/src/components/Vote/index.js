@@ -76,10 +76,13 @@ class VotePage extends React.Component {
         <Container>
           <Row>
             {
-              topics.length > 0 ? topics.map((topic, index) => (
-                <Col key={index} xs={12} lg={4} className='pb-5' >
-                  <CardVote topic={Object.values(topic)[0]} value={index} />
-                </Col>
+              topics.length > 0 ? topics.map((nestedTopic) => (
+                Object.values(nestedTopic).map((topic, index) => (
+                  <Col key={index} xs={12} lg={4} className='pb-5' >
+                    <CardVote topic={topic} value={index} />
+                  </Col>
+                )
+                )
               ))
                 : <Col>
                   <Card className='mb-5'>
