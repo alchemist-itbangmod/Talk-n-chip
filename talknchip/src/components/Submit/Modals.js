@@ -107,17 +107,20 @@ export default class Modals extends React.Component {
       const { user } = this.props
       const { topic } = this.state
       if (topic && topic.title && topic.description) {
+        const uid = generateUID()
         if (user.telNo) {
-          insert(`topics/${user.uid}/${generateUID()}`, {
+          insert(`topics/${user.uid}/${uid}`, {
             ...this.state.topic,
             telNo: user.telNo,
-            createdAt: moment().format()
+            createdAt: moment().format(),
+            id: uid
           })
           insert(`users/${user.uid}`, { ...user, updatedAt: moment().format() })
         } else {
-          insert(`topics/${user.uid}/${generateUID()}`, {
+          insert(`topics/${user.uid}/${uid}`, {
             ...this.state.topic,
-            createdAt: moment().format()
+            createdAt: moment().format(),
+            id: uid
           })
           getOne("users", user.uid).once("value").then(userSnapshot => {
             const user = userSnapshot.val()

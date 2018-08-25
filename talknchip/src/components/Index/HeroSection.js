@@ -5,7 +5,7 @@ import Button from "../core/Button"
 import styled from "styled-components"
 
 const LinkTo = styled(Link)`
-  cursor: not-allowed;
+  cursor: pointer;
   color: #69302c;
   margin: 0px;
   &:hover {
@@ -31,10 +31,7 @@ const Text = styled.h1`
   margin-top: 10%;
   font-size: 55px;
   font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
   line-height: 1.35;
-  letter-spacing: normal;
   color: #69302c;
   @media (max-width: 768px) {
     font-size: 35px;
@@ -48,10 +45,6 @@ const SubText = styled.div`
 const Date = styled.p`
   font-size: 24px;
   font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #69302c;
   @media (max-width: 768px) {
     font-size: 20px;
@@ -80,7 +73,7 @@ const IndexPage = () => (
         <Col xs={12} md={7} lg={9} className='py-2 mt-1 my-0 pl-1'>
           <SubText>
             <span className='mx-3'>หรือ</span>
-            <LinkTo to='/'>{"โหวตหัวข้อตัวเองที่อยากฟัง >"}</LinkTo>
+            <LinkTo to='/vote'>{"โหวตหัวข้อตัวเองที่อยากฟัง >"}</LinkTo>
           </SubText>
         </Col>
       </Row>
