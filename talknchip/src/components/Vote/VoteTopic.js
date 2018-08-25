@@ -2,7 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import { Container, Row, Col } from "reactstrap"
 
-const topic = "มาโหวตหัวข้อสุดชิบกันเถอะ"
+const topic = "หัวข้อสุดชิบทั้งหมดตอนนี้"
+// const topic = "มาโหวตหัวข้อสุดชิบกันเถอะ"
 
 const SubmitText = styled.p`
   color: #69302c;
@@ -10,12 +11,13 @@ const SubmitText = styled.p`
 `
 const VoteTopic = () => (
   <Container fluid>
-    <Container className='py-1'>
+    <Container className='py-3'>
       <Row>
         <Col className='ml-auto'>
-          <div className='d-flex justify-content-between align-items-center'>
+          <div className='d-flex flex-row align-items-center'>
             <SubmitText>{topic}</SubmitText>
           </div>
+          <small>หมายเหตุ : เปิดโหวตวันที่ 26 ส.ค. 2561</small>
         </Col>
       </Row>
     </Container>

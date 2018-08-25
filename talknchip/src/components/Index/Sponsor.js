@@ -36,6 +36,11 @@ const Image = styled.img`
     padding: 0 0.5em;
     margin: 10px 0px;
   }
+
+  &.bangmod {
+    max-height: unset;
+    height: 60px;
+  }
 `
 const SponsorCol = styled(Col)`
   display: flex;
@@ -64,6 +69,9 @@ const Sponsor = () => (
           <Image src={Images.itForge} /> X
           <Image src={Images.alchemist} />
         </SponsorImageCol>
+        <Col className='text-center mt-5'>
+          <Image className='bangmod' src={"/static/images/bangmod.png"} />
+        </Col>
       </Row>
     </Container>
   </Landing>
