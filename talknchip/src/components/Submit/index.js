@@ -58,21 +58,22 @@ class SubmitPage extends React.Component {
       }
     })
   }
-  login = async () => {
+  login = () => {
     const { user } = this.state
     if (user.displayName === "Guest") {
-      const userAuth = await auth().signInWithPopup(provider)
-      const user = getUser(userAuth.user)
-      const userQuery = await getOne("users", user.uid).once("value").then(userSnapshot => {
-        const user = userSnapshot.val()
-        return user
+      auth().signInWithPopup(provider).then(userAuth => {
+        const user = getUser(userAuth.user)
+        const userQuery = getOne("users", user.uid).once("value").then(userSnapshot => {
+          const user = userSnapshot.val()
+          return user
+        })
+        if (userQuery && userQuery.uid) {
+          insert(`users/${user.uid}`, { ...userQuery, updatedAt: moment().format() })
+        } else {
+          insert(`users/${user.uid}`, { ...user, createdAt: moment().format(), updatedAt: moment().format() })
+        }
+        this.setState({ user: { ...user } })
       })
-      if (userQuery && userQuery.uid) {
-        insert(`users/${user.uid}`, { ...userQuery, updatedAt: moment().format() })
-      } else {
-        insert(`users/${user.uid}`, { ...user, createdAt: moment().format(), updatedAt: moment().format() })
-      }
-      this.setState({ user: { ...user } })
     } else {
       firebase.auth().signOut().then(() => {
         const user = { displayName: "Guest" }
@@ -103,7 +104,11 @@ class SubmitPage extends React.Component {
                     <h4>
                       {
                         user.displayName === "Guest"
-                          ? <Fragment>{"กรุณา"}<Button className='mx-3' onClick={this.login}>เข้าสู่ระบบ</Button>{"ก่อนเสนอหัวข้อ"}</Fragment>
+                          ? <Fragment>
+                            <div className='px-4'>
+                              {"กรุณา"}<Button className='mx-3' onClick={this.login}>เข้าสู่ระบบ</Button>{"ก่อนเสนอหัวข้อ"}
+                            </div>
+                          </Fragment>
                           : <Fragment>{"กรุณาเสนอหัวข้อโดยกดปุ่ม \"เสนอหัวข้อ\" ด้านขวาบน"}</Fragment>
                       }
                     </h4>
