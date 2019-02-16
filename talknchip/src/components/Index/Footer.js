@@ -8,7 +8,7 @@ const FooterContainer = styled(Container)`
 
 const creditText = {
   creditText: "Made with <3 by",
-  creditHilight: "Artisan + Alchemist"
+  creditHilight: "Artisan + Alchemist + Thinc."
 }
 const Credit = styled.p`
   font-size: 23px;
@@ -40,7 +40,9 @@ const CreditImage = styled.img`
 
 const images = {
   itforge: "/static/images/Artisan Logo.png",
-  alchemist: "/static/images/logoAlchemist.png"
+  alchemist: "/static/images/logoAlchemist.png",
+  thinc: "/static/images/thinc.png"
+
 }
 
 const Footer = () => (
@@ -55,6 +57,7 @@ const Footer = () => (
             <Col xs={12} md={6} lg={5} className='pb-2' align='center'>
               <CreditImage src={images.itforge} />
               <CreditImage src={images.alchemist} />
+              <CreditImage src={images.thinc} />
             </Col>
           </Row>
         </Col>

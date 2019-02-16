@@ -3,12 +3,12 @@ import styled from "styled-components"
 import { Container, Row, Col } from "reactstrap"
 
 const content = {
-  header: "คนอยากเมาท์",
-  headerHighlight: "กับเรื่องที่จะเมาท์",
+  header: "คนอยากเม้าท์",
+  headerHighlight: "กับเรื่องที่จะเม้าท์",
   body: `
   นอกจากจะมี Open Session แล้ว
   เรายังมีหัวข้อดีๆ
-  จาก Speaker ของทั้งสองทีม
+  จาก Speaker ของทั้งสามทีม
   ที่จะมาแชร์ความรู้แบบวร้ายๆ
   ให้ได้ฟังกันอีกด้วย
   `
