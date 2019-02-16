@@ -4,9 +4,9 @@ import { Container, Row, Col } from "reactstrap"
 
 const content = {
   header: "เพราะใดๆในโลกล้วนเป็น",
-  headerHighlight: "เรื่องน่าเมาท์",
+  headerHighlight: "เรื่องน่าเม้าท์",
   body: `
-    ในปีนี้ทางชุมนุม ITForge KMITL และ Alchemist KMUTT จึงได้ลงเอย
+    ในปีนี้ทางชุมนุม ITForge KMITL , Alchemist KMUTT , Thinc. CU จึงได้ลงเอย
     มานัดพบ ชวนทุกคนมานั่งเม้าท์กินขนมให้เจ็บคอเล่นอย่างเป็นกันเอง
     เพื่อให้ทุกคนได้รู้จักกันมากขึ้นผ่าน Open Session ที่ใครอยากจะแชร์อะไร
     ก็เสนอหัวข้อกันมาได้แล้วมาฝอยกัน
