@@ -9,10 +9,10 @@ const style = {
 
 const MapLocation = withGoogleMap(props => (
   <GoogleMap
-    defaultCenter={{ lat: 13.730882, lng: 100.781345 }}
+    defaultCenter={{ lat: 13.651454, lng: 100.493780 }}
     defaultZoom={17}
   >
-    <Marker position={{ lat: 13.730882, lng: 100.781345 }} />
+    <Marker position={{ lat: 13.651454, lng: 100.493780 }} />
   </GoogleMap>
 ))
 

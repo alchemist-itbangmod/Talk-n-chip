@@ -54,32 +54,68 @@ const CardTitle = styled(DefaultCardTitle)`
 
 const Schedules = [
   {
-    time: "10.00",
-    schedule: "เริ่มงาน"
+    time: "10.00-10.30",
+    schedule: "ลงทะเบียน"
   },
   {
     time: "11.00 - 12.00",
-    schedule: "Session 1"
+    schedule: "แนะนำตัว และพูดทำความรู้จักกัน"
   },
   {
     time: "12.00 - 13.00",
-    schedule: "พักเที่ยง"
+    schedule: "พักรัปประทานอาหารกลางวัน"
   },
   {
-    time: "13.00 - 14.00",
-    schedule: "Session 2"
+    time: "13.00 - 13.20",
+    schedule: "Session 1, 2"
   },
   {
-    time: "14.00 - 15.00",
-    schedule: "Session 3"
+    time: "13.20 - 13.30",
+    schedule: "พัก"
   },
   {
-    time: "15.00 - 16.00",
-    schedule: "Session 4"
+    time: "13.30 - 13.50",
+    schedule: "Session 3, 4"
   },
   {
-    time: "16.00 - 17.00",
-    schedule: "Session 5"
+    time: "13.50 - 14.00",
+    schedule: "พัก"
+  },
+  {
+    time: "14.00 - 14.20",
+    schedule: "Session 5, 6"
+  },
+  {
+    time: "14.20 - 14.30",
+    schedule: "พัก"
+  },
+  {
+    time: "14.30 - 14.50",
+    schedule: "Session 7, 8"
+  },
+  {
+    time: "14.50 - 15.00",
+    schedule: "พัก"
+  },
+  {
+    time: "15.00 - 15.20",
+    schedule: "Session 9, 10"
+  },
+  {
+    time: "15.20 - 15.30",
+    schedule: "พัก"
+  },
+  {
+    time: "15.30 - 15.50",
+    schedule: "Session 11, 12"
+  },
+  {
+    time: "15.50 - 16.00",
+    schedule: "พัก"
+  },
+  {
+    time: "16.00",
+    schedule: "ปิดกิจกรรม"
   }
 ]
 const Time = styled.p`
@@ -154,10 +190,10 @@ const Schedule = () => (
               LOCATION
               </CardTitle>
               <div className='mb-4'>
-                <Faculty>คณะเทคโนโลยีสารสนเทศ</Faculty>
+                <Faculty>อาคารเรียนรวม 2</Faculty>
                 <Describe>
-                  สถาบันเทคโนโลยีพระจอมเกล้า<br />
-                  เจ้าคุณทหารลาดกระบัง
+                มหาวิทยาลัย<br />
+                เทคโนโลยีพระจอมเกล้าธนบุรี
                 </Describe>
               </div>
               <div align='right'>

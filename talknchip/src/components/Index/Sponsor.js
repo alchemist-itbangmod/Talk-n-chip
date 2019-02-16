@@ -15,7 +15,8 @@ const Text = styled.p`
 `
 const Images = {
   itForge: "/static/images/ITFORGE.png",
-  alchemist: "/static/images/logoAlchemist.png"
+  alchemist: "/static/images/logoAlchemist.png",
+  thinc: "/static/images/Thinc.png"
 }
 const Image = styled.img`
   padding: 0.5em 1.5em;
@@ -65,12 +66,13 @@ const Sponsor = () => (
   <Landing>
     <Container className='p-5'>
       <Row className='py-5'>
-        <SponsorCol xs={12} md={4} lg={{size: 3}}>
+        <SponsorCol xs={12} md={4} lg={{size: 2}}>
           <Text>ด้วยรักจึงจัดให้จาก</Text>
         </SponsorCol>
-        <SponsorImageCol xs={12} md={8} lg={7} align='center'>
+        <SponsorImageCol xs={12} md={8} lg={9} align='center'>
           <Image src={Images.itForge} /> X
-          <Image src={Images.alchemist} />
+          <Image src={Images.alchemist} /> X
+          <Image src={Images.thinc} />
         </SponsorImageCol>
         <Col className='text-center mt-5'>
           <small>สนับสนุนโดย</small>
