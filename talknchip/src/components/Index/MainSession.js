@@ -3,8 +3,8 @@ import styled from "styled-components"
 import { Container, Row, Col } from "reactstrap"
 
 const content = {
-  header: "คนอยากเม้าท์",
-  headerHighlight: "กับเรื่องที่จะเม้าท์",
+  header: "คนอยากเมาท์",
+  headerHighlight: "กับเรื่องที่จะเมาท์",
   body: `
   นอกจากจะมี Open Session แล้ว
   เรายังมีหัวข้อดีๆ

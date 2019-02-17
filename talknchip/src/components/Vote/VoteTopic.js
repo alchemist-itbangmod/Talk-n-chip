@@ -17,7 +17,6 @@ const VoteTopic = () => (
           <div className='d-flex flex-row align-items-center'>
             <SubmitText>{topic}</SubmitText>
           </div>
-          <small>หมายเหตุ : เปิดโหวตวันที่ 26 ส.ค. 2561</small>
         </Col>
       </Row>
     </Container>
