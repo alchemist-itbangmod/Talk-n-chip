@@ -70,13 +70,13 @@ const SectionSubmitTopic = () => (
       <Row>
         <Col className='text-center py-5 d-flex flex-column'>
           <Text>
-          อ่านมาขนาดนี้แล้วยังไม่ส่งหัวข้ออีกหรอ ?<span> ส่งเร็ว!</span>
+          อ่านมาขนาดนี้แล้วยังไม่ส่งหัวข้ออีกเหรอ ?<span> ส่งเร็ว!</span>
           </Text>
           <LinkTo to='../submit'>
             <DownButton className='my-4'>ส่งหัวข้อที่จะไปพูดกันเลย !</DownButton>
           </LinkTo>
           <span>
-            หรือ <LinkTo to='../vote'>โหวตหัวข้อตัวเองที่อยากฟัง ></LinkTo>
+            หรือ <LinkTo to='../vote'>ดูหัวข้อที่น่าสนใจ ></LinkTo>
           </span>
         </Col>
       </Row>
