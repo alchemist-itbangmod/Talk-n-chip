@@ -41,7 +41,7 @@ const CreditImage = styled.img`
 const images = {
   itforge: "/static/images/Artisan Logo.png",
   alchemist: "/static/images/logoAlchemist.png",
-  thinc: "/static/images/thinc.png"
+  thinc: "/static/images/Thinc.png"
 
 }
 

@@ -93,7 +93,7 @@ export default class NavBar extends React.Component {
     return (
       <Navbar color={this.state.color} expand='md' className='sticky-top' light>
         <Container>
-          <NavBrand href='#home'>
+          <NavBrand href='/'>
             <Img src='/static/images/Asset_10.svg' />
           </NavBrand>
           <NavbarToggler onClick={this.toggle} />
