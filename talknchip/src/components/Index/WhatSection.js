@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Container, Row, Col } from "reactstrap"
 
 const content = {
-  header: "เพราะใดๆในโลกล้วนเป็น",
+  header: "เพราะใดๆ ในโลกล้วนเป็น",
   headerHighlight: "เรื่องน่าเมาท์",
   body: `
     ในปีนี้ทางชุมนุม ITForge KMITL , Alchemist KMUTT , Thinc. CU จึงได้ลงเอย
